@@ -1,0 +1,39 @@
+{
+  "id": "5e401b31-5534-4fb9-9c2d-0cbc8ee3fcc2",
+  "name": "Strategy & Planning",
+  "publisher": "Altair Retro Ltd",
+  "version": "1.0.0.3",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "", 
+  "dependencies": [  
+    {
+      "id": "c9e391e0-3547-4cc5-bb9a-87842b44aa9a",
+ "name": "General Management",
+  "publisher": "JMUTHUI@ALTAIRETRO.COM",
+  "version": "1.0.0.0"
+}
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "21.0.0.0",
+  "idRanges": [
+    {
+      "from": 65000,
+      "to": 66000
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "10.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

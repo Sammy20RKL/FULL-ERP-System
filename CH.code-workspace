@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "General Management CH"
+		},
+		{
+			"path": "Human-Resource-Management-main"
+		},
+		{
+			"path": "Finance Management"
+		},
+		{
+			"path": "Grants Management"
+		},
+		{
+			"path": "Procurement Management2"
+		},
+		{
+			"path": "Strategy and Planning"
+		}
+	],
+	"settings": {
+		"al.showHomeAtStartup": "WhenUpdated"
+	}
+}

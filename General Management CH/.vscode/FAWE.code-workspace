@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Finance Management"
+		},
+		{
+			"path": "../../Human Resource Management"
+		},
+		{
+			"path": "../../Grants Management"
+		},
+		{
+			"path": "../../Procurement Management"
+		}
+	],
+	"settings": {
+		"al.showHomeAtStartup": "WhenUpdated"
+	}
+}
