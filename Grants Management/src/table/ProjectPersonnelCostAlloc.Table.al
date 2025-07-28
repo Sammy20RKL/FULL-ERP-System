@@ -9,15 +9,18 @@ table 60036 "Project Personnel Cost Alloc"
         }
         field(2; "Employee No"; Code[50])
         {
-            TableRelation = Resource;
+            TableRelation = Employee;
 
             trigger OnValidate()
+            var
+                Emp: Record Employee;
             begin
-                Res.Get("Employee No");
-                "Employee Name" := Res.Name;
+                Emp.Get("Employee No");
+                "Employee Name" := Emp.FullName();
+                "Project Role" := Emp.Title;
             end;
         }
-        field(3; "Employee Name"; Text[30])
+        field(3; "Employee Name"; Text[100])
         {
         }
         field(4; "Project Role"; Code[30])

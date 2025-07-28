@@ -10,12 +10,18 @@ table 60017 "Project Donors"
             TableRelation = Customer where("Customer Posting Group" = filter('DONOR'));
 
             trigger OnValidate()
+            var
+                Cust: Record Customer;
             begin
                 DimVal.Reset();
                 DimVal.SetRange(DimVal."Global Dimension No.", 1);
                 DimVal.SetRange(DimVal.Code, "Shortcut Dimension 1 Code");
-                if DimVal.Find('-') then
+                if DimVal.Find('-') then begin
                     "Donor Name" := DimVal.Name;
+                end
+                else
+                if Cust.Get("Shortcut Dimension 1 Code") then
+                    "Donor Name" := Cust.Name;
             end;
         }
         field(2; "Donor Name"; Text[100])

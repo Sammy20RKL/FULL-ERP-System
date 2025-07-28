@@ -615,17 +615,19 @@ table 60006 Jobs
         }
         field(50020; "Principal Investigator"; Text[100])
         {
-            TableRelation = Resource;
+            TableRelation = Employee;
 
             trigger OnValidate()
+            var
+            Employee: Record Employee;
             begin
-                objReso.Reset();
-                objReso.SetRange(objReso."No.", "Principal Investigator");
-                if objReso.Find('-') then begin
-                    "Principal Investigator name" := objReso.Name;
-                    "Bill-to Address" := objReso.Address;
-                    "Bill-to Address 2" := objReso.Email;
-                    Institution := objReso.Institution;
+                Employee.Reset();
+                Employee.SetRange(Employee."No.", "Principal Investigator");
+                if Employee.Find('-') then begin
+                    "Principal Investigator name" := Employee.FullName();
+                    "Bill-to Address" := Employee.Address;
+                    "Bill-to Address 2" := Employee."E-Mail";
+                    // Institution := Employee.Institution;
                 end;
             end;
         }
