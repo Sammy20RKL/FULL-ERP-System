@@ -10,6 +10,17 @@ pageextension 53003 "PurchaseOrderCardPageExt" extends "Purchase Order"
         {
             Caption = 'Delivery Note Number';
         }
+        addafter("Vendor Shipment No.")
+        {
+            field("Delivery Address"; Rec."Delivery Address")
+            {
+                ApplicationArea = All;
+                Caption = 'Delivery Address';
+                ToolTip = 'Specifies the delivery address for the purchase order.';
+                Visible = true;
+                Editable = true;
+            }
+        }
 
         addlast(General)
         {

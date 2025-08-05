@@ -24,6 +24,9 @@ report 53055 "LPO New"
             {
 
             }
+            column(Delivery_Address; "Delivery Address")
+            {
+            }
             column(Document_Date; "Document Date")
             {
 

@@ -309,8 +309,12 @@ tableextension 53002 "PurchHeaderExt" extends "Purchase Header"
                 end;
             end;
         }
+        field(53019; "Delivery Address"; Text[100])
+        {
+            Caption = 'Delivery Address';
+            DataClassification = CustomerContent;
+        }
     }
-
     var
         DocAttachMgt: Codeunit "Document Attachment Custom";
         DocumentAttachment: Record "Document Attachment";
