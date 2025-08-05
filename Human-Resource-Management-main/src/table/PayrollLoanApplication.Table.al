@@ -180,8 +180,8 @@ table 52129 "Payroll Loan Application"
                             "Employee Name" := EmpRec."First Name" + ' ' + EmpRec."Middle Name" + ' ' + EmpRec."Last Name";
                             "Payroll Group" := EmpRec."Posting Group";
                             "Employee Type" := EmpRec."Employee Type";
-                            EmpRec.TestField("Debtor Code");
-                            "Debtors Code" := EmpRec."Debtor Code";
+                            EmpRec.TestField("Salary Advance Debtors");
+                            "Debtors Code" := EmpRec."Salary Advance Debtors";
                         end;
                     "Loan Customer Type"::"External Customer":
 

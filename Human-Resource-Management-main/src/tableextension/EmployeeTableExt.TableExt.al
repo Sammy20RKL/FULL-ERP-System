@@ -1170,7 +1170,7 @@ Error(EmployeeRetiredErr); */
         field(52131; "Debtor Code"; Code[20])
         {
             DataClassification = CustomerContent;
-            TableRelation = Customer;
+            TableRelation = Customer where ("Customer Type"=filter("Imprest Advance"));
             Caption = 'Debtor Code';
         }
         field(52132; "Current Leave Period"; Code[20])
@@ -1481,7 +1481,7 @@ Error(EmployeeRetiredErr); */
         field(53024; "Salary Advance Debtors"; Code[20])
         {
             DataClassification = CustomerContent;
-            TableRelation = Customer;
+            TableRelation = Customer where ("Customer Type"=filter("Staff Advance"));
             Caption = 'Salary Advance Debtors';
 
             trigger OnValidate()

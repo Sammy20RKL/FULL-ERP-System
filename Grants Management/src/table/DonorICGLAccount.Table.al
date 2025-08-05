@@ -11,7 +11,7 @@ table 60029 "Donor IC G/L Account"
             Caption = 'No.';
             NotBlank = true;
         }
-        field(2; Name; Text[30])
+        field(2; Name; Text[250])
         {
             Caption = 'Name';
         }

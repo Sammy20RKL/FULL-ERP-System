@@ -63,6 +63,12 @@ table 52186 "Employee Work Time"
             // FieldClass = FlowFilter;
             TableRelation = "Payroll Period";
             Caption = 'Pay Period Filter';
+            // trigger OnValidate()
+            // var
+            // BaseCal: 
+            // begin
+
+            // end;
         }
         field(31; "Employee Total Personal Cost"; Decimal)
         {

@@ -642,7 +642,7 @@ Amount:=PayrollRounding(Amount);
         field(18; "Next Period Entry"; Boolean)
         {
             Caption = 'Next Period Entry';
-        }
+        } 
         field(19; "Posting Group Filter"; Code[20])
         {
             TableRelation = "Employee HR Posting Group";

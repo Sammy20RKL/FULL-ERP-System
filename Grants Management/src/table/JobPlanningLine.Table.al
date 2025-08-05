@@ -946,7 +946,7 @@ table 60010 "Job-Planning Line"
             OptionCaption = ' ,Restricted,Unrestricted';
             OptionMembers = " ",Restricted,Unrestricted;
         }
-        field(50020; "Donor Expense Code"; Code[10])
+        field(50020; "Donor Expense Code"; Code[20])
         {
             TableRelation = "Donor IC G/L Account";
 

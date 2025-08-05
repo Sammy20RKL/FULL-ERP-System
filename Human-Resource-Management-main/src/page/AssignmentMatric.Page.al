@@ -248,7 +248,7 @@ page 52003 "Assignment Matric"
                 }
                 field("Next Period Entry"; Rec."Next Period Entry")
                 {
-                    ToolTip = 'Specifies the value of the Next Period Entry field.';
+                    ToolTip = 'Specifies the value of the Next Period Entry field.'; 
                 }
                 field("No of Days"; Rec."No of Days")
                 {

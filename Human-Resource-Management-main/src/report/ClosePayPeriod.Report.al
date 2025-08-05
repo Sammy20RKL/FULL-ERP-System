@@ -276,9 +276,9 @@ report 52028 "Close Pay Period"
                     AssignMatrix."Payroll Group" := EmpRec."Posting Group";
                     Window.Update(1, EmpRec."First Name" + ' ' + EmpRec."Middle Name" + ' ' + EmpRec."Last Name");
                     //MESSAGE('%1',EmpRec."Employee Job Type");
-                    if (EmpRec.Status = EmpRec.Status::Active) and (EmpRec."Employee Type" <> EmpRec."Employee Type"::"Board Member") and (CreateRec = true) and (AssignMatrix.Amount <> 0)
-                        and (EmpRec."Employee Job Type" = EmpRec."Employee Job Type"::"  ") then
-                        AssignMatrix.Insert();
+                    if (AssignMatrix."Employer Amount" <> 0) or (AssignMatrix.Amount <> 0) then
+                        if (EmpRec.Status = EmpRec.Status::Active) and (EmpRec."Employee Type" <> EmpRec."Employee Type"::"Board Member") and (CreateRec = true) and (EmpRec."Employee Job Type" = EmpRec."Employee Job Type"::"  ") then
+                            AssignMatrix.Insert();
                 end;
             until PaymentDed.Next() = 0;
         //Manage loans
