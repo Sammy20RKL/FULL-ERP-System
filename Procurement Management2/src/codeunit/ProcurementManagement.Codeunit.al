@@ -675,6 +675,7 @@ codeunit 53000 "Procurement Management"
         TenderRec: Record "Procurement Request";
         DocAttachRec: Record "Document Attachment";
         Committement: Codeunit "Commitments Mgt Procurement";
+        Item: Record Item;
         NoseriesMgt: Codeunit NoSeriesManagement;
         DocumentAttachment: Codeunit "Document Attachment Custom";
         TempBlob: Codeunit "Temp Blob";
@@ -717,6 +718,7 @@ codeunit 53000 "Procurement Management"
                     PurchHeader."No. Printed" := 0;
                     PurchHeader."Quote No." := IR."No.";
                     PurchHeader.Status := PurchHeader.Status::Open;
+                    PurchHeader."Responsibility Center" := IR."Responsibility Centre";
                     PurchHeader.InitRecord();
                     PurchHeader."Buy-from Vendor No." := VendNo;
                     PurchHeader.Validate("Buy-from Vendor No.");
@@ -807,7 +809,14 @@ codeunit 53000 "Procurement Management"
                         PurchLine.Validate("Direct Unit Cost");
                         PurchLine.Validate("Line Amount");
                         PurchLine.Amount := IRLine2.Amount;
-                        PurchLine."VAT Prod. Posting Group" := IRLine2."VAT Code";
+
+
+                        // Get VAT Prod. Posting Group from Item Card when Type = Item
+                        if PurchLine.Type = PurchLine.Type::Item then begin
+                            if Item.Get(PurchLine."No.") then
+                                PurchLine."VAT Prod. Posting Group" := Item."VAT Prod. Posting Group";
+                        end else
+                            PurchLine."VAT Prod. Posting Group" := IRLine2."VAT Code";
                         PurchLine."VAT %" := IRLine2."VAT %";
                         PurchLine.Validate(Amount);
                         PurchLine."Requisition No." := IR."Requisition No";

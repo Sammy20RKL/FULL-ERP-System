@@ -157,28 +157,28 @@ table 60010 "Job-Planning Line"
             Caption = 'Quantity';
             DecimalPlaces = 0 : 5;
 
-            trigger OnValidate()
-            begin
+            // trigger OnValidate()
+            // begin
 
-                case Type of
-                    Type::Item:
-                        begin
-                            if not Item.Get("No.") then
-                                Error(Text004, Type, Item.FieldCaption("No."));
-                            CheckItemAvailable();
-                        end;
-                    Type::Resource:
-                        if not Res.Get("No.") then
-                            Error(Text004, Type, Res.FieldCaption("No."));
-                    Type::"G/L Account":
-                        if not GLAcc.Get("No.") then
-                            Error(Text004, Type, GLAcc.FieldCaption("No."));
+            //     case Type of
+            //         Type::Item:
+            //             begin
+            //                 if not Item.Get("No.") then
+            //                     Error(Text004, Type, Item.FieldCaption("No."));
+            //                 CheckItemAvailable();
+            //             end;
+            //         Type::Resource:
+            //             if not Res.Get("No.") then
+            //                 Error(Text004, Type, Res.FieldCaption("No."));
+            //         Type::"G/L Account":
+            //             if not GLAcc.Get("No.") then
+            //                 Error(Text004, Type, GLAcc.FieldCaption("No."));
 
-                end;
+            //     end;
 
-                "Quantity (Base)" := CalcBaseQty(Quantity);
-                UpdateAllAmounts();
-            end;
+            //     "Quantity (Base)" := CalcBaseQty(Quantity);
+            //     UpdateAllAmounts();
+            // end;
         }
         field(11; "Direct Unit Cost (LCY)"; Decimal)
         {
@@ -428,14 +428,14 @@ table 60010 "Job-Planning Line"
             AutoFormatType = 2;
             Caption = 'Unit Cost';
 
-            trigger OnValidate()
-            begin
-                UpdateAllAmounts();
-                //Check if unit cost is less than zero
-                //IF ("Unit Cost"<=0) THEN
-                //ERROR('Unit Cost should not be less than 0');
-                // END
-            end;
+            // trigger OnValidate()
+            // begin
+            //     UpdateAllAmounts();
+            //     //Check if unit cost is less than zero
+            //     //IF ("Unit Cost"<=0) THEN
+            //     //ERROR('Unit Cost should not be less than 0');
+            //     // END
+            // end;
         }
         field(1003; "Total Cost"; Decimal)
         {
