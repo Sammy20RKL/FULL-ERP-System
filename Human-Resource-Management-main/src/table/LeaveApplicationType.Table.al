@@ -353,6 +353,7 @@ table 52176 "Leave Application Type"
         field(14; "Entry No."; Integer)
         {
             Caption = 'Entry No.';
+            AutoIncrement = true;
         }
 
     }
@@ -370,10 +371,20 @@ table 52176 "Leave Application Type"
 
 
     trigger OnInsert()
+    var
+        entry: Integer;
     begin
-        "Entry No." := "Entry No." + 2;
-        "Application Date" := Today;
+        // Rec.Reset();
+        // Rec.SetRange("Leave Code", "Leave Code");
+        // Rec.SetRange("Employee No", "Employee No");
+        // if Rec.FindLast() then
+        //     "Entry No." := Rec."Entry No." + 1
+        // else
+        //     "Entry No." := 1;
 
+
+        "Application Date" := Today;
+        //Rec."Entry No." := "Entry No.";
         FindMaturityDate();
         "Maturity Date" := MaturityDate;
         "Fiscal Start Date" := FiscalStart;
@@ -383,6 +394,7 @@ table 52176 "Leave Application Type"
         if LeaveApp.FindFirst() then begin
             "Employee No" := LeaveApp."Employee No";
             // "Leave Period" := LeaveApp."Leave Period";
+
         end;
 
     end;

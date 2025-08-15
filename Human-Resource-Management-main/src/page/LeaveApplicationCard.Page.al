@@ -85,10 +85,14 @@ page 52043 "Leave Application Card"
                     Visible = false;
                     trigger OnValidate()
                     begin
-                        // CurrPage.LeaveStatistics.Page.GetLeaveEarnedToDate(Rec."Leave Code");
-                        //rec."Leave Earned to Date" := HRManagement.GetLeaveDaysEarnedToDate(Rec, Rec."Leave Code");
-                        //CurrPage.Update();
+
+
+
+                        //     CurrPage.LeaveStatistics.Page.GetLeaveEarnedToDate(Rec."Leave Code");
+                        //     rec."Leave Earned to Date" := HRManagement.GetLeaveDaysEarnedToDate(Rec, Rec."Leave Code");
+                        CurrPage.Update();
                     end;
+
                 }
                 field("Leave Status"; Rec."Leave Status")
                 {
@@ -128,6 +132,7 @@ page 52043 "Leave Application Card"
             }
             part(Relievers; "Leave Relievers")
             {
+                Visible = false;
                 SubPageLink = "Leave Code" = field("Application No");
                 Editable = Rec."Status" = Rec."Status"::Open;
             }
@@ -179,18 +184,32 @@ page 52043 "Leave Application Card"
 
                     trigger OnAction()
                     begin
-                        Rec.TestField("Leave Period");
-                        Rec.TestField("Days Applied");
-                        Rec.TestField("Start Date");
-                        Rec.TestField("End Date");
-                        Rec.TestField("Leave Code");
 
-                        HRMgt.CheckIfLeaveRelieversExist(Rec);
+                        LeaveType.Reset();
+                        LeaveType.SetRange("Leave Code", Rec."Application No");
+                        if not LeaveType.FindFirst() then
+                            Error('No leave application lines found. Cannot send for approval.');
+                        begin
+
+                            repeat
+                                LeaveType.TestField("Leave Code");
+                                LeaveType.TestField("Days Applied");
+                                LeaveType.TestField("Start Date");
+                                if LeaveType."Staff No" = '' then
+                                    Error(LeaveReliverErr);
+                            until LeaveType.Next() = 0;
+
+                        end;
+
+                        // Rec.TestField("Leave Code");
+
                         HRMgt.CheckDocumentAttachmentExist(Rec);
+
 
                         if ApprovalsMgmt.CheckLeaveRequestWorkflowEnabled(Rec) then
                             ApprovalsMgmt.OnSendLeaveRequestApproval(Rec);
                         Commit();
+                        //
                         /*
                         //MESSAGE("Employee No");
                         //Check HOD approver
@@ -327,6 +346,11 @@ page 52043 "Leave Application Card"
         HRMgt: Codeunit "HR Management";
         HRManagement: Codeunit "HR Management";
         DocumentAttachment: Record "Document Attachment";
+        LeaveType: Record "Leave Application Type";
+        LeaveRelievers: Record "Leave Relievers";
+        LeaveReliverErr: Label 'Please define at least one leave reliever';
+
+
 }
 
 

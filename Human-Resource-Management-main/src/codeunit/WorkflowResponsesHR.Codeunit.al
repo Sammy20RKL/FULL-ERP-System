@@ -43,6 +43,8 @@ codeunit 52004 "Workflow Responses HR"
         if Leave.FindFirst() then begin
             Leave.Validate(Status, Leave.Status::Released);
             Leave.Modify(true);
+            // Message('Leave status is %1', Leave.Status);
+
             HRMgnt.LeaveApplication(Leave."Application No");
             if guiAllowed then begin
                 if Confirm('Do you want to notify the leave applicant and their reliever(s)', false) then
@@ -405,7 +407,7 @@ codeunit 52004 "Workflow Responses HR"
     // New Employee Application
     procedure ReleaseNewEmployeeApplication(var Emp: Record Employee)
     var
-    Employee: Record Employee;
+        Employee: Record Employee;
     begin
         Employee.Reset();
         Employee.SetRange("No.", Emp."No.");
@@ -417,7 +419,7 @@ codeunit 52004 "Workflow Responses HR"
 
     procedure ReopenNewEmployeeApplication(var Emp: Record Employee)
     var
-    Employee: Record Employee;
+        Employee: Record Employee;
     begin
         Employee.Reset();
         Employee.SetRange("No.", Emp."No.");

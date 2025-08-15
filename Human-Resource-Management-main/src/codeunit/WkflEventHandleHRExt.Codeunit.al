@@ -57,6 +57,11 @@ codeunit 52006 "Wkfl Event Handle HR Ext"
         exit(UpperCase('RunworkflowOnCancelLeaveApplicationApprovalRequest'));
     end;
 
+    procedure RunWorkfowOnAfterReleaseLeaveApplicationCode(): Code[128]
+    begin
+        exit(UpperCase('RunWorkfowOnAfterReleaseLeaveApplication'));
+    end;
+
     procedure RunworkflowOnSendRecruitmentRequestforApprovalCode(): Code[128]
     begin
         exit(UpperCase('RunworkflowOnSendRecruitmentRequestforApprovalCode'));
@@ -196,6 +201,7 @@ codeunit 52006 "Wkfl Event Handle HR Ext"
     begin
         exit(UpperCase('RunWorkflowOnSendNewEmployeeForApproval'));
     end;
+
     procedure RunWorkflowOnCancelNewEmployeeApprovalRequestCode(): Code[128]
     begin
         exit(UpperCase('RunWorkflowOnCancelNewEmployeeApprovalRequest'));
@@ -280,7 +286,7 @@ codeunit 52006 "Wkfl Event Handle HR Ext"
         WorkflowEvent.AddEventToLibrary(RunWorkflowOnSendNewEmployeeForApprovalCode(), Database::"Employee",
         NewEmployeeSendforApprovalDescTxt, 0, false);
         WorkflowEvent.AddEventToLibrary(RunWorkflowOnCancelNewEmployeeApprovalRequestCode(), Database::"Employee",
-        NewEmployeeCancelApprovalRequestDescTxt, 0, false); 
+        NewEmployeeCancelApprovalRequestDescTxt, 0, false);
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Workflow Event Handling", 'OnAddWorkflowEventPredecessorsToLibrary', '', false, false)]
@@ -328,7 +334,7 @@ codeunit 52006 "Wkfl Event Handle HR Ext"
             //Allowance Register
             RunworkflowOnCancelAllowanceRegisterApprovalRequestCode():
                 WorkflowEvent.AddEventPredecessor(RunworkflowOnCancelAllowanceRegisterApprovalRequestCode(), RunworkflowOnSendAllowanceRegisterforApprovalCode());
-                // New Employee
+            // New Employee
             RunWorkflowOnCancelNewEmployeeApprovalRequestCode():
                 WorkflowEvent.AddEventPredecessor(RunWorkflowOnCancelNewEmployeeApprovalRequestCode(), RunWorkflowOnSendNewEmployeeForApprovalCode());
 
@@ -629,6 +635,7 @@ codeunit 52006 "Wkfl Event Handle HR Ext"
     begin
         WorkflowManagement.HandleEvent(RunWorkflowOnSendNewEmployeeForApprovalCode(), Emp);
     end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Approval Mgt HR Ext", 'OnCancelNewEmployeeApprovalRequest', '', false, false)]
     local procedure RunWorkflowOnCancelNewEmployeeApprovalRequest(var Emp: Record "Employee")
     begin

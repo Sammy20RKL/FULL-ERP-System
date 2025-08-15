@@ -67,7 +67,6 @@
                                 </Paragraph>
                               </Paragraphs>
                               <rd:DefaultName>Textbox293</rd:DefaultName>
-                              <Top>0cm</Top>
                               <Left>3.91231cm</Left>
                               <Height>1.38464cm</Height>
                               <Width>7.0867cm</Width>
@@ -397,7 +396,6 @@
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>2.4cm</Top>
-                              <Left>0cm</Left>
                               <Height>3.41153cm</Height>
                               <Width>5.33042cm</Width>
                               <ZIndex>2</ZIndex>
@@ -3742,7 +3740,6 @@
                                             </Style>
                                           </Textbox>
                                           <ColSpan>6</ColSpan>
-                                          <rd:Selected>true</rd:Selected>
                                         </CellContents>
                                       </TablixCell>
                                       <TablixCell />
@@ -3940,10 +3937,8 @@
                                   </TablixMember>
                                 </TablixMembers>
                               </TablixRowHierarchy>
-                              <KeepTogether>true</KeepTogether>
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>6.05746cm</Top>
-                              <Left>0cm</Left>
                               <Height>11.09104cm</Height>
                               <Width>19.07342cm</Width>
                               <ZIndex>4</ZIndex>
@@ -4426,7 +4421,6 @@
                                 </TablixMembers>
                               </TablixRowHierarchy>
                               <DataSetName>DataSet_Result</DataSetName>
-                              <Top>0cm</Top>
                               <Left>12.05198cm</Left>
                               <Height>5.492cm</Height>
                               <Width>7.02142cm</Width>
@@ -4520,9 +4514,10 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <KeepTogether>true</KeepTogether>
             <DataSetName>DataSet_Result</DataSetName>
-            <Top>1.24698cm</Top>
-            <Left>0.39479cm</Left>
+            <Top>0.48322cm</Top>
+            <Left>0.12147cm</Left>
             <Height>17.75017cm</Height>
             <Width>19.07885cm</Width>
             <Style>
@@ -4532,17 +4527,16 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>19.66511cm</Height>
+        <Height>18.5274cm</Height>
         <Style />
       </Body>
-      <Width>20.10902cm</Width>
+      <Width>19.52694cm</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>0.8cm</LeftMargin>
         <RightMargin>0.5cm</RightMargin>
         <TopMargin>1cm</TopMargin>
-        <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>

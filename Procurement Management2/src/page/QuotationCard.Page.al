@@ -216,6 +216,25 @@ page 53072 "Quotation Card"
                         TestTheFields();
                     end;
                 }
+                // action("Print RFQ's")
+                // {
+                //     Caption = 'Print RFQ''s';
+                //     Image = Print;
+                //     Promoted = true;
+                //     PromotedCategory = "Report";
+                //     PromotedIsBig = true;
+                //     ApplicationArea = All;
+                //     ToolTip = 'Executes the Print RFQ''s action';
+
+                //     trigger OnAction()
+                //     begin
+                //         TestTheFields();
+
+                //         SupplierSelect.Reset();
+                //         SupplierSelect.SetFilter(SupplierSelect."Reference No.", Rec."No.");
+                //         Report.Run(Report::"RFQ", true, false, SupplierSelect);
+                //     end;
+                // }
                 action("Print RFQ's")
                 {
                     Caption = 'Print RFQ''s';
@@ -227,12 +246,13 @@ page 53072 "Quotation Card"
                     ToolTip = 'Executes the Print RFQ''s action';
 
                     trigger OnAction()
+
                     begin
                         TestTheFields();
 
-                        SupplierSelect.Reset();
-                        SupplierSelect.SetFilter(SupplierSelect."Reference No.", Rec."No.");
-                        Report.Run(Report::"RFQ", true, false, SupplierSelect);
+                        ProcurementRequest.Reset();
+                        ProcurementRequest.SetFilter(ProcurementRequest."No.", Rec."No.");
+                        Report.Run(Report::"RFQnew", true, false, ProcurementRequest);
                     end;
                 }
                 action(Notify)
@@ -396,6 +416,7 @@ page 53072 "Quotation Card"
         OutStrm: OutStream;
         EmailBodyTxt: Text;
         EmailBodyBigTxt: BigText;
+        ProcurementRequest: Record "Procurement Request";
 
     local procedure TestTheFields()
     begin
