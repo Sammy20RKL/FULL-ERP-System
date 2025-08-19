@@ -173,8 +173,10 @@ codeunit 52007 "Wkflw Event Response HR Ext"
                     WorkFlowResponse.AddResponsePredecessor(WorkFlowResponse.CancelAllApprovalRequestsCode(), WorkflowEventHandling.RunWorkflowOnCancelNewEmployeeApprovalRequestCode());
                 end;
             WorkFlowResponse.ReleaseDocumentCode():
-                ;
-
+                begin
+                    //Leave Application
+                    WorkFlowResponse.AddResponsePredecessor(WorkFlowResponse.ReleaseDocumentCode(), WorkflowEventHandling.RunWorkfowOnAfterReleaseLeaveApplicationCode());
+                end;
         end;
     end;
 

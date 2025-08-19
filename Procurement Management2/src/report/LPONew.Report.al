@@ -24,6 +24,9 @@ report 53055 "LPO New"
             {
 
             }
+            column(Delivery_Address; "Delivery Address")
+            {
+            }
             column(Document_Date; "Document Date")
             {
 
@@ -249,6 +252,7 @@ report 53055 "LPO New"
                             ResponsibilityCenter3.SetRange(ResponsibilityCenter3."User ID", PositionCode3);
                             if ResponsibilityCenter3.FindSet() then
                                 PositionCaptured3 := ResponsibilityCenter3."Job Title";
+                            // message('na is  %1', PositionCaptured3);
                         end;
                         if ApprovalEntries."Sequence No." = 3 then begin
                             Approver[4] := ApprovalEntries."Last Modified By User ID";

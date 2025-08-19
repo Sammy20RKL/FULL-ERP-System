@@ -16,10 +16,7 @@ pageextension 52001 "EmployeeCardPageExt" extends "Employee Card"
         {
             ShowMandatory = false;
         }
-        modify("Job Title")
-        {
-            Visible = false;
-        }
+
         modify("Bank Branch No.")
         {
             Visible = false;
@@ -302,6 +299,14 @@ pageextension 52001 "EmployeeCardPageExt" extends "Employee Card"
                     Caption = 'Job Position';
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Job Position field';
+                }
+                field("Job Title-CH"; Rec."Job Title")
+                {
+                    Caption = 'Job Title';
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Job Title field';
+                    Editable = true;
+                    Visible = false;
                 }
                 field("Job Position Title"; Rec."Job Position Title")
                 {

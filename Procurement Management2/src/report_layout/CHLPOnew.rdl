@@ -802,14 +802,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="CompanyAddr1">
+                        <Textbox Name="Delivery_Address">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Gudele Block 4</Value>
+                                  <Value>=Fields!Delivery_Address.Value</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
@@ -822,7 +822,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>CompanyAddr1</rd:DefaultName>
+                          <rd:DefaultName>Delivery_Address</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -877,7 +877,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Gudele Block 4</Value>
+                                  <Value>Gudele Block IV</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
@@ -1350,10 +1350,13 @@
                   <Width>3.99167in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.06666in</Width>
+                  <Width>0.86456in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.81667in</Width>
+                  <Width>1.2021in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.79962in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1424,8 +1427,10 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <ColSpan>2</ColSpan>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell />
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox59">
@@ -1503,7 +1508,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Delivered  to CH Offices  Juba </Value>
+                                  <Value>Delivered  to </Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -1511,6 +1516,36 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox62</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Delivery_Address1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Delivery_Address.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Delivery_Address1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1567,6 +1602,7 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -1579,7 +1615,7 @@
             <Top>3.33537in</Top>
             <Left>0.19205in</Left>
             <Height>0.68333in</Height>
-            <Width>7.875in</Width>
+            <Width>7.85795in</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -4950,41 +4986,21 @@ b).</Value>
           <Rectangle Name="Rectangle1">
             <KeepTogether>true</KeepTogether>
             <Top>0.37426in</Top>
-            <Left>0.1879in</Left>
+            <Left>0.19205in</Left>
             <Height>8.85019in</Height>
-            <Width>7.8621in</Width>
+            <Width>7.85795in</Width>
             <ZIndex>10</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
               </Border>
-              <TopBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </TopBorder>
-              <BottomBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </BottomBorder>
-              <LeftBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </LeftBorder>
-              <RightBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </RightBorder>
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>9.87925in</Height>
+        <Height>9.30633in</Height>
         <Style />
       </Body>
-      <Width>8.30834in</Width>
+      <Width>8.18163in</Width>
       <Page>
         <Style />
       </Page>
@@ -5049,6 +5065,9 @@ End Function
         </Field>
         <Field Name="Due_Date">
           <DataField>Due_Date</DataField>
+        </Field>
+        <Field Name="Delivery_Address">
+          <DataField>Delivery_Address</DataField>
         </Field>
         <Field Name="Document_Date">
           <DataField>Document_Date</DataField>

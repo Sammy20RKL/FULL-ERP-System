@@ -345,9 +345,14 @@ codeunit 52001 "HR Management"
     var
         AccPeriod: Record "Accounting Period";
         PeriodStart: Date;
+        BaseDate: Date;
     begin
+        if ApplicationDate = 0D then
+            BaseDate := Today
+        else
+            BaseDate := ApplicationDate;
         AccPeriod.Reset();
-        AccPeriod.SetFilter("Starting Date", '>=%1', CalcDate('<-CM>', ApplicationDate));
+        AccPeriod.SetFilter("Starting Date", '>=%1', CalcDate('<-CM>', BaseDate));
         if AccPeriod.FindFirst() then
             PeriodStart := AccPeriod."Starting Date";
         exit(PeriodStart);
@@ -2514,15 +2519,27 @@ codeunit 52001 "HR Management"
     end;
 
 
-    procedure CheckIfLeaveRelieversExist(Leave: Record "Leave Application")
+    procedure CheckIfLeaveRelieversExist(Leave: Record "Leave Application Type")
     var
         LeaveRelievers: Record "Leave Relievers";
         LeaveReliverErr: Label 'Please define at least one leave reliever';
     begin
         LeaveRelievers.Reset();
-        LeaveRelievers.SetRange("Leave Code", Leave."Application No");
+        LeaveRelievers.SetRange("Leave Code", Leave."Leave Code");
         if LeaveRelievers.IsEmpty() then
             Error(LeaveReliverErr);
+    end;
+
+    procedure CheckIfLeaveapplicationline(Leave: Record "Leave Application Type")
+    var
+        LeaveRelievers: Record "Leave Application Type";
+        LeaveReliverErr: Label 'Please define at least one leave reliever';
+    begin
+        LeaveRelievers.Reset();
+        LeaveRelievers.SetRange("Leave Code", Leave."Leave Code");
+        if LeaveRelievers.FindFirst() then
+            LeaveRelievers.TestField("Days Applied");
+        LeaveRelievers.TestField("Start Date");
     end;
 
 
@@ -2846,13 +2863,14 @@ codeunit 52001 "HR Management"
         DaysEarnedPerMonth: Decimal;
         LeaveEntitlement: Decimal;
         NoofMonthsWorked: Decimal;
+        LeaveEntitlementRec: Record "Leave Entitlement Entry";
     begin
         /* if GuiAllowed then
             Employee.TestField("Date Of Join"); */
         //Employee TestField commented for error
 
         LeaveEarnedToDate := 0;
-
+        //mjk
         GetCurrentLeavePeriodRecord(LeavePeriods);
 
         Employee.SetRange("Leave Type Filter", LeaveTypeCode);
@@ -2861,8 +2879,18 @@ codeunit 52001 "HR Management"
 
         LeaveTypes.Get(LeaveTypeCode);
 
-        if LeaveTypes."Earn Days" then begin
+        if LeaveTypes."Earn Days" = true then begin
+            // LeaveEntitlementRec.Reset();
+            // LeaveEntitlementRec.SetRange("Leave Type Code", LeaveTypeCode);
+            // if LeaveEntitlementRec.FindFirst() then begin
+            //     LeaveEntitlement := LeaveEntitlementRec.Days;
+            //     LeaveEntitlementRec.TestField("Days Earned per Month");
+            //     DaysEarnedPerMonth := LeaveEntitlementRec."Days Earned per Month";
+            //     leaveEntitlementRec.TestField("Days Earned per Month");
+            // end;
+
             GetLeaveEntitlement(Employee, LeaveTypes, LeaveEntitlement, DaysEarnedPerMonth);
+
 
             //Cater for employees joining in the middle of the year
             if Employee."Date Of Join" > LeavePeriods."Start Date" then begin
@@ -2939,10 +2967,14 @@ codeunit 52001 "HR Management"
         LeaveEntitlementRec.SetRange("Country/Region Code", Employee."Country/Region Code");
         if LeaveEntitlementRec.FindFirst() then begin
             LeaveEntitlement := LeaveEntitlementRec.Days;
-            if LeaveTypeRec."Earn Days" then begin
+            if LeaveTypeRec."Earn Days" = true then begin
                 LeaveEntitlementRec.TestField("Days Earned per Month");
                 DaysEarnedPerMonth := LeaveEntitlementRec."Days Earned per Month";
+                // Message('days earned is %1', DaysEarnedPerMonth);
+
             end;
+
+
         end else
             Error(NoLeaveEntitlementDefinedErr, LeaveTypeRec.Code, Employee."Employee Category", Employee."Country/Region Code");
     end;

@@ -11,7 +11,12 @@ page 52310 "Leave Application Type"
         {
             repeater(Group)
             {
-
+                field("Entry No."; Rec."Entry No.")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Entry No.';
+                    Visible = false;
+                }
                 field("Leave Code"; Rec."Leave Code")
                 {
                     ApplicationArea = All;
@@ -39,12 +44,19 @@ page 52310 "Leave Application Type"
                     trigger OnValidate()
                     begin
 
+                        CurrPage.Update();
                     end;
+
                 }
                 field("Leave Earned to Date"; Rec."Leave Earned to Date")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Leave Earned to Date';
+                    trigger OnValidate()
+                    begin
+                        CurrPage.Update();
+                    end;
+
                 }
                 field("Days Applied"; Rec."Days Applied")
                 {
@@ -84,6 +96,10 @@ page 52310 "Leave Application Type"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Leave Balance';
+                    trigger OnValidate()
+                    begin
+                        CurrPage.Update();
+                    end;
                 }
                 field("Staff No"; Rec."Staff No")
                 {

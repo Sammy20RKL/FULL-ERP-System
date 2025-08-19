@@ -51,6 +51,8 @@ table 52018 "Leave Application"
             var
                 LeaveApplication: Record "Leave Application";
                 OpenPendingLeaveErr: Label 'You have an open/pending %1 leave application %2. Kindly process that one before creating a new one';
+                LeavePeriods: Record "Leave Period";
+            // HRMgt: Codeunit "HR Management";
             begin
                 "Leave Entitlment" := 0;
 
@@ -70,6 +72,12 @@ table 52018 "Leave Application"
                             Error('%1 can only be assigned to %2 employees', LeaveTypes.Description, LeaveTypes.Gender);
 
                     "Date of Joining Company" := EmployeeRec."Date Of Join";
+
+                    // /////addedd//////
+                    // HRMgt.GetCurrentLeavePeriodRecord(LeavePeriods);
+                    // EmployeeRec.SetRange("Leave Type Filter", "Leave Code");
+                    // EmployeeRec.SetRange("Leave Period Filter", LeavePeriods."Leave Period Code");
+                    // /////////////////
 
 
                     "Leave Earned to Date" := HRManagement.GetLeaveDaysEarnedToDate(employeerec, "Leave Code");
