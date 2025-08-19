@@ -41,7 +41,7 @@ codeunit 60050 "Approval Mgt Grant Ext"
     var
         JobApp: Record Job;
         Employee: Record Employee;
-
+        CloseOut: Record "Close Out Check List";
     begin
         case RecRef.Number of
 
@@ -53,6 +53,15 @@ codeunit 60050 "Approval Mgt Grant Ext"
                     JobApp.Modify(true);
                     Variant := JobApp;
                     IsHandled := true;
+                end;
+            //Grant Close Out
+            Database::"Close Out Check List":
+                begin
+                    RecRef.SetTable(CloseOut);
+                    CloseOut.Validate(Status, CloseOut.Status::"Pending Approval");
+                    CloseOut.Modify(true);
+                    IsHandled := true;
+                    Variant := CloseOut;
                 end;
         //Leave Application
 
@@ -142,6 +151,30 @@ codeunit 60050 "Approval Mgt Grant Ext"
     begin
 
     end;
+    //*********************************************************Grant Close Out****************************************
+    [IntegrationEvent(false, false)]
+    procedure OnSendCloseOutGrantApprovalRequest(var CloseOut: Record "Close Out Check List")
+    begin
+    end;
+
+    [IntegrationEvent(false, false)]
+    procedure OnCancelCloseOutGrantApprovalRequest(var CloseOut: Record "Close Out Check List")
+    begin
+    end;
+
+    procedure CheckGrantCloseOutWorkflowEnabled(var CloseOut: Record "Close Out Check List"): Boolean
+    begin
+        if not IsGrantCloseOutWorkflowEnabled(CloseOut) then
+            Error(NoWorkflowEnabledErr);
+        exit(true);
+    end;
+
+    procedure IsGrantCloseOutWorkflowEnabled(var CloseOut: Record "Close Out Check List"): Boolean
+    begin
+        exit(WorkflowManagement.CanExecuteWorkflow(CloseOut, WorkflowEventHandling.RunWorkflowOnSendGrantCloseOutApprovalRequestCode()));
+    end;
+
+
 }
 
 

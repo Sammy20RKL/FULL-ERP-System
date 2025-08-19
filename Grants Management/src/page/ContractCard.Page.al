@@ -194,7 +194,7 @@ page 60054 "Contract Card"
             group("&Contract")
             {
                 Caption = '&Contract';
-                Visible = false;
+                Visible = true;
                 action("Area")
                 {
                     Caption = 'Area';

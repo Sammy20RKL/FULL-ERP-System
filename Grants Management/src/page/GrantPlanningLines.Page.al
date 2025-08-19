@@ -69,7 +69,7 @@ page 60025 "Grant Planning Lines"
                             BudgetSetup.Find('-');
                             PlanningLines.Reset();
                             PlanningLines.SetRange(PlanningLines."Grant Task No.", Rec."Grant Task No.");
-                            PlanningLines.SetRange(PlanningLines."Transfered To Budget", false);
+                            // PlanningLines.SetRange(PlanningLines."Transfered To Budget", false);
                             if PlanningLines.Find('-') then
                                 repeat
                                     mGLAccount := '';
@@ -78,7 +78,7 @@ page 60025 "Grant Planning Lines"
                                         objItem.Reset();
                                         objItem.SetRange(objItem."No.", PlanningLines."No.");
                                         if objItem.Find('-') then;
-                                            // mGLAccount:=objItem."Item G/L Budget Account";//mutinda
+                                        // mGLAccount:=objItem."Item G/L Budget Account";//mutinda
                                     end
                                     else if PlanningLines.Type = PlanningLines.Type::Resource then begin
                                         objResource.Reset();
@@ -101,7 +101,7 @@ page 60025 "Grant Planning Lines"
                                         BudgetEntry.Date := PlanningLines."Planning Date";
                                         BudgetEntry."G/L Account No." := PlanningLines."G/l Account";
                                         BudgetEntry.Description := PlanningLines.Description;
-                                        BudgetEntry.Amount := PlanningLines."Unit Cost (LCY)";
+                                        BudgetEntry.Amount := PlanningLines."Total Cost";
                                         //BudgetEntry.Donor:=Job."Bill-to Partner No.";
                                         //BudgetEntry."Project No":=Job."No.";
                                         BudgetEntry."Global Dimension 1 Code" := PlanningLines."Global Dimension 1 Code";
@@ -124,6 +124,7 @@ page 60025 "Grant Planning Lines"
                                             BudgetEntry."Budget Name" := BudgetSetup."Current Budget";
                                             BudgetEntry."G/L Account No." := PlanningLines."G/l Account";
                                             BudgetEntry.Description := PlanningLines.Description;
+                                            BudgetEntry.Amount := PlanningLines."Total Cost";
                                             //BudgetEntry.Donor:=Job."Bill-to Partner No.";
                                             //BudgetEntry."Project No":=Job."No.";
                                             BudgetEntry."Global Dimension 1 Code" := PlanningLines."Global Dimension 1 Code";
@@ -150,7 +151,7 @@ page 60025 "Grant Planning Lines"
     end;
 
     var
-        BudgetSetup: Record "Cash Management Setup";
+        BudgetSetup: Record "Cash Management Setups";
         BudgetEntry: Record "G/L Budget Entry";
         objItem: Record Item;
         PlanningLines: Record "Job-Planning Line";

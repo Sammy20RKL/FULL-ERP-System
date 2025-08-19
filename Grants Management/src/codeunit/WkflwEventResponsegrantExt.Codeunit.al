@@ -56,6 +56,7 @@ codeunit 60054 "Wkflw Event Response grant Ext"
     var
         JobApp: Record Job;
         Emp: Record "Employee";
+        CloseOut: Record "Close Out Check List";
         VarVariant: Variant;
     begin
         VarVariant := RecRef;
@@ -69,9 +70,12 @@ codeunit 60054 "Wkflw Event Response grant Ext"
                     Handled := true;
                     // WorkflowResponses.ReleaseJobAppReq(VarVariant);
                 end;
-
-
-
+            Database::"Close Out Check List":
+                begin
+                    CloseOut.SetView(RecRef.GetView());
+                    Handled := true;
+                    WorkflowResponses.ReleaseGrantCloseOut(VarVariant);
+                end;
         end;
     end;
 
@@ -80,6 +84,7 @@ codeunit 60054 "Wkflw Event Response grant Ext"
     var
         JobApp: Record Job;
         Emp: Record "Employee";
+        CloseOut: Record "Close Out Check List";
         VarVariant: Variant;
     begin
         VarVariant := RecRef;
@@ -94,9 +99,19 @@ codeunit 60054 "Wkflw Event Response grant Ext"
                     Handled := true;
                     //  WorkflowResponses.ReopenJobAppReq(VarVariant);
                 end;
+            Database::"Close Out Check List":
+                begin
+                    CloseOut.SetView(RecRef.GetView());
+                    Handled := true;
+                    WorkflowResponses.ReOpenGrantCloseOut(VarVariant);
+                end;
 
         end;
     end;
+
+    var
+        WorkflowResponses: Codeunit "WorkFlow Responses";
+
 
 }
 
