@@ -192,7 +192,7 @@ page 60055 "Approved Contract Card"
             group("&Contract")
             {
                 Caption = '&Contract';
-                Visible = false;
+                Visible = true;
                 action("Area")
                 {
                     Caption = 'Area';
@@ -363,6 +363,7 @@ page 60055 "Approved Contract Card"
 
                     end;
                 }
+                
                 action("Convert to Project")
                 {
                     Image = CopyToTask;

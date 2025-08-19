@@ -1190,6 +1190,8 @@ table 60006 Jobs
         ProjPersonnel: Record "Project Personnel Cost Alloc";
         ProjPersonnels: Record "Project Personnel Cost Alloc";
         objReso: Record Resource;
+        OldTaskLines:Record "Job-Task";
+        NewTaskLines: Record "Job-Task";
         DimMgt: Codeunit DimensionManagement;
         NoSeriesMgt: Codeunit NoSeriesManagement;
         Dim3: Code[30];
@@ -1549,6 +1551,7 @@ table 60006 Jobs
                     JobTasks.Validate(JobTasks."Grant No.", "Proposal No");
                     JobTasks."Grant Task No." := JobTask."Grant Task No.";
                     JobTasks.Description := JobTask.Description;
+                    JobTasks.Amount:=JobTask.Amount;
                     JobTasks.Insert();
                 until JobTask.Next() = 0;
             //++++++++End Copy Task Lines++++++++++++++++++
@@ -1667,9 +1670,12 @@ table 60006 Jobs
                 if JobTask.FindFirst() then
                     repeat
                         JobTasks.Init();
+                        // JobTasks.TransferFields(JobTask);
                         JobTasks.Validate(JobTasks."Grant No.", "System Contract No");
                         JobTasks."Grant Task No." := JobTask."Grant Task No.";
                         JobTasks.Description := JobTask.Description;
+                        JobTasks."Budget Line Item":=JobTask."Budget Line Item";
+                        JobTasks.Amount:=JobTask.Amount;
                         JobTasks.Insert();
                     until JobTask.Next() = 0;
                 //++++++++End Copy Task Lines++++++++++++++++++
@@ -1809,9 +1815,12 @@ table 60006 Jobs
                     if JobTask.FindFirst() then
                         repeat
                             JobTasks.Init();
+                            JobTasks.TransferFields(JobTask);
                             JobTasks.Validate(JobTasks."Grant No.", "Project No");
                             JobTasks."Grant Task No." := JobTask."Grant Task No.";
-                            JobTasks.Description := JobTask.Description;
+                            // JobTasks.Description := JobTask.Description;
+                            // JobTasks."Budget Line Item":=JobTask."Budget Line Item";
+                            // JobTasks.Amount:=JobTask.Amount;
                             JobTasks.Insert();
                         until JobTask.Next() = 0;
                     //++++++++End Copy Task Lines++++++++++++++++++
@@ -1839,6 +1848,15 @@ table 60006 Jobs
                             JobPlanningLines.Insert();
                         until JobPlanningLine.Next() = 0;
                     //++++++++End Copy Planning Lines++++++++++++++
+
+                    //Copy Grant Task Lines
+                    // OldTaskLines.Reset();
+                    // OldTaskLines.SetRange("Grant No.",Rec."No.");
+                    // if OldTaskLines.FindSet() then begin
+                    //     repeat
+                    //     NewTaskLines:=OldTaskLines;
+                    //     NewTaskLines."Grant No.":=Job."No.";
+                    // end;
 
                     Message('Contract No' + ' ' + "No." + ' ' + 'has succesfully been converted to Project No.' + ' ' + "Project No");
                     Modify();

@@ -428,14 +428,15 @@ table 60010 "Job-Planning Line"
             AutoFormatType = 2;
             Caption = 'Unit Cost';
 
-            // trigger OnValidate()
-            // begin
-            //     UpdateAllAmounts();
-            //     //Check if unit cost is less than zero
-            //     //IF ("Unit Cost"<=0) THEN
-            //     //ERROR('Unit Cost should not be less than 0');
-            //     // END
-            // end;
+            trigger OnValidate()
+            begin
+                UpdateTotalCost();
+                // UpdateAllAmounts();
+                //Check if unit cost is less than zero
+                //IF ("Unit Cost"<=0) THEN
+                //ERROR('Unit Cost should not be less than 0');
+                // END
+            end;
         }
         field(1003; "Total Cost"; Decimal)
         {
@@ -1518,12 +1519,12 @@ table 60010 "Job-Planning Line"
 
     local procedure UpdateTotalCost()
     begin
-        "Total Cost" := Round("Unit Cost" * Quantity, AmountRoundingPrecision);
+        "Total Cost" := ROUND("Unit Cost" * Quantity, 0.01, '=');
         "Total Cost (LCY)" := Round(
             CurrExchRate.ExchangeAmtFCYToLCY(
               "Currency Date", "Currency Code",
               "Total Cost", "Currency Factor"),
-            AmountRoundingPrecision);
+            0.01, '=');
     end;
 
 

@@ -364,7 +364,7 @@ page 60010 "Proposal Card"
 
                     trigger OnAction()
                     var
-                        JTLines: Page "Grant Task Lines";
+                        JTLines: Page "Grant Task Lines"; 
                     begin
                         JTLines.SetJobNo(Rec."No.");
                         JTLines.Run();

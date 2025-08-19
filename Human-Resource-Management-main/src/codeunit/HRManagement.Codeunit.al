@@ -721,6 +721,7 @@ codeunit 52001 "HR Management"
         LeaveLedg."Leave Period Code" := LeaveApp."Leave Period";
         if LeaveLedg."No. of days" <> 0 then
             LeaveLedg.Insert();
+            Message('Status is %1', LeaveApp.Status);
     end;
 
     procedure LeaveRecall(LeaveRecNo: Code[20])

@@ -10,7 +10,12 @@
   "help": "",
   "url": "",
   "logo": "",
-  "dependencies": [],
+  "dependencies": [
+    {"id": "db096af5-6956-429b-af5f-3d02f1f155d8",
+  "name": "Finance Management",
+  "publisher": "Altair Retro Ltd",
+  "version": "1.0.0.0"}
+  ],
   "screenshots": [],
   "platform": "1.0.0.0",
   "application": "21.0.0.0",

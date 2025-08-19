@@ -266,7 +266,7 @@ page 60015 "Approved Proposals Card"
             group("Plan&ning")
             {
                 Caption = 'Plan&ning';
-                Visible = false;
+                Visible = true;
                 action("Resource Allocated per Job")
                 {
                     Caption = 'Resource Allocated per Job';
@@ -341,12 +341,18 @@ page 60015 "Approved Proposals Card"
                     ShortcutKey = 'Ctrl+F7';
                     ToolTip = 'Executes the Ledger E&ntries action.';
                 }
-                action("Grant Task Lines")
+               action("Grant Task Lines")
                 {
                     Caption = 'Grant Task Lines';
-                    RunObject = page "Grant Task Lines";
-                    RunPageLink = "Grant No." = field("No.");
                     ToolTip = 'Executes the Grant Task Lines action.';
+
+                    trigger OnAction()
+                    var
+                        JTLines: Page "Grant Task Lines"; 
+                    begin
+                        JTLines.SetJobNo(Rec."No.");
+                        JTLines.Run();
+                    end;
                 }
                 action("Grant &Planning Lines")
                 {
@@ -490,6 +496,7 @@ page 60015 "Approved Proposals Card"
                     trigger OnAction()
                     begin
                         if Rec."Approval Status" = Rec."Approval Status"::Approved then Rec.ChangeProjectStatus();
+                        
                         CurrPage.Close();
                     end;
                 }
