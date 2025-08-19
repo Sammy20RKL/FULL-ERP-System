@@ -196,6 +196,7 @@ report 52028 "Close Pay Period"
         AssignMatrix: Record "Assignment Matrix";
         PaymentDed: Record "Assignment Matrix";
         EmpEarnRec: Record "Employee Earnings History";
+        CashpayAllocation: Record "Cash Payment";
     begin
         /*This function creates new entries for the Next() Payroll period which are accessible and editable
        by the User of the Payroll. It should ideally create new entries if the EmpRec is Active*/
@@ -308,6 +309,24 @@ report 52028 "Close Pay Period"
                 end;
             until PaymentDed.Next() = 0;
 
+        //Create Cash Payment Entries
+        // CashpayAllocation.Reset();
+        // CashpayAllocation.SetRange(CashpayAllocation."Payroll Period", PayperiodStart);
+
+        // if CashpayAllocation.Find('-') then
+        //     repeat
+        //         CreateRec := true;
+        //         CashpayAllocation.Init();
+        //         CashpayAllocation."Employee No" := CashpayAllocation."Employee No";
+        //         CashpayAllocation."Payroll Period" := NewPeriod;
+        //         CashpayAllocation."Cash Amount" := CashpayAllocation."Cash Amount";
+        //         CashpayAllocation."Location" := CashpayAllocation."Location";
+        //         CashpayAllocation."Status" := CashpayAllocation."Status";
+        //         AssignMatrix.Insert();
+
+        //     until
+
+        //         CashpayAllocation.Next() = 0;
     end;
 
     procedure DeducePayPeriod()

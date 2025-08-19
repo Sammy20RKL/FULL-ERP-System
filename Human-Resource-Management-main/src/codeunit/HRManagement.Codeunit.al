@@ -345,14 +345,11 @@ codeunit 52001 "HR Management"
     var
         AccPeriod: Record "Accounting Period";
         PeriodStart: Date;
-        BaseDate: Date;
+       
     begin
-        if ApplicationDate = 0D then
-            BaseDate := Today
-        else
-            BaseDate := ApplicationDate;
+       
         AccPeriod.Reset();
-        AccPeriod.SetFilter("Starting Date", '>=%1', CalcDate('<-CM>', BaseDate));
+        AccPeriod.SetFilter("Starting Date", '>=%1', CalcDate('<-CM>', ApplicationDate));
         if AccPeriod.FindFirst() then
             PeriodStart := AccPeriod."Starting Date";
         exit(PeriodStart);
