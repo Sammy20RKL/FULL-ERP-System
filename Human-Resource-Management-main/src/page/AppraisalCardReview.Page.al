@@ -491,6 +491,7 @@ page 52183 "Appraisal Card-Review"
             {
                 Caption = 'Send For further Review';
                 Enabled = DocReleased;
+                Visible = false;
                 Image = SendApprovalRequest;
                 Promoted = true;
                 PromotedCategory = Category5;

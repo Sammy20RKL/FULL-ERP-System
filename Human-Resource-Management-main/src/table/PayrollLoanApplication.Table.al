@@ -613,7 +613,7 @@ table 52129 "Payroll Loan Application"
                     begin
                         HRsetup.TestField("Loan App No");
                         NoSeriesMgt.InitSeries(HRsetup."Loan App No", xRec."No Series", 0D, "Loan No", "No Series");
-                        InsertUserAccount();
+                        // InsertUserAccount();
                     end;
                 "Transaction Type"::"Loan Settlement":
 

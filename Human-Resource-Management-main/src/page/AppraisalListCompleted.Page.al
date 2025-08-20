@@ -8,7 +8,7 @@ page 52184 "Appraisal List - Completed"
     ModifyAllowed = false;
     PageType = List;
     SourceTable = "Employee Appraisal";
-    SourceTableView = where("Appraisal Status" = filter(Completed));
+    SourceTableView = where("Appraisal Status" = filter(Completed),Status = filter(Released));
     Caption = 'Appraisal List - Completed';
     layout
     {

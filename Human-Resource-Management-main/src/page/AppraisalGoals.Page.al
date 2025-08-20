@@ -14,6 +14,7 @@ page 52180 "Appraisal Goals"
                 field("Workplan Code"; Rec."Workplan Code")
                 {
                     ToolTip = 'Specifies the value of the Workplan Code field.';
+                    Caption = 'Objectives';
                 }
                 field("Performance Measure"; Rec."Performance Measure")
                 {
