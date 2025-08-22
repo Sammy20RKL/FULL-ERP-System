@@ -24,79 +24,6 @@
       <rd:DataSourceID>a1b813c0-f359-4aa7-96d4-0de0eebec12e</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="Creation_Date">
-          <DataField>Creation_Date</DataField>
-        </Field>
-        <Field Name="Committee_Name">
-          <DataField>Committee_Name</DataField>
-        </Field>
-        <Field Name="Appointment_No">
-          <DataField>Appointment_No</DataField>
-        </Field>
-        <Field Name="DeclarationLabel">
-          <DataField>DeclarationLabel</DataField>
-        </Field>
-        <Field Name="CertifyLabel">
-          <DataField>CertifyLabel</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Name">
-          <DataField>CompanyInfo_Name</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address">
-          <DataField>CompanyInfo_Address</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Address2">
-          <DataField>CompanyInfo_Address2</DataField>
-        </Field>
-        <Field Name="CompanyInfo_City">
-          <DataField>CompanyInfo_City</DataField>
-        </Field>
-        <Field Name="CompanyInfo_PhoneNo">
-          <DataField>CompanyInfo_PhoneNo</DataField>
-        </Field>
-        <Field Name="CompanyInfo_FaxNo">
-          <DataField>CompanyInfo_FaxNo</DataField>
-        </Field>
-        <Field Name="CompanyInfo_Picture">
-          <DataField>CompanyInfo_Picture</DataField>
-        </Field>
-        <Field Name="Member_Name">
-          <DataField>Member_Name</DataField>
-        </Field>
-        <Field Name="Committee_Member_No">
-          <DataField>Committee_Member_No</DataField>
-        </Field>
-        <Field Name="Role">
-          <DataField>Role</DataField>
-        </Field>
-        <Field Name="commitee_member_signature">
-          <DataField>commitee_member_signature</DataField>
-        </Field>
-        <Field Name="Supplier_Name">
-          <DataField>Supplier_Name</DataField>
-        </Field>
-        <Field Name="Vendor_Name">
-          <DataField>Vendor_Name</DataField>
-        </Field>
-        <Field Name="Vendor_No">
-          <DataField>Vendor_No</DataField>
-        </Field>
-        <Field Name="Amount">
-          <DataField>Amount</DataField>
-        </Field>
-        <Field Name="AmountFormat">
-          <DataField>AmountFormat</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -1141,12 +1068,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -1184,4 +1105,77 @@ End Function
 </Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Creation_Date">
+          <DataField>Creation_Date</DataField>
+        </Field>
+        <Field Name="Committee_Name">
+          <DataField>Committee_Name</DataField>
+        </Field>
+        <Field Name="Appointment_No">
+          <DataField>Appointment_No</DataField>
+        </Field>
+        <Field Name="DeclarationLabel">
+          <DataField>DeclarationLabel</DataField>
+        </Field>
+        <Field Name="CertifyLabel">
+          <DataField>CertifyLabel</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address">
+          <DataField>CompanyInfo_Address</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address2">
+          <DataField>CompanyInfo_Address2</DataField>
+        </Field>
+        <Field Name="CompanyInfo_City">
+          <DataField>CompanyInfo_City</DataField>
+        </Field>
+        <Field Name="CompanyInfo_PhoneNo">
+          <DataField>CompanyInfo_PhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyInfo_FaxNo">
+          <DataField>CompanyInfo_FaxNo</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Picture">
+          <DataField>CompanyInfo_Picture</DataField>
+        </Field>
+        <Field Name="Member_Name">
+          <DataField>Member_Name</DataField>
+        </Field>
+        <Field Name="Committee_Member_No">
+          <DataField>Committee_Member_No</DataField>
+        </Field>
+        <Field Name="Role">
+          <DataField>Role</DataField>
+        </Field>
+        <Field Name="commitee_member_signature">
+          <DataField>commitee_member_signature</DataField>
+        </Field>
+        <Field Name="Supplier_Name">
+          <DataField>Supplier_Name</DataField>
+        </Field>
+        <Field Name="Vendor_Name">
+          <DataField>Vendor_Name</DataField>
+        </Field>
+        <Field Name="Vendor_No">
+          <DataField>Vendor_No</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

@@ -51,7 +51,21 @@ report 50005 "Conflict of Interest(COI)"
                 {
 
                 }
-                //  trigger OnAfterGetRecord()
+                trigger OnAfterGetRecord()
+                var
+                    employee: Record Employee;
+                    commitee_member_signature: Text;
+                begin
+                    employee.reset();
+                    employee.SetRange("No.", "Committee Member No");
+                    if employee.findset() then begin
+                        if Employee.Get("User ID") then
+                            UserSetup.CalcFields(Signature);
+                    end;
+
+                end;
+
+                // trigger OnAfterGetRecord()
                 // begin
                 //     if UserSetup.Get("Committee Member No") then begin
                 //         UserSetup.CalcFields(Signature);
@@ -112,4 +126,12 @@ report 50005 "Conflict of Interest(COI)"
         CommitteeMember: Record "Committee Member";
         UserSetup: Record "User Setup";
         Employee: Record "Employee";
+
+    procedure GetUserIDFromSystemGuid(UserGuid: Guid): Text
+    var
+        User: Record User;
+    begin
+        if User.Get(UserGuid) then
+            exit(User."User Name");
+    end;
 }
