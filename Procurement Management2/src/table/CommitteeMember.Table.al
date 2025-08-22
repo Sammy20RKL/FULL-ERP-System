@@ -27,6 +27,8 @@ table 53008 "Committee Member"
             Caption = 'Committee Member No';
 
             trigger OnValidate()
+            var
+                UserSetup: Record "User Setup";
             begin
                 case Type of
                     Type::Employee:
@@ -38,6 +40,10 @@ table 53008 "Committee Member"
                                 "E-Mail Address" := Empl."Company E-Mail";
                                 "User ID" := Empl."User ID";
                                 "Mobile Phone No." := Empl."Mobile Phone No.";
+                                if Empl.Get("User ID") then
+                                    UserSetup.CalcFields(Signature);
+                                Signature := UserSetup.Signature;
+
                             end;
                         end;
                     Type::"External Consultant":
@@ -133,6 +139,11 @@ table 53008 "Committee Member"
         }
         //field(19; "Representative Department Type" ; Enum respe )
         //{}
+        field(20; "Signature"; Blob)
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Signature';
+        }
     }
 
     keys

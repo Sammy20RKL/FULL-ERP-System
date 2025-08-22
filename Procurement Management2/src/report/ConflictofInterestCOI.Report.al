@@ -51,26 +51,44 @@ report 50005 "Conflict of Interest(COI)"
                 {
 
                 }
+                column(Signature; Signature)
+                {
+
+                }
                 trigger OnAfterGetRecord()
                 var
                     employee: Record Employee;
                     commitee_member_signature: Text;
+                    Approver: array[10] of Code[50];
+                    UserSetup: Record "User Setup";
+                    ApproverDate: array[10] of DateTime;
+                    ProcurementMgt: Codeunit "Procurement Management";
                 begin
-                    employee.reset();
-                    employee.SetRange("No.", "Committee Member No");
-                    if employee.findset() then begin
-                        if Employee.Get("User ID") then
-                            UserSetup.CalcFields(Signature);
-                    end;
+                    // Clear previous data
+                    Clear(employee);
+                    Clear(UserSetup);
 
+                    // Find employee by Committee Member No
+                    if "Committee Member No" <> '' then begin
+                        employee.Reset();
+                        employee.SetCurrentKey("No.");
+                        employee.SetRange("No.", "Committee Member No");
+                        if employee.FindFirst() then begin
+
+                            // Get User Setup record using the employee's User ID
+                            if employee."User ID" <> '' then begin
+                                if UserSetup.Get(employee."User ID") then begin
+                                    //  Message('Employee Name: %1...# user is %2', UserSetup.Signature, UserSetup);
+                                    UserSetup.CalcFields(Signature);
+                                    Signature := UserSetup.Signature;
+
+                                end;
+                            end;
+                        end;
+                    end;
                 end;
 
-                // trigger OnAfterGetRecord()
-                // begin
-                //     if UserSetup.Get("Committee Member No") then begin
-                //         UserSetup.CalcFields(Signature);
-                //     end;
-                // end;
+
             }
             dataitem("Prospective Suppliers"; "Prospective Suppliers")
             {
