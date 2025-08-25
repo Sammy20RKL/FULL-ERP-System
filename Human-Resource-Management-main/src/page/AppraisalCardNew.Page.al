@@ -284,6 +284,8 @@ page 52179 "Appraisal Card-New"
                     Rec."Appraisal Status" := Rec."Appraisal Status"::Review;
                     // WorkflowResponses.ReleaseEmployeeAppraisalRequest(Rec);
                     // Message('Approved Successfully');
+                    if Rec.Status = Rec.Status::Released then
+                        Rec."Appraisal Status" := Rec."Appraisal Status"::Completed;
 
                     Commit();
                     CurrPage.Close();

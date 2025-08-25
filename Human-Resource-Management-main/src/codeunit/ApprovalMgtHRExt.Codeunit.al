@@ -696,7 +696,7 @@ codeunit 52005 "Approval Mgt HR Ext"
     procedure OnCancelNewEmpAppraisalRequestApproval(var NewEmployeeAppraisal: Record "Employee Appraisal")
     begin
     end;
-
+ 
     [IntegrationEvent(false, false)]
     procedure OnSendPayrollApprovalRequest(var PayApproval: Record "Payroll Approval")
     begin
