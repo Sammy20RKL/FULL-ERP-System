@@ -14,6 +14,12 @@ page 52180 "Appraisal Goals"
                 field("Workplan Code"; Rec."Workplan Code")
                 {
                     ToolTip = 'Specifies the value of the Workplan Code field.';
+                    Caption = 'Objectives Code';
+                }
+                field("Workplan Description"; Rec."Workplan Description")
+                {
+                    ToolTip = 'Specifies the value of the Workplan Description field.';
+                    Caption = 'Objectives Name';
                 }
                 field("Performance Measure"; Rec."Performance Measure")
                 {
@@ -22,6 +28,7 @@ page 52180 "Appraisal Goals"
                 field("Actual targets"; Rec."Actual targets")
                 {
                     ToolTip = 'Specifies the value of the Actual/achieved targets field';
+                    Caption = 'Perfomance Measure Description';
                 }
                 field("Initiative code"; Rec."Initiative code")
                 {
@@ -29,13 +36,57 @@ page 52180 "Appraisal Goals"
                 }
                 field(Description; Rec.Description)
                 {
-                    Caption = 'Initiatives';
+                    Caption = 'Initiative Description';
                     ToolTip = 'Specifies the value of the Initiatives field';
                 }
+                field("FY Target"; Rec."FY Target")
+                {
+                    Caption = 'Target';
+                }
+                field(Actual;Rec.Actual)
+                {
+                    Caption = 'Actual';
+                    ToolTip = 'Specifies the value of the Actual field';
+                    trigger OnValidate()
+                    begin
+                        if Rec.Actual <> 0 then begin
+                            Rec."Achieved (%)" := Round((Rec.Actual / Rec."FY Target") * 100, 0.01);
+                            // Rec."Weighted Rating" := Round((Rec."Achieved (%)" * Rec.Weighting) / 100, 0.01);
+                        end else begin
+                            Rec."Achieved (%)" := 0;
+                            // Rec."Weighted Rating" := 0;
+                        end;
+                    end;
+                }
+                
                 field("Achieved (%)"; Rec."Achieved (%)")
                 {
                     ToolTip = 'Specifies the value of the Achieved (%) field.';
                     //Editable = UnderReview;
+                }
+
+                // field(Weighting; Rec.Weighting)
+                // {
+                //     Visible = true;
+                //     //Caption = 'Expected % score (Which is 100% for each) (B)';
+                //     Caption = 'Weighting';
+                //     ToolTip = 'Specifies the value of the Expected % score (Which is 100% for each) (B) field';
+
+                //     trigger OnValidate()
+                //     begin
+                //         CurrPage.Update();
+                //     end;
+                // }
+                field("Weighted Rating"; Rec."Weighted Rating")
+                {
+                    ToolTip = 'Specifies the value of the Weighted Rating field.';
+                    Editable = UnderReview;
+                    trigger OnValidate()
+                    begin
+                        if Rec."Weighted Rating" <>0 then begin
+                            Rec.Rating := Round(Rec."Weighted Rating" * Rec."Achieved (%)" / 100, 0.01);
+                        end;
+                    end;
                 }
                 field(Rating; Rec.Rating)
                 {
@@ -48,23 +99,6 @@ page 52180 "Appraisal Goals"
                     begin
                         CurrPage.Update();
                     end;
-                }
-                field(Weighting; Rec.Weighting)
-                {
-                    Visible = true;
-                    //Caption = 'Expected % score (Which is 100% for each) (B)';
-                    Caption = 'Weighting';
-                    ToolTip = 'Specifies the value of the Expected % score (Which is 100% for each) (B) field';
-
-                    trigger OnValidate()
-                    begin
-                        CurrPage.Update();
-                    end;
-                }
-                field("Weighted Rating"; Rec."Weighted Rating")
-                {
-                    ToolTip = 'Specifies the value of the Weighted Rating field.';
-                    Editable = UnderReview;
                 }
                 field("Mid-Year Appraisal"; Rec."Mid-Year Appraisal")
                 {
@@ -213,10 +247,10 @@ page 52180 "Appraisal Goals"
         else
             Completed := false;
 
-        if (EmployeeAppraisal."AppraisalType" = EmployeeAppraisal."AppraisalType"::"Mid-Year") and (EmployeeAppraisal."Appraisal Status" = EmployeeAppraisal."Appraisal Status"::Review) then
-            MidYearVisible := true
-        else
-            MidYearVisible := false;
+        // if (EmployeeAppraisal."AppraisalType" = EmployeeAppraisal."AppraisalType"::"Mid-Year") and (EmployeeAppraisal."Appraisal Status" = EmployeeAppraisal."Appraisal Status"::Review) then
+        //     MidYearVisible := true
+        // else
+        //     MidYearVisible := false;
 
         if EmployeeAppraisal."AppraisalType" = EmployeeAppraisal."AppraisalType"::"Final Year" then
             FinalYearVisible := true

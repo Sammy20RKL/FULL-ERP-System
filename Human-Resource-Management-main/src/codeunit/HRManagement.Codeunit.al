@@ -1147,7 +1147,7 @@ codeunit 52001 "HR Management"
         AppPeriod: Record "Appraisal Periods";
         Appr: Record "Employee Appraisal";
     begin
-        Message('This appraisal shall be send to final year');
+        Message('This appraisal shall be sent to final year');
         Appr.Init();
         Appr."Appraisal No" := '';
         Appr.AppraisalType := Appr.AppraisalType::"Final Year";

@@ -67,6 +67,12 @@ page 53056 "Committee Members"
 
 
                 }
+                field(Signature; Rec.Signature)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Signature field.';
+                    Editable = false;
+                }
                 field("Appointment No"; Rec."Appointment No")
                 {
                     ToolTip = 'Specifies the value of the Committee Member Type field.';
@@ -74,6 +80,7 @@ page 53056 "Committee Members"
 
 
                 }
+
             }
         }
     }

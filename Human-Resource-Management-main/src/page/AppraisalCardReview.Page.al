@@ -118,17 +118,17 @@ page 52183 "Appraisal Card-Review"
                     group(Control46)
                     {
                         ShowCaption = false;
-                        Caption = 'Control46';
-                        field("Total Mid-Year Rating"; Rec."Total Mid-Year")
-                        {
-                            ToolTip = 'Specifies the value of the Total Mid-Year field';
-                            Caption = 'Total Mid-Year';
-                        }
+                        // Caption = 'Control46';
+                        // field("Total Mid-Year Rating"; Rec."Total Mid-Year")
+                        // {
+                        //     ToolTip = 'Specifies the value of the Total Mid-Year field';
+                        //     Caption = 'Total Mid-Year';
+                        // }
                         field("Total Final Year Rating"; Rec."Total FY Rating")
                         {
                             Visible = FinalVisible;
                             ToolTip = 'Specifies the value of the Total FY Rating field';
-                            Caption = 'Total FY Rating';
+                            Caption = 'Total Rating';
                         }
                         field("Final Year Percentage Score"; Rec."Total Percentage FY Rating")
                         {
@@ -491,6 +491,7 @@ page 52183 "Appraisal Card-Review"
             {
                 Caption = 'Send For further Review';
                 Enabled = DocReleased;
+                Visible = false;
                 Image = SendApprovalRequest;
                 Promoted = true;
                 PromotedCategory = Category5;
@@ -541,7 +542,7 @@ page 52183 "Appraisal Card-Review"
 
                 trigger OnAction()
                 begin
-                    ApprovalsMgmt.OnCancelNewEmpAppraisalRequestApproval(Rec);
+                    ApprovalsMgmt.OnCancelEmployeeAppraisalApprovalRequest(Rec);
                     Commit();
                     CurrPage.Close();
                 end;
@@ -623,24 +624,24 @@ page 52183 "Appraisal Card-Review"
                     CurrPage.Close();
                 end;
             }
-            action("Send to final year")
-            {
-                Image = ChangePaymentTolerance;
-                Promoted = true;
-                PromotedCategory = Category4;
-                PromotedIsBig = true;
-                PromotedOnly = true;
-                Visible = MidVisible;
-                ToolTip = 'Executes the Send to final year action';
-                Caption = 'Send to final year';
-                trigger OnAction()
-                begin
-                    if Rec.AppraisalType = Rec.AppraisalType::"Mid-Year" then HRManagement.SendToFinalYear(Rec);
-                    // IF AppraisalType = AppraisalType::Q2 THEN HRManagement.SendToQ3(Rec);
-                    // IF AppraisalType = AppraisalType::Q3 THEN HRManagement.SendToQ4(Rec);
-                end;
+            // action("Send to final year")
+            // {
+            //     Image = ChangePaymentTolerance;
+            //     Promoted = true;
+            //     PromotedCategory = Category4;
+            //     PromotedIsBig = true;
+            //     PromotedOnly = true;
+            //     Visible = MidVisible;
+            //     ToolTip = 'Executes the Send to final year action';
+            //     Caption = 'Send to final year';
+            //     trigger OnAction()
+            //     begin
+            //         if Rec.AppraisalType = Rec.AppraisalType::"Mid-Year" then HRManagement.SendToFinalYear(Rec);
+            //         // IF AppraisalType = AppraisalType::Q2 THEN HRManagement.SendToQ3(Rec);
+            //         // IF AppraisalType = AppraisalType::Q3 THEN HRManagement.SendToQ4(Rec);
+            //     end;
 
-            }
+            // }
             action(SendToFinal)
             {
                 Caption = 'Send To Final Year Review';

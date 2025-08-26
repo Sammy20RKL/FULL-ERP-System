@@ -7,8 +7,9 @@ page 52192 "Appraisals UnderReview MidYear"
     PageType = List;
     SourceTable = "Employee Appraisal";
     SourceTableView = where(Status = filter(Released),
-                            "Appraisal Status" = filter(Review | Set),
-                            AppraisalType = const("Mid-Year"));
+                            "Appraisal Status" = filter(Review | Set))
+                            // AppraisalType = const("Mid-Year"))
+                            ;
     Caption = 'Appraisals UnderReview MidYear';
     layout
     {

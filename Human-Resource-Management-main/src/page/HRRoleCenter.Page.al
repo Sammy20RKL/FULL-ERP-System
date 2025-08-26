@@ -1461,6 +1461,7 @@ page 52121 "HR Role Center"
                     RunPageLink = "Appraisal Status" = filter("Further review");
                     ToolTip = 'Executes the Appraisal List - Further review action';
                     Caption = 'Appraisal List - Further review';
+                    Visible = false;
                 }
                 group("Appraisals List Under Review")
                 {
@@ -1470,12 +1471,14 @@ page 52121 "HR Role Center"
                         RunObject = page "Appraisals UnderReview MidYear";
                         ToolTip = 'Executes the Appraisal List Under Review - MidYear action';
                         Caption = 'Appraisal List Under Review - MidYear';
+                        Visible = false;
                     }
                     action("Appraisal List Under Review - FinalYear")
                     {
                         RunObject = page "Appraisals UnderReview FY";
                         ToolTip = 'Executes the Appraisal List Under Review - FinalYear action';
                         Caption = 'Appraisal List Under Review - FinalYear';
+                        Visible = false;
                     }
 
                 }
@@ -1506,7 +1509,7 @@ page 52121 "HR Role Center"
                     action("Workplan Codes")
                     {
                         RunObject = page "Appraisal Workplan Codes";
-                        Caption = 'Workplan Codes';
+                        Caption = 'Appraisal Objectives';
                     }
                     action("Strategic Implementation Frequency")
                     {

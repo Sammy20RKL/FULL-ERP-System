@@ -1,4 +1,4 @@
-report 50005"Conflict of Interest(COI)"
+report 50005 "Conflict of Interest(COI)"
 {
     Caption = 'Conflict of Interest(COI)';
     DefaultLayout = RDLC;
@@ -40,13 +40,54 @@ report 50005"Conflict of Interest(COI)"
             }
             dataitem("Committee Member"; "Committee Member")
             {
-                DataItemLink="Appointment No"=field("Appointment No");
+                DataItemLink = "Appointment No" = field("Appointment No");
                 column(Member_Name; Name)
                 { }
                 column(Committee_Member_No; "Committee Member No")
                 { }
                 column(Role; Role)
                 { }
+                column(commitee_member_signature; UserSetup.Signature)
+                {
+
+                }
+                column(Signature; Signature)
+                {
+
+                }
+                trigger OnAfterGetRecord()
+                var
+                    employee: Record Employee;
+                    commitee_member_signature: Text;
+                    Approver: array[10] of Code[50];
+                    UserSetup: Record "User Setup";
+                    ApproverDate: array[10] of DateTime;
+                    ProcurementMgt: Codeunit "Procurement Management";
+                begin
+                    // Clear previous data
+                    Clear(employee);
+                    Clear(UserSetup);
+
+                    // Find employee by Committee Member No
+                    if "Committee Member No" <> '' then begin
+                        employee.Reset();
+                        employee.SetCurrentKey("No.");
+                        employee.SetRange("No.", "Committee Member No");
+                        if employee.FindFirst() then begin
+
+                            // Get User Setup record using the employee's User ID
+                            if employee."User ID" <> '' then begin
+                                if UserSetup.Get(employee."User ID") then begin
+                                    //  Message('Employee Name: %1...# user is %2', UserSetup.Signature, UserSetup);
+                                    UserSetup.CalcFields(Signature);
+                                    Signature := UserSetup.Signature;
+
+                                end;
+                            end;
+                        end;
+                    end;
+                end;
+
 
             }
             dataitem("Prospective Suppliers"; "Prospective Suppliers")
@@ -56,6 +97,17 @@ report 50005"Conflict of Interest(COI)"
                 { }
 
             }
+            dataitem("Procurement Evaluation Line"; "Procurement Evaluation Line")
+            {
+                DataItemLink = "Document No." = field("Tender/Quotation No");
+                column(Vendor_Name; "Vendor Name")
+                { }
+                column(Vendor_No; "Vendor No")
+                { }
+                column(Amount; Amount)
+                { }
+            }
+
         }
     }
     requestpage
@@ -83,8 +135,21 @@ report 50005"Conflict of Interest(COI)"
 
         // Counter := 0;
     end;
+
+
     var
         CompanyInfo: Record "Company Information";
         DeclarationLabel: Label 'By signing this document, I confirm that I have NO Conflict Of Interest with a person, firm, corporation of other business that is competing for the above contract/(s) with Coalition for Humanity (CH). I have not participated, directly or indirectly, by committee or as an advisor, consultant, employee, agent, trustee, or otherwise, in the development of a proposal for any individual or business entity that is competing for the above contract(s).';
         CertifyLabel: Label 'I certify that I have read, have understood, and agree to be bound by the Coalition for Humanity (CH) policies on procurement conflicts of interest';
+        CommitteeMember: Record "Committee Member";
+        UserSetup: Record "User Setup";
+        Employee: Record "Employee";
+
+    procedure GetUserIDFromSystemGuid(UserGuid: Guid): Text
+    var
+        User: Record User;
+    begin
+        if User.Get(UserGuid) then
+            exit(User."User Name");
+    end;
 }
