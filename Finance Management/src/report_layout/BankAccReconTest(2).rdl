@@ -9,7 +9,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.0.20283.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2025-08-26T07:37:30.0433087Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2025-08-26T11:45:57.2350462Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -22,349 +22,6 @@
       <rd:DataSourceID>f9e01696-9d91-4528-a7b0-711307676acf</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="Bank_Acc__Reconciliation_Bank_Account_No_">
-          <DataField>Bank_Acc__Reconciliation_Bank_Account_No_</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Statement_No_">
-          <DataField>Bank_Acc__Reconciliation_Statement_No_</DataField>
-        </Field>
-        <Field Name="FORMAT_TODAY_0_4_">
-          <DataField>FORMAT_TODAY_0_4_</DataField>
-        </Field>
-        <Field Name="COMPANYNAME">
-          <DataField>COMPANYNAME</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation__TABLECAPTION___________BankAccReconFilter">
-          <DataField>Bank_Acc__Reconciliation__TABLECAPTION___________BankAccReconFilter</DataField>
-        </Field>
-        <Field Name="BankAccReconFilter">
-          <DataField>BankAccReconFilter</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___Bank_Account_No____________Bank_Acc__Reconciliation___Statement_No__">
-          <DataField>Bank_Acc__Reconciliation___Bank_Account_No____________Bank_Acc__Reconciliation___Statement_No__</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___Balance_Last_Statement_">
-          <DataField>Bank_Acc__Reconciliation___Balance_Last_Statement_</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___Balance_Last_Statement_Format">
-          <DataField>Bank_Acc__Reconciliation___Balance_Last_Statement_Format</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___Statement_Date_">
-          <DataField>Bank_Acc__Reconciliation___Statement_Date_</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___Statement_Ending_Balance_">
-          <DataField>Bank_Acc__Reconciliation___Statement_Ending_Balance_</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___Statement_Ending_Balance_Format">
-          <DataField>Bank_Acc__Reconciliation___Statement_Ending_Balance_Format</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalBalOnBankAccount">
-          <DataField>Bank_Acc__Reconciliation___TotalBalOnBankAccount</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalBalOnBankAccountFormat">
-          <DataField>Bank_Acc__Reconciliation___TotalBalOnBankAccountFormat</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalBalOnBankAccountLCY">
-          <DataField>Bank_Acc__Reconciliation___TotalBalOnBankAccountLCY</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalBalOnBankAccountLCYFormat">
-          <DataField>Bank_Acc__Reconciliation___TotalBalOnBankAccountLCYFormat</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalBalOnGLAccount">
-          <DataField>Bank_Acc__Reconciliation___TotalBalOnGLAccount</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalBalOnGLAccountFormat">
-          <DataField>Bank_Acc__Reconciliation___TotalBalOnGLAccountFormat</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalBalOnGLAccountLCY">
-          <DataField>Bank_Acc__Reconciliation___TotalBalOnGLAccountLCY</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalBalOnGLAccountLCYFormat">
-          <DataField>Bank_Acc__Reconciliation___TotalBalOnGLAccountLCYFormat</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalOutstdBankTransactions">
-          <DataField>Bank_Acc__Reconciliation___TotalOutstdBankTransactions</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalOutstdBankTransactionsFormat">
-          <DataField>Bank_Acc__Reconciliation___TotalOutstdBankTransactionsFormat</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalOutstdPayments">
-          <DataField>Bank_Acc__Reconciliation___TotalOutstdPayments</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___TotalOutstdPaymentsFormat">
-          <DataField>Bank_Acc__Reconciliation___TotalOutstdPaymentsFormat</DataField>
-        </Field>
-        <Field Name="ErrorLabel">
-          <DataField>ErrorLabel</DataField>
-        </Field>
-        <Field Name="HeaderError1">
-          <DataField>HeaderError1</DataField>
-        </Field>
-        <Field Name="HeaderError2">
-          <DataField>HeaderError2</DataField>
-        </Field>
-        <Field Name="HeaderError3">
-          <DataField>HeaderError3</DataField>
-        </Field>
-        <Field Name="DirectPostingURLLink">
-          <DataField>DirectPostingURLLink</DataField>
-        </Field>
-        <Field Name="Bank_Account_Statement___TestCaption">
-          <DataField>Bank_Account_Statement___TestCaption</DataField>
-        </Field>
-        <Field Name="CurrReport_PAGENOCaption">
-          <DataField>CurrReport_PAGENOCaption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___Balance_Last_Statement_Caption">
-          <DataField>Bank_Acc__Reconciliation___Balance_Last_Statement_Caption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___Statement_Date_Caption">
-          <DataField>Bank_Acc__Reconciliation___Statement_Date_Caption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation___Statement_Ending_Balance_Caption">
-          <DataField>Bank_Acc__Reconciliation___Statement_Ending_Balance_Caption</DataField>
-        </Field>
-        <Field Name="G_L_BalanceCaption">
-          <DataField>G_L_BalanceCaption</DataField>
-        </Field>
-        <Field Name="G_L_Balance_LCYCaption">
-          <DataField>G_L_Balance_LCYCaption</DataField>
-        </Field>
-        <Field Name="Bank_Acc_BalanceCaption">
-          <DataField>Bank_Acc_BalanceCaption</DataField>
-        </Field>
-        <Field Name="Ending_G_L_BalanceCaption">
-          <DataField>Ending_G_L_BalanceCaption</DataField>
-        </Field>
-        <Field Name="Subtotal_Caption">
-          <DataField>Subtotal_Caption</DataField>
-        </Field>
-        <Field Name="Difference_Caption">
-          <DataField>Difference_Caption</DataField>
-        </Field>
-        <Field Name="Ending_BalanceCaption">
-          <DataField>Ending_BalanceCaption</DataField>
-        </Field>
-        <Field Name="Outstanding_BankTransactionsCaption">
-          <DataField>Outstanding_BankTransactionsCaption</DataField>
-        </Field>
-        <Field Name="Total_Outstanding_BankTransactionsCaption">
-          <DataField>Total_Outstanding_BankTransactionsCaption</DataField>
-        </Field>
-        <Field Name="Outstanding_PaymentsCaption">
-          <DataField>Outstanding_PaymentsCaption</DataField>
-        </Field>
-        <Field Name="Total_Outstanding_PaymentsCaption">
-          <DataField>Total_Outstanding_PaymentsCaption</DataField>
-        </Field>
-        <Field Name="Print_Outstanding_Transactions">
-          <DataField>Print_Outstanding_Transactions</DataField>
-        </Field>
-        <Field Name="Currency_CodeCaption">
-          <DataField>Currency_CodeCaption</DataField>
-        </Field>
-        <Field Name="Currency_Code">
-          <DataField>Currency_Code</DataField>
-        </Field>
-        <Field Name="Statement_BalanceCaption">
-          <DataField>Statement_BalanceCaption</DataField>
-        </Field>
-        <Field Name="GL_Subtotal">
-          <DataField>GL_Subtotal</DataField>
-        </Field>
-        <Field Name="GL_SubtotalFormat">
-          <DataField>GL_SubtotalFormat</DataField>
-        </Field>
-        <Field Name="Ending_GL_Balance">
-          <DataField>Ending_GL_Balance</DataField>
-        </Field>
-        <Field Name="Ending_GL_BalanceFormat">
-          <DataField>Ending_GL_BalanceFormat</DataField>
-        </Field>
-        <Field Name="Statement_Subtotal">
-          <DataField>Statement_Subtotal</DataField>
-        </Field>
-        <Field Name="Statement_SubtotalFormat">
-          <DataField>Statement_SubtotalFormat</DataField>
-        </Field>
-        <Field Name="Adjusted_Statement_Ending_Balance">
-          <DataField>Adjusted_Statement_Ending_Balance</DataField>
-        </Field>
-        <Field Name="Adjusted_Statement_Ending_BalanceFormat">
-          <DataField>Adjusted_Statement_Ending_BalanceFormat</DataField>
-        </Field>
-        <Field Name="Sum_Of_Differences">
-          <DataField>Sum_Of_Differences</DataField>
-        </Field>
-        <Field Name="Sum_Of_DifferencesFormat">
-          <DataField>Sum_Of_DifferencesFormat</DataField>
-        </Field>
-        <Field Name="ErrorText_Number_">
-          <DataField>ErrorText_Number_</DataField>
-        </Field>
-        <Field Name="ErrorText_Number_Caption">
-          <DataField>ErrorText_Number_Caption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Transaction_Date_">
-          <DataField>Bank_Acc__Reconciliation_Line__Transaction_Date_</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Document_No__">
-          <DataField>Bank_Acc__Reconciliation_Line__Document_No__</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line_Description">
-          <DataField>Bank_Acc__Reconciliation_Line_Description</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Value_Date_">
-          <DataField>Bank_Acc__Reconciliation_Line__Value_Date_</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Entries_">
-          <DataField>Bank_Acc__Reconciliation_Line__Applied_Entries_</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Amount_">
-          <DataField>Bank_Acc__Reconciliation_Line__Applied_Amount_</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Amount_Format">
-          <DataField>Bank_Acc__Reconciliation_Line__Applied_Amount_Format</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Statement_Amount_">
-          <DataField>Bank_Acc__Reconciliation_Line__Statement_Amount_</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Statement_Amount_Format">
-          <DataField>Bank_Acc__Reconciliation_Line__Statement_Amount_Format</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line_Type">
-          <DataField>Bank_Acc__Reconciliation_Line_Type</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line_Difference">
-          <DataField>Bank_Acc__Reconciliation_Line_Difference</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line_DifferenceFormat">
-          <DataField>Bank_Acc__Reconciliation_Line_DifferenceFormat</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Amount__Control25">
-          <DataField>Bank_Acc__Reconciliation_Line__Applied_Amount__Control25</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Amount__Control25Format">
-          <DataField>Bank_Acc__Reconciliation_Line__Applied_Amount__Control25Format</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line_Difference_Control29">
-          <DataField>Bank_Acc__Reconciliation_Line_Difference_Control29</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line_Difference_Control29Format">
-          <DataField>Bank_Acc__Reconciliation_Line_Difference_Control29Format</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Transaction_Date_Caption">
-          <DataField>Bank_Acc__Reconciliation_Line__Transaction_Date_Caption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Document_No__Caption">
-          <DataField>Bank_Acc__Reconciliation_Line__Document_No__Caption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line_DescriptionCaption">
-          <DataField>Bank_Acc__Reconciliation_Line_DescriptionCaption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Value_Date_Caption">
-          <DataField>Bank_Acc__Reconciliation_Line__Value_Date_Caption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Entries_Caption">
-          <DataField>Bank_Acc__Reconciliation_Line__Applied_Entries_Caption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Statement_Amount_Caption">
-          <DataField>Bank_Acc__Reconciliation_Line__Statement_Amount_Caption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Amount_Caption">
-          <DataField>Bank_Acc__Reconciliation_Line__Applied_Amount_Caption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line_TypeCaption">
-          <DataField>Bank_Acc__Reconciliation_Line_TypeCaption</DataField>
-        </Field>
-        <Field Name="Bank_Acc__Reconciliation_Line_DifferenceCaption">
-          <DataField>Bank_Acc__Reconciliation_Line_DifferenceCaption</DataField>
-        </Field>
-        <Field Name="TotalsCaption">
-          <DataField>TotalsCaption</DataField>
-        </Field>
-        <Field Name="ErrorText_Number__Control97">
-          <DataField>ErrorText_Number__Control97</DataField>
-        </Field>
-        <Field Name="ErrorText_Number__Control97Caption">
-          <DataField>ErrorText_Number__Control97Caption</DataField>
-        </Field>
-        <Field Name="FooterError1">
-          <DataField>FooterError1</DataField>
-        </Field>
-        <Field Name="FooterError2">
-          <DataField>FooterError2</DataField>
-        </Field>
-        <Field Name="Outstd_Bank_Transac_Amount">
-          <DataField>Outstd_Bank_Transac_Amount</DataField>
-        </Field>
-        <Field Name="Outstd_Bank_Transac_AmountFormat">
-          <DataField>Outstd_Bank_Transac_AmountFormat</DataField>
-        </Field>
-        <Field Name="Outstd_Bank_Transac_EntryNo_">
-          <DataField>Outstd_Bank_Transac_EntryNo_</DataField>
-        </Field>
-        <Field Name="Outstd_Bank_Transac_Posting_Date">
-          <DataField>Outstd_Bank_Transac_Posting_Date</DataField>
-        </Field>
-        <Field Name="Outstd_Bank_Transac_Doc_Type">
-          <DataField>Outstd_Bank_Transac_Doc_Type</DataField>
-        </Field>
-        <Field Name="Outstd_Bank_Transac_Doc_No_">
-          <DataField>Outstd_Bank_Transac_Doc_No_</DataField>
-        </Field>
-        <Field Name="Outstd_Bank_Transac_Bank_Acc_No_">
-          <DataField>Outstd_Bank_Transac_Bank_Acc_No_</DataField>
-        </Field>
-        <Field Name="Outstd_Bank_Transac_Description">
-          <DataField>Outstd_Bank_Transac_Description</DataField>
-        </Field>
-        <Field Name="Outstd_Bank_Transac_Type">
-          <DataField>Outstd_Bank_Transac_Type</DataField>
-        </Field>
-        <Field Name="Outstd_Bank_Transac_Applied">
-          <DataField>Outstd_Bank_Transac_Applied</DataField>
-        </Field>
-        <Field Name="Outstd_Payment_Amount">
-          <DataField>Outstd_Payment_Amount</DataField>
-        </Field>
-        <Field Name="Outstd_Payment_AmountFormat">
-          <DataField>Outstd_Payment_AmountFormat</DataField>
-        </Field>
-        <Field Name="Outstd_Payment_Entry_No_">
-          <DataField>Outstd_Payment_Entry_No_</DataField>
-        </Field>
-        <Field Name="Outstd_Payment_Posting_Date">
-          <DataField>Outstd_Payment_Posting_Date</DataField>
-        </Field>
-        <Field Name="Outstd_Payment_Doc_Type">
-          <DataField>Outstd_Payment_Doc_Type</DataField>
-        </Field>
-        <Field Name="Outstd_Payment_Doc_No_">
-          <DataField>Outstd_Payment_Doc_No_</DataField>
-        </Field>
-        <Field Name="Outstd_Payment_Bank_Acc_No_">
-          <DataField>Outstd_Payment_Bank_Acc_No_</DataField>
-        </Field>
-        <Field Name="Outstd_Payment_Description">
-          <DataField>Outstd_Payment_Description</DataField>
-        </Field>
-        <Field Name="Outstd_Payment_Type">
-          <DataField>Outstd_Payment_Type</DataField>
-        </Field>
-        <Field Name="Outstd_Payment_Applied">
-          <DataField>Outstd_Payment_Applied</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -9487,7 +9144,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
-            <Top>3.04767cm</Top>
+            <Top>2.87834cm</Top>
             <Height>14.18292cm</Height>
             <Width>18.23783cm</Width>
             <Style />
@@ -9555,11 +9212,621 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.43621cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.15421cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>4.00771cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.49742cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>prepared by:</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PreparedBy">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!PreparedBy.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PreparedBy</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox25">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>signature</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox25</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PreparedSignature">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!PreparedSignature.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PreparedSignature</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox50">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>date</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox50</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PreparedDate">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!PreparedDate.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>PreparedDate</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.51533cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox27">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>reviewed by</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox27</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ReviewedBy">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ReviewedBy.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ReviewedBy</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox46">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>signature</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox46</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ReviewedSignature">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ReviewedSignature.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ReviewedSignature</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox51">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>date</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox51</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ReviewedDate">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ReviewedDate.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ReviewedDate</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.45015cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Approved by</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ApprovedBy">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ApprovedBy.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ApprovedBy</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox26">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>signature</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox26</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ApprovedSignature">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ApprovedSignature.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ApprovedSignature</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <rd:Selected>true</rd:Selected>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox52">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>date</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox52</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ApprovedDate">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ApprovedDate.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ApprovedDate</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>0.89201cm</Top>
+            <Left>0.07369cm</Left>
+            <Height>1.4629cm</Height>
+            <Width>18.09813cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
         </ReportItems>
         <Height>18.375cm</Height>
         <Style />
       </Body>
-      <Width>18.30105cm</Width>
+      <Width>19.66283cm</Width>
       <Page>
         <PageHeader>
           <Height>2.0103cm</Height>
@@ -9783,8 +10050,15 @@
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfColumns>1</NumberOfColumns>
+      <NumberOfRows>1</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Warning</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
@@ -9843,4 +10117,374 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>addee71b-d845-49e1-80b3-e15d646ba5d0</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Bank_Acc__Reconciliation_Bank_Account_No_">
+          <DataField>Bank_Acc__Reconciliation_Bank_Account_No_</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Statement_No_">
+          <DataField>Bank_Acc__Reconciliation_Statement_No_</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation__TABLECAPTION___________BankAccReconFilter">
+          <DataField>Bank_Acc__Reconciliation__TABLECAPTION___________BankAccReconFilter</DataField>
+        </Field>
+        <Field Name="BankAccReconFilter">
+          <DataField>BankAccReconFilter</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___Bank_Account_No____________Bank_Acc__Reconciliation___Statement_No__">
+          <DataField>Bank_Acc__Reconciliation___Bank_Account_No____________Bank_Acc__Reconciliation___Statement_No__</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___Balance_Last_Statement_">
+          <DataField>Bank_Acc__Reconciliation___Balance_Last_Statement_</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___Balance_Last_Statement_Format">
+          <DataField>Bank_Acc__Reconciliation___Balance_Last_Statement_Format</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___Statement_Date_">
+          <DataField>Bank_Acc__Reconciliation___Statement_Date_</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___Statement_Ending_Balance_">
+          <DataField>Bank_Acc__Reconciliation___Statement_Ending_Balance_</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___Statement_Ending_Balance_Format">
+          <DataField>Bank_Acc__Reconciliation___Statement_Ending_Balance_Format</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalBalOnBankAccount">
+          <DataField>Bank_Acc__Reconciliation___TotalBalOnBankAccount</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalBalOnBankAccountFormat">
+          <DataField>Bank_Acc__Reconciliation___TotalBalOnBankAccountFormat</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalBalOnBankAccountLCY">
+          <DataField>Bank_Acc__Reconciliation___TotalBalOnBankAccountLCY</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalBalOnBankAccountLCYFormat">
+          <DataField>Bank_Acc__Reconciliation___TotalBalOnBankAccountLCYFormat</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalBalOnGLAccount">
+          <DataField>Bank_Acc__Reconciliation___TotalBalOnGLAccount</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalBalOnGLAccountFormat">
+          <DataField>Bank_Acc__Reconciliation___TotalBalOnGLAccountFormat</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalBalOnGLAccountLCY">
+          <DataField>Bank_Acc__Reconciliation___TotalBalOnGLAccountLCY</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalBalOnGLAccountLCYFormat">
+          <DataField>Bank_Acc__Reconciliation___TotalBalOnGLAccountLCYFormat</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalOutstdBankTransactions">
+          <DataField>Bank_Acc__Reconciliation___TotalOutstdBankTransactions</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalOutstdBankTransactionsFormat">
+          <DataField>Bank_Acc__Reconciliation___TotalOutstdBankTransactionsFormat</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalOutstdPayments">
+          <DataField>Bank_Acc__Reconciliation___TotalOutstdPayments</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___TotalOutstdPaymentsFormat">
+          <DataField>Bank_Acc__Reconciliation___TotalOutstdPaymentsFormat</DataField>
+        </Field>
+        <Field Name="ErrorLabel">
+          <DataField>ErrorLabel</DataField>
+        </Field>
+        <Field Name="HeaderError1">
+          <DataField>HeaderError1</DataField>
+        </Field>
+        <Field Name="HeaderError2">
+          <DataField>HeaderError2</DataField>
+        </Field>
+        <Field Name="HeaderError3">
+          <DataField>HeaderError3</DataField>
+        </Field>
+        <Field Name="DirectPostingURLLink">
+          <DataField>DirectPostingURLLink</DataField>
+        </Field>
+        <Field Name="Bank_Account_Statement___TestCaption">
+          <DataField>Bank_Account_Statement___TestCaption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___Balance_Last_Statement_Caption">
+          <DataField>Bank_Acc__Reconciliation___Balance_Last_Statement_Caption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___Statement_Date_Caption">
+          <DataField>Bank_Acc__Reconciliation___Statement_Date_Caption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation___Statement_Ending_Balance_Caption">
+          <DataField>Bank_Acc__Reconciliation___Statement_Ending_Balance_Caption</DataField>
+        </Field>
+        <Field Name="G_L_BalanceCaption">
+          <DataField>G_L_BalanceCaption</DataField>
+        </Field>
+        <Field Name="G_L_Balance_LCYCaption">
+          <DataField>G_L_Balance_LCYCaption</DataField>
+        </Field>
+        <Field Name="Bank_Acc_BalanceCaption">
+          <DataField>Bank_Acc_BalanceCaption</DataField>
+        </Field>
+        <Field Name="Ending_G_L_BalanceCaption">
+          <DataField>Ending_G_L_BalanceCaption</DataField>
+        </Field>
+        <Field Name="Subtotal_Caption">
+          <DataField>Subtotal_Caption</DataField>
+        </Field>
+        <Field Name="Difference_Caption">
+          <DataField>Difference_Caption</DataField>
+        </Field>
+        <Field Name="Ending_BalanceCaption">
+          <DataField>Ending_BalanceCaption</DataField>
+        </Field>
+        <Field Name="Outstanding_BankTransactionsCaption">
+          <DataField>Outstanding_BankTransactionsCaption</DataField>
+        </Field>
+        <Field Name="Total_Outstanding_BankTransactionsCaption">
+          <DataField>Total_Outstanding_BankTransactionsCaption</DataField>
+        </Field>
+        <Field Name="Outstanding_PaymentsCaption">
+          <DataField>Outstanding_PaymentsCaption</DataField>
+        </Field>
+        <Field Name="Total_Outstanding_PaymentsCaption">
+          <DataField>Total_Outstanding_PaymentsCaption</DataField>
+        </Field>
+        <Field Name="Print_Outstanding_Transactions">
+          <DataField>Print_Outstanding_Transactions</DataField>
+        </Field>
+        <Field Name="Currency_CodeCaption">
+          <DataField>Currency_CodeCaption</DataField>
+        </Field>
+        <Field Name="Currency_Code">
+          <DataField>Currency_Code</DataField>
+        </Field>
+        <Field Name="Statement_BalanceCaption">
+          <DataField>Statement_BalanceCaption</DataField>
+        </Field>
+        <Field Name="GL_Subtotal">
+          <DataField>GL_Subtotal</DataField>
+        </Field>
+        <Field Name="GL_SubtotalFormat">
+          <DataField>GL_SubtotalFormat</DataField>
+        </Field>
+        <Field Name="Ending_GL_Balance">
+          <DataField>Ending_GL_Balance</DataField>
+        </Field>
+        <Field Name="Ending_GL_BalanceFormat">
+          <DataField>Ending_GL_BalanceFormat</DataField>
+        </Field>
+        <Field Name="Statement_Subtotal">
+          <DataField>Statement_Subtotal</DataField>
+        </Field>
+        <Field Name="Statement_SubtotalFormat">
+          <DataField>Statement_SubtotalFormat</DataField>
+        </Field>
+        <Field Name="Adjusted_Statement_Ending_Balance">
+          <DataField>Adjusted_Statement_Ending_Balance</DataField>
+        </Field>
+        <Field Name="Adjusted_Statement_Ending_BalanceFormat">
+          <DataField>Adjusted_Statement_Ending_BalanceFormat</DataField>
+        </Field>
+        <Field Name="Sum_Of_Differences">
+          <DataField>Sum_Of_Differences</DataField>
+        </Field>
+        <Field Name="Sum_Of_DifferencesFormat">
+          <DataField>Sum_Of_DifferencesFormat</DataField>
+        </Field>
+        <Field Name="ErrorText_Number_">
+          <DataField>ErrorText_Number_</DataField>
+        </Field>
+        <Field Name="ErrorText_Number_Caption">
+          <DataField>ErrorText_Number_Caption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Transaction_Date_">
+          <DataField>Bank_Acc__Reconciliation_Line__Transaction_Date_</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Document_No__">
+          <DataField>Bank_Acc__Reconciliation_Line__Document_No__</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line_Description">
+          <DataField>Bank_Acc__Reconciliation_Line_Description</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Value_Date_">
+          <DataField>Bank_Acc__Reconciliation_Line__Value_Date_</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Entries_">
+          <DataField>Bank_Acc__Reconciliation_Line__Applied_Entries_</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Amount_">
+          <DataField>Bank_Acc__Reconciliation_Line__Applied_Amount_</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Amount_Format">
+          <DataField>Bank_Acc__Reconciliation_Line__Applied_Amount_Format</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Statement_Amount_">
+          <DataField>Bank_Acc__Reconciliation_Line__Statement_Amount_</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Statement_Amount_Format">
+          <DataField>Bank_Acc__Reconciliation_Line__Statement_Amount_Format</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line_Type">
+          <DataField>Bank_Acc__Reconciliation_Line_Type</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line_Difference">
+          <DataField>Bank_Acc__Reconciliation_Line_Difference</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line_DifferenceFormat">
+          <DataField>Bank_Acc__Reconciliation_Line_DifferenceFormat</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Amount__Control25">
+          <DataField>Bank_Acc__Reconciliation_Line__Applied_Amount__Control25</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Amount__Control25Format">
+          <DataField>Bank_Acc__Reconciliation_Line__Applied_Amount__Control25Format</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line_Difference_Control29">
+          <DataField>Bank_Acc__Reconciliation_Line_Difference_Control29</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line_Difference_Control29Format">
+          <DataField>Bank_Acc__Reconciliation_Line_Difference_Control29Format</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Transaction_Date_Caption">
+          <DataField>Bank_Acc__Reconciliation_Line__Transaction_Date_Caption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Document_No__Caption">
+          <DataField>Bank_Acc__Reconciliation_Line__Document_No__Caption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line_DescriptionCaption">
+          <DataField>Bank_Acc__Reconciliation_Line_DescriptionCaption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Value_Date_Caption">
+          <DataField>Bank_Acc__Reconciliation_Line__Value_Date_Caption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Entries_Caption">
+          <DataField>Bank_Acc__Reconciliation_Line__Applied_Entries_Caption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Statement_Amount_Caption">
+          <DataField>Bank_Acc__Reconciliation_Line__Statement_Amount_Caption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line__Applied_Amount_Caption">
+          <DataField>Bank_Acc__Reconciliation_Line__Applied_Amount_Caption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line_TypeCaption">
+          <DataField>Bank_Acc__Reconciliation_Line_TypeCaption</DataField>
+        </Field>
+        <Field Name="Bank_Acc__Reconciliation_Line_DifferenceCaption">
+          <DataField>Bank_Acc__Reconciliation_Line_DifferenceCaption</DataField>
+        </Field>
+        <Field Name="TotalsCaption">
+          <DataField>TotalsCaption</DataField>
+        </Field>
+        <Field Name="ErrorText_Number__Control97">
+          <DataField>ErrorText_Number__Control97</DataField>
+        </Field>
+        <Field Name="ErrorText_Number__Control97Caption">
+          <DataField>ErrorText_Number__Control97Caption</DataField>
+        </Field>
+        <Field Name="FooterError1">
+          <DataField>FooterError1</DataField>
+        </Field>
+        <Field Name="FooterError2">
+          <DataField>FooterError2</DataField>
+        </Field>
+        <Field Name="Outstd_Bank_Transac_Amount">
+          <DataField>Outstd_Bank_Transac_Amount</DataField>
+        </Field>
+        <Field Name="Outstd_Bank_Transac_AmountFormat">
+          <DataField>Outstd_Bank_Transac_AmountFormat</DataField>
+        </Field>
+        <Field Name="Outstd_Bank_Transac_EntryNo_">
+          <DataField>Outstd_Bank_Transac_EntryNo_</DataField>
+        </Field>
+        <Field Name="Outstd_Bank_Transac_Posting_Date">
+          <DataField>Outstd_Bank_Transac_Posting_Date</DataField>
+        </Field>
+        <Field Name="Outstd_Bank_Transac_Doc_Type">
+          <DataField>Outstd_Bank_Transac_Doc_Type</DataField>
+        </Field>
+        <Field Name="Outstd_Bank_Transac_Doc_No_">
+          <DataField>Outstd_Bank_Transac_Doc_No_</DataField>
+        </Field>
+        <Field Name="Outstd_Bank_Transac_Bank_Acc_No_">
+          <DataField>Outstd_Bank_Transac_Bank_Acc_No_</DataField>
+        </Field>
+        <Field Name="Outstd_Bank_Transac_Description">
+          <DataField>Outstd_Bank_Transac_Description</DataField>
+        </Field>
+        <Field Name="Outstd_Bank_Transac_Type">
+          <DataField>Outstd_Bank_Transac_Type</DataField>
+        </Field>
+        <Field Name="Outstd_Bank_Transac_Applied">
+          <DataField>Outstd_Bank_Transac_Applied</DataField>
+        </Field>
+        <Field Name="Outstd_Payment_Amount">
+          <DataField>Outstd_Payment_Amount</DataField>
+        </Field>
+        <Field Name="Outstd_Payment_AmountFormat">
+          <DataField>Outstd_Payment_AmountFormat</DataField>
+        </Field>
+        <Field Name="Outstd_Payment_Entry_No_">
+          <DataField>Outstd_Payment_Entry_No_</DataField>
+        </Field>
+        <Field Name="Outstd_Payment_Posting_Date">
+          <DataField>Outstd_Payment_Posting_Date</DataField>
+        </Field>
+        <Field Name="Outstd_Payment_Doc_Type">
+          <DataField>Outstd_Payment_Doc_Type</DataField>
+        </Field>
+        <Field Name="Outstd_Payment_Doc_No_">
+          <DataField>Outstd_Payment_Doc_No_</DataField>
+        </Field>
+        <Field Name="Outstd_Payment_Bank_Acc_No_">
+          <DataField>Outstd_Payment_Bank_Acc_No_</DataField>
+        </Field>
+        <Field Name="Outstd_Payment_Description">
+          <DataField>Outstd_Payment_Description</DataField>
+        </Field>
+        <Field Name="Outstd_Payment_Type">
+          <DataField>Outstd_Payment_Type</DataField>
+        </Field>
+        <Field Name="Outstd_Payment_Applied">
+          <DataField>Outstd_Payment_Applied</DataField>
+        </Field>
+        <Field Name="PreparedBy">
+          <DataField>PreparedBy</DataField>
+        </Field>
+        <Field Name="ReviewedBy">
+          <DataField>ReviewedBy</DataField>
+        </Field>
+        <Field Name="ApprovedBy">
+          <DataField>ApprovedBy</DataField>
+        </Field>
+        <Field Name="PreparedSignature">
+          <DataField>PreparedSignature</DataField>
+        </Field>
+        <Field Name="ReviewedSignature">
+          <DataField>ReviewedSignature</DataField>
+        </Field>
+        <Field Name="ApprovedSignature">
+          <DataField>ApprovedSignature</DataField>
+        </Field>
+        <Field Name="PreparedDate">
+          <DataField>PreparedDate</DataField>
+        </Field>
+        <Field Name="ReviewedDate">
+          <DataField>ReviewedDate</DataField>
+        </Field>
+        <Field Name="ApprovedDate">
+          <DataField>ApprovedDate</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

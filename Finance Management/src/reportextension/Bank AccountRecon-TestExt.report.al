@@ -8,7 +8,6 @@ reportextension 51112 "Bank Acc Reconcilliation Test" extends "Bank Acc. Recon. 
             column(ReviewedBy; ReviewedBy) { }
             column(ApprovedBy; ApprovedBy) { }
 
-
             column(PreparedSignature; PreparedUserSetup.Signature) { }
             column(ReviewedSignature; ReviewedUserSetup.Signature) { }
             column(ApprovedSignature; ApprovedUserSetup.Signature) { }
@@ -24,41 +23,50 @@ reportextension 51112 "Bank Acc Reconcilliation Test" extends "Bank Acc. Recon. 
             var
                 ApprovalEntry: Record "Approval Entry";
             begin
-                // ***************
+                // --------------------
                 // Prepared By
-                // ***************
-                PreparedBy := "UserId";
-                PreparedDate := CreateDateTime("Statement Date", 0T);
-
-                if PreparedUserSetup.Get(PreparedBy) then
-                    PreparedUserSetup.CalcFields(Signature);
-
-                // ***************
-                // Reviewed & Approved
-                // ***************
+                // --------------------
                 ApprovalEntry.Reset();
-                ApprovalEntry.SetCurrentKey("Sequence No.");
+                ApprovalEntry.SetRange("Table ID", Database::"Bank Acc. Reconciliation");
+                ApprovalEntry.SetRange("Document No.", "Statement No.");
+                if ApprovalEntry.FindFirst() then begin
+                    PreparedBy := ApprovalEntry."Sender ID";
+                    PreparedDate := ApprovalEntry."Date-Time Sent for Approval";
+                    if UserSetup.Get(PreparedBy) then begin
+                        UserSetup.CalcFields(Signature);
+                        PreparedUserSetup := UserSetup;
+                    end;
+                end;
+
+                // --------------------
+                // Reviewed By & Approved By
+                // --------------------
+                ApprovalEntry.Reset();
                 ApprovalEntry.SetRange("Table ID", Database::"Bank Acc. Reconciliation");
                 ApprovalEntry.SetRange("Document No.", "Statement No.");
                 ApprovalEntry.SetRange(Status, ApprovalEntry.Status::Approved);
+                ApprovalEntry.SetCurrentKey("Sequence No.");
 
                 if ApprovalEntry.FindSet() then
                     repeat
                         case ApprovalEntry."Sequence No." of
                             1:
-                                begin // First approval = Reviewed By
+                                begin
                                     ReviewedBy := ApprovalEntry."Last Modified By User ID";
                                     ReviewedDate := ApprovalEntry."Last Date-Time Modified";
-                                    if ReviewedUserSetup.Get(ReviewedBy) then
-                                        ReviewedUserSetup.CalcFields(Signature);
+                                    if UserSetup1.Get(ReviewedBy) then begin
+                                        UserSetup1.CalcFields(Signature);
+                                        ReviewedUserSetup := UserSetup1;
+                                    end;
                                 end;
-
                             2:
-                                begin // Second approval = Approved By
+                                begin
                                     ApprovedBy := ApprovalEntry."Last Modified By User ID";
                                     ApprovedDate := ApprovalEntry."Last Date-Time Modified";
-                                    if ApprovedUserSetup.Get(ApprovedBy) then
-                                        ApprovedUserSetup.CalcFields(Signature);
+                                    if UserSetup2.Get(ApprovedBy) then begin
+                                        UserSetup2.CalcFields(Signature);
+                                        ApprovedUserSetup := UserSetup2;
+                                    end;
                                 end;
                         end;
                     until ApprovalEntry.Next() = 0;
@@ -70,9 +78,9 @@ reportextension 51112 "Bank Acc Reconcilliation Test" extends "Bank Acc. Recon. 
     {
         layout(Custom)
         {
-            Caption = 'Bank Acc Reconcilliation Test - AACC';
+            Caption = 'BankAccReconTest(2)';
             Type = RDLC;
-            LayoutFile = './src/report_layout/BankAccReconTest (2).rdlc';
+            LayoutFile = './src/report_layout/BankAccReconTest(2).rdl';
         }
     }
 
@@ -84,6 +92,9 @@ reportextension 51112 "Bank Acc Reconcilliation Test" extends "Bank Acc. Recon. 
         ReviewedDate: DateTime;
         ApprovedDate: DateTime;
 
+        UserSetup: Record "User Setup";
+        UserSetup1: Record "User Setup";
+        UserSetup2: Record "User Setup";
 
         PreparedUserSetup: Record "User Setup";
         ReviewedUserSetup: Record "User Setup";
