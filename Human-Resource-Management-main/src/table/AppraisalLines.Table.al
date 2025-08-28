@@ -231,6 +231,19 @@ table 52016 "Appraisal Lines"
         {
             Caption = 'Workplan Code';
             TableRelation = "Appraisal Workplan Code".Code;
+
+            trigger OnValidate()
+            var
+                AppraisalWorkplanCode: Record "Appraisal Workplan Code";
+            begin
+                if "Workplan Code" <> '' then begin
+                    if AppraisalWorkplanCode.Get("Workplan Code") then
+                        "Workplan Description" := AppraisalWorkplanCode.Description
+                    else
+                        "Workplan Description" := '';
+                end else
+                    "Workplan Description" := '';
+            end;
         }
         field(38; "Performance Measure"; Code[50])
         {
@@ -249,6 +262,15 @@ table 52016 "Appraisal Lines"
         field(40; "Weighted Rating"; Decimal)
         {
             Caption = 'Weighted Rating';
+        }
+        field(41; "Workplan Description"; Text[250])
+        {
+            Caption = 'Workplan Description';
+            // TableRelation = "Appraisal Workplan Code"."Description" where(Code = field("Workplan Code"));
+        }
+        field(42; Actual; Decimal)
+        {
+            Caption = 'Actual';
         }
     }
 

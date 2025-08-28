@@ -135,7 +135,7 @@ codeunit 52004 "Workflow Responses HR"
         EmployeeApp.SetRange("Appraisal No", Appraisal."Appraisal No");
         if EmployeeApp.FindFirst() then begin
             EmployeeApp.Status := EmployeeApp.Status::Open;
-            EmployeeApp."Appraisal Status" := EmployeeApp."Appraisal Status"::Setting;
+            // EmployeeApp."Appraisal Status" := EmployeeApp."Appraisal Status"::Setting;
             EmployeeApp.Modify(true);
         end;
     end;

@@ -16,6 +16,7 @@ reportextension 51000 "Bank Acc Detail Trial Bal. Ext" extends "Bank Acc. - Deta
         layout(Custom)
         {
             Caption = 'Bank Accounts - Detail Trial Balance - AACC';
+
             Type = RDLC;
             LayoutFile = './src/report_layout/BankAccDetailTrialBal-AACC.rdl';
         }

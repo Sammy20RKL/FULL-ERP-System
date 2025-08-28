@@ -280,7 +280,7 @@ table 52015 "Employee Appraisal"
         }
         field(46; "Total Weighting"; Decimal)
         {
-            CalcFormula = sum("Appraisal Lines".Weighting where("Appraisal No" = field("Appraisal No")));
+            CalcFormula = sum("Appraisal Lines".Rating where("Appraisal No" = field("Appraisal No")));
             Editable = false;
             FieldClass = FlowField;
             Caption = 'Total Weighting';
@@ -323,8 +323,8 @@ table 52015 "Employee Appraisal"
         field(53; "AppraisalType"; Option)
         {
             Caption = 'Appraisal Type';
-            OptionCaption = ' ,Mid-Year,Final Year';
-            OptionMembers = " ","Mid-Year","Final Year";
+            OptionCaption = ' ,Annual Review, Probation Review';
+            OptionMembers = " ","Final Year","Probation Review";
         }
         field(55; "Grade-Attributes"; Text[50])
         {

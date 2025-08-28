@@ -110,6 +110,11 @@ pageextension 52002 "HRSetupPageExt" extends "Human Resources Setup"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Transfer Nos field';
                 }
+                field("Trustee Nos";Rec."Trustee Nos")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Trustee Nos field';
+                }
             }
             group(LeaveNos)
             {
