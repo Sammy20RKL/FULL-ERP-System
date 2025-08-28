@@ -29,6 +29,7 @@ table 52176 "Leave Application Type"
                 OpenPendingLeaveErr: Label 'You have an open/pending %1 leave application %2. Kindly process that one before creating a new one';
             begin
                 "Leave Entitlment" := 0;
+                "Leave Earned to Date" := 0;
 
                 if EmployeeRec.Get("Employee No") then begin
                     LeaveTypes.Get("Leave Type");
@@ -43,6 +44,7 @@ table 52176 "Leave Application Type"
 
                     "Date of Joining Company" := EmployeeRec."Date Of Join";
                     "Leave Earned to Date" := HRManagement.GetLeaveDaysEarnedToDate(employeerec, "Leave Type");
+                    Validate("Leave Earned to Date");
                     Message('leave earned to date %1', "Leave Earned to Date");
 
                 end;
@@ -335,10 +337,15 @@ table 52176 "Leave Application Type"
             Caption = 'Staff No';
 
             trigger OnValidate()
+            var
+                LeaveAppType: Record "Leave Application Type";
             begin
                 LeaveApp.Get("Leave Code");
                 if "Staff No" = LeaveApp."Employee No" then
                     Error('You can not be your own reliever!');
+                if LeaveAppType.Get("Leave Code", "Employee No", "Entry No.") then
+                    if LeaveAppType."Staff No" = "Staff No" then
+                        Error('You have already assigned %1 as your reliever for this leave application', Employee.Name);
 
                 if Employee.Get("Staff No") then
                     "Staff Name" := Employee."First Name" + ' ' + Employee."Middle Name" + ' ' + Employee."Last Name";
@@ -354,6 +361,12 @@ table 52176 "Leave Application Type"
         {
             Caption = 'Entry No.';
             AutoIncrement = true;
+        }
+        //"Employee Name"
+        field(15; "Employee Name"; Text[100])
+        {
+            Caption = 'Employee Name';
+            Editable = false;
         }
 
     }
@@ -393,7 +406,8 @@ table 52176 "Leave Application Type"
         LeaveApp.SetRange(LeaveApp."Application No", "Leave Code");
         if LeaveApp.FindFirst() then begin
             "Employee No" := LeaveApp."Employee No";
-            // "Leave Period" := LeaveApp."Leave Period";
+            "Leave Period" := LeaveApp."Leave Period";
+            "Employee Name" := LeaveApp."Employee Name";
 
         end;
 

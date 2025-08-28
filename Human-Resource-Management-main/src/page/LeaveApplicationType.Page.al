@@ -15,26 +15,26 @@ page 52310 "Leave Application Type"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Entry No.';
-                    Visible = false;
+                    // Visible = false;
                 }
                 field("Leave Code"; Rec."Leave Code")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Leave Code';
-                    Visible = false;
+                    // Visible = false;
                 }
                 field("Employee No"; Rec."Employee No")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Employee No';
-                    Visible = false;
+                    //  Visible = false;
                 }
                 field("Leave Period"; Rec."Leave Period")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Leave Period';
                     Editable = false;
-                    Visible = false;
+                    // Visible = false;
 
                 }
                 field("Leave Type"; Rec."Leave Type")

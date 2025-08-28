@@ -34,26 +34,6 @@ codeunit 52004 "Workflow Responses HR"
         end;
     end;
 
-    procedure ReleaseLeave(var LeaveReq: Record "Leave Application")
-    var
-        Leave: Record "Leave Application";
-    begin
-        Leave.Reset();
-        Leave.SetRange("Application No", LeaveReq."Application No");
-        if Leave.FindFirst() then begin
-            Leave.Validate(Status, Leave.Status::Released);
-            Leave.Modify(true);
-            // Message('Leave status is %1', Leave.Status);
-
-            HRMgnt.LeaveApplication(Leave."Application No");
-            if guiAllowed then begin
-                if Confirm('Do you want to notify the leave applicant and their reliever(s)', false) then
-                    HRMgnt.NotifyLeaveReliever(Leave."Application No");
-            end else
-                HRMgnt.NotifyLeaveReliever(Leave."Application No");
-        end;
-    end;
-
     procedure ReopenLeave(var LeaveReq: Record "Leave Application")
     var
         Leave: Record "Leave Application";
@@ -65,6 +45,35 @@ codeunit 52004 "Workflow Responses HR"
             Leave.Modify(true);
         end;
     end;
+
+    procedure ReleaseLeave(var LeaveReq: Record "Leave Application")
+    var
+        Leave: Record "Leave Application";
+    begin
+        Leave.Reset();
+        Leave.SetRange("Application No", LeaveReq."Application No");
+        if Leave.FindFirst() then begin
+            // Message('Current Leave status is %1', Leave.Status);
+            Leave.Validate(Status, Leave.Status::Released);
+            Leave.Modify(true);
+            //Message('Leave status is %1', Leave.Status);
+            HRMgnt.LeaveApplication(Leave."Application No");
+
+            HRMgnt.NotifyLeaveReliever(Leave."Application No");
+            // Message('2 Leave status is %1', Leave.Status);
+            //if guiAllowed then begin
+            //if Confirm('Do you want to notify the leave applicant and their reliever(s)', false) then
+
+            // end else
+            //  HRMgnt.NotifyLeaveReliever(Leave."Application No");
+        end;
+        Leave.Reset();
+        // Leave.SetRange("Application No", LeaveReq."Application No");
+        // if Leave.FindFirst() then
+        //     HRMgnt.LeaveApplication(Leave."Application No");
+    end;
+
+
 
     procedure ReleaseTrainingRequest(var TrainingReq: Record "Training Request")
     var

@@ -345,9 +345,9 @@ codeunit 52001 "HR Management"
     var
         AccPeriod: Record "Accounting Period";
         PeriodStart: Date;
-       
+
     begin
-       
+
         AccPeriod.Reset();
         AccPeriod.SetFilter("Starting Date", '>=%1', CalcDate('<-CM>', ApplicationDate));
         if AccPeriod.FindFirst() then
@@ -684,44 +684,53 @@ codeunit 52001 "HR Management"
         Employee: Record Employee;
         LeaveLedg: Record "HR Leave Ledger Entries";
         LeaveApp: Record "Leave Application";
+        leaveline: Record "Leave Application Type";
     begin
         LeaveApp.Get(LeaveAppNo);
-
         Employee.Get(LeaveApp."Employee No");
         Employee.SetRange("Leave Type Filter", LeaveApp."Leave Code");
         Employee.SetRange("Leave Period Filter", LeaveApp."Leave Period");
         Employee.CalcFields("Leave Balance Brought Forward");
 
-        LeaveLedg.Init();
-        LeaveLedg."Entry No." := LeaveLedg.GetNextEntryNo();
-        LeaveLedg."Document No." := LeaveAppNo;
-        LeaveLedg."Leave Type" := LeaveApp."Leave Code";
-        LeaveLedg."Leave Start Date" := LeaveApp."Start Date";
-        LeaveLedg."Leave End Date" := LeaveApp."End Date";
-        LeaveLedg."Leave Return Date" := LeaveApp."Resumption Date";
-        LeaveLedg."Leave Approval Date" := Today;
-        LeaveLedg."Leave Date" := Today;
-        LeaveLedg."Leave Period" := GetLeavePeriod(LeaveApp."Start Date");
-        LeaveLedg."Leave Application No." := LeaveApp."Application No";
-        LeaveLedg."Leave Posting Description" := 'Leave Application';
-        LeaveLedg."Transaction Type" := LeaveLedg."Transaction Type"::"Leave Application";
-        LeaveLedg."Leave Entry Type" := LeaveLedg."Leave Entry Type"::Negative;
-        LeaveLedg."User ID" := LeaveApp."User ID";
-        if LeaveLedg."Leave Entry Type" = LeaveLedg."Leave Entry Type"::Negative then
-            LeaveLedg."No. of days" := -LeaveApp."Days Applied"
-        else
-            LeaveLedg."No. of days" := LeaveApp."Days Applied";
-        LeaveLedg."Staff No." := LeaveApp."Employee No";
-        LeaveLedg."Staff Name" := CopyStr(LeaveApp."Employee Name", 1, MaxStrLen(LeaveLedg."Staff Name"));
-        LeaveLedg."Job ID" := Employee."Job Position";
-        LeaveLedg."Job Group" := CopyStr(Employee."Salary Scale", 1, MaxStrLen(LeaveLedg."Job Group"));
-        LeaveLedg."Contract Type" := CopyStr(Employee."Nature of Employment", 1, MaxStrLen(LeaveLedg."Contract Type"));
-        LeaveLedg."Global Dimension 1 Code" := Employee."Global Dimension 1 Code";
-        LeaveLedg."Global Dimension 2 Code" := Employee."Global Dimension 2 Code";
-        LeaveLedg."Leave Period Code" := LeaveApp."Leave Period";
-        if LeaveLedg."No. of days" <> 0 then
-            LeaveLedg.Insert();
-            Message('Status is %1', LeaveApp.Status);
+        leaveline.Reset();
+        leaveline.SetRange(leaveline."Leave Code", LeaveAppNo);
+        if leaveline.Find('-') then
+            repeat
+                if leaveline."Leave Code" <> LeaveApp."Leave Code" then
+                    Message('The Leave Code %1 does not match the one selected in the application %2', leaveline."Leave Code", LeaveApp."Leave Code");
+                LeaveLedg.Init();
+                LeaveLedg."Entry No." := LeaveLedg.GetNextEntryNo();
+                LeaveLedg."Document No." := LeaveAppNo;
+                LeaveLedg."Leave Type" := leaveline."Leave Type";
+                LeaveLedg."Leave Start Date" := leaveline."Start Date";
+                LeaveLedg."Leave End Date" := leaveline."End Date";
+                LeaveLedg."Leave Return Date" := leaveline."Resumption Date";
+                LeaveLedg."Leave Approval Date" := Today;
+                LeaveLedg."Leave Date" := Today;
+                LeaveLedg."Leave Period" := GetLeavePeriod(leaveline."Start Date");
+                LeaveLedg."Leave Application No." := leaveline."Leave Code";
+                LeaveLedg."Leave Posting Description" := 'Leave Application';
+
+                LeaveLedg."Transaction Type" := LeaveLedg."Transaction Type"::"Leave Application";
+                LeaveLedg."Leave Entry Type" := LeaveLedg."Leave Entry Type"::Negative;
+
+                LeaveLedg."User ID" := LeaveApp."User ID";
+                if LeaveLedg."Leave Entry Type" = LeaveLedg."Leave Entry Type"::Negative then
+                    LeaveLedg."No. of days" := -leaveline."Days Applied"
+                else
+                    LeaveLedg."No. of days" := leaveline."Days Applied";
+                LeaveLedg."Staff No." := leaveline."Employee No";
+                LeaveLedg."Staff Name" := CopyStr(leaveline."Employee Name", 1, MaxStrLen(LeaveLedg."Staff Name"));
+                LeaveLedg."Job ID" := Employee."Job Position";
+                LeaveLedg."Job Group" := CopyStr(Employee."Salary Scale", 1, MaxStrLen(LeaveLedg."Job Group"));
+                LeaveLedg."Contract Type" := CopyStr(Employee."Nature of Employment", 1, MaxStrLen(LeaveLedg."Contract Type"));
+                LeaveLedg."Global Dimension 1 Code" := Employee."Global Dimension 1 Code";
+                LeaveLedg."Global Dimension 2 Code" := Employee."Global Dimension 2 Code";
+                LeaveLedg."Leave Period Code" := leaveline."Leave Period"; //Leav."Leave Period";
+                if LeaveLedg."No. of days" <> 0 then
+                    LeaveLedg.Insert();
+            until leaveline.Next() = 0;
+        Message('Status is %1', LeaveApp.Status);
     end;
 
     procedure LeaveRecall(LeaveRecNo: Code[20])
@@ -807,7 +816,7 @@ codeunit 52001 "HR Management"
         Employee: Record Employee;
         HRSetup: Record "Human Resources Setup";
         LeaveApp: Record "Leave Application";
-        LeaveRelievers: Record "Leave Relievers";
+        LeaveRelievers: Record "Leave Application Type";
         UserSetup: Record "User Setup";
         Email: Codeunit Email;
         EmailMessage: Codeunit "Email Message";
