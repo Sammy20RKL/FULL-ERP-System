@@ -47,6 +47,19 @@ Error(EmployeeRetiredErr); */
                     Message('Kindly specify Cause For Inactivity');
             end;
         }
+        modify("No.")
+        {
+            trigger OnAfterValidate()
+            begin
+                if "Employee Type" = "Employee Type"::"Board Member" then begin
+                    if "No." <> xRec."No." then begin
+                        HumanResSetup.Get();
+                        NoSeriesMgt.TestManual(HumanResSetup."Trustee Nos");
+                        "No. Series" := '';
+                    end;
+                end;
+            end;
+        }
         field(52000; "Date of Birth - Age"; Text[50])
         {
             DataClassification = CustomerContent;
@@ -271,8 +284,7 @@ Error(EmployeeRetiredErr); */
 
             trigger OnValidate()
             begin
-                //if (strlen("Bank Account Number") < ) or (strlen("Bank Account Number") > 13) then
-                //  Error('Bank Account Number can not be less than 8 and more than 13 characters');
+
             end;
         }
         field(52032; "Posting Group"; Code[10])
@@ -284,24 +296,7 @@ Error(EmployeeRetiredErr); */
 
             trigger OnValidate()
             begin
-                /*
-                if xRec."Posting Group"='PROBATION' then
-                begin
-                
-                 if "Date Of Join"<>0D then
-                 begin
-                   NoofMonthsWorked:=0;
-                   Nextmonth:="Date Of Join";
-                   repeat
-                      Nextmonth:=CalcDate('1M',Nextmonth);
-                      NoofMonthsWorked:=NoofMonthsWorked+1;
-                   until NoofMonthsWorked=HumanResSetup."Probation Period(Months)";
-                      EndDate:=Nextmonth;
-                 end;
-                 if EndDate>Today then
-                   Error('You cannot change status from Probation before the probation period has expired');
-                end;
-                */
+
 
             end;
         }
@@ -484,18 +479,7 @@ Error(EmployeeRetiredErr); */
                     Jobs.SetRange(Jobs."Job ID", Position);
                     if Jobs.Find('-') then
                         "Job Title" := Jobs."Job Description";
-                    /*Payroll.Copy(Rec);
-                    Payroll.Reset();
-                    Payroll.SetRange(Payroll."No.","No.");
-                    if Payroll.Find('-') then begin
-                        Payroll."Salary Scheme Category":=Jobs.Category;
-                        Payroll."Salary Steps":=Jobs.Grade;
-                      //  Payroll.VALIDATE(Payroll."Salary Steps");
-                        Payroll.Modify();
-                    end;*/
-                    //"Salary Scheme Category":=Jobs.Category;
-                    //"Salary Steps":=Jobs.Grade;
-                    //MODIFY;
+
                 end;
 
             end;
@@ -1054,11 +1038,7 @@ Error(EmployeeRetiredErr); */
             trigger OnValidate()
             begin
                 Validate("Contract Start Date");
-                /*
-                if "Contract Type"="Contract Type"::"Long-Term" then
-                  "Contract Length">'<6M>' else
-                  Error('The Contract Period Should be Greater than 6 Months');
-                */
+
 
             end;
         }
@@ -1170,7 +1150,7 @@ Error(EmployeeRetiredErr); */
         field(52131; "Debtor Code"; Code[20])
         {
             DataClassification = CustomerContent;
-            TableRelation = Customer where ("Customer Type"=filter("Imprest Advance"));
+            TableRelation = Customer where("Customer Type" = filter("Imprest Advance"));
             Caption = 'Debtor Code';
         }
         field(52132; "Current Leave Period"; Code[20])
@@ -1481,7 +1461,7 @@ Error(EmployeeRetiredErr); */
         field(53024; "Salary Advance Debtors"; Code[20])
         {
             DataClassification = CustomerContent;
-            TableRelation = Customer where ("Customer Type"=filter("Staff Advance"));
+            TableRelation = Customer where("Customer Type" = filter("Staff Advance"));
             Caption = 'Salary Advance Debtors';
 
             trigger OnValidate()
@@ -1500,13 +1480,19 @@ Error(EmployeeRetiredErr); */
 
     trigger OnInsert()
     begin
+
         if "Employee Type" = "Employee Type"::"Board Member" then begin
-            HumanResSetup.Get();
-            HumanResSetup.TestField("Trustee Nos");
+
+            if "No." = '' then begin
+                HumanResSetup.Get();
+                HumanResSetup.TestField("Trustee Nos");
+                NoSeriesMgt.InitSeries(HumanResSetup."Trustee Nos", xRec."No. Series", 0D, "No.", "No. Series");
+            end;
         end;
     end;
 
     var
+        NoSeriesMgt: Codeunit NoSeriesManagement;
         Branches: Record "Bank Branches";
         Banks: Record Banks;
         Jobs: Record "Company Job";

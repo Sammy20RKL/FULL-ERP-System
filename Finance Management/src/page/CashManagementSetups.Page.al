@@ -157,6 +157,11 @@ page 51000 "Cash Management Setups"
                     Caption = 'Cheque Reject Period';
                     ToolTip = 'Specifies the value of allowed cheque period';
                 }
+                field("Bank Reconciliation Nos"; Rec."Bank Reconciliation Nos")
+                {
+
+                    ToolTip = 'Specifies the value of';
+                }
             }
             group(Numbering)
             {

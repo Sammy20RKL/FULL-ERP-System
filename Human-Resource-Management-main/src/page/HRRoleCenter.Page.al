@@ -198,6 +198,12 @@ page 52121 "HR Role Center"
             {
                 Caption = 'Board Members';
                 Image = HumanResources;
+                action("Trustee Create")
+                {
+                    Caption = 'Create Board Members';
+                    RunObject = page "Board MemberList";
+                    ToolTip = 'Executes the Board Members action';
+                }
                 action("Trustee Employees")
                 {
                     Caption = 'Board Members';

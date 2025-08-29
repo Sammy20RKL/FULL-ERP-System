@@ -7,6 +7,8 @@ page 52178 "Trustee Employee Card"
 
     layout
     {
+
+        
         area(content)
         {
             group(General)
@@ -732,6 +734,8 @@ page 52178 "Trustee Employee Card"
                 Visible = true;
             }
         }
+    
+    
     }
 
     actions
@@ -1373,12 +1377,30 @@ page 52178 "Trustee Employee Card"
         DisabilityView := false;
     end;
 
+    trigger OnAfterGetCurrRecord()
+    var
+        Employee: Record Employee;
+        EmployeeTemplMgt: Codeunit "Employee Templ. Mgt.";
+    begin
+        if not NewMode then
+            exit;
+        NewMode := false;
+
+        if EmployeeTemplMgt.InsertEmployeeFromTemplate(Employee) then begin
+            //Copy(Employee);
+            CurrPage.Update();
+        end else
+            if EmployeeTemplMgt.TemplatesAreNotEmpty() then
+                CurrPage.Close();
+    end;
+
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
         Rec."Employee Type" := Rec."Employee Type"::"Board Member";
         Rec."Employment Type" := Rec."Employment Type"::Trustee;
         Rec."Secondary Employee" := true;
         Rec."Pays tax?" := true;
+
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
@@ -1438,6 +1460,9 @@ page 52178 "Trustee Employee Card"
     end;
 
     var
+
+        NewMode: Boolean;
+
         Banks: Record Banks;
         Employee: Record Employee;
         EmployeeChange: Record "Employee Change Request";
