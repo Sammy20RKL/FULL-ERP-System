@@ -118,6 +118,11 @@ page 53095 "Procurement Evaluation Card"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Calculation Type field.';
                 }
+                field("Process Type"; Rec."Process Type")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Process Type field.';
+                }
                 field("Remarks"; RemarksTxt)
                 {
                     Caption = 'General Remarks';
@@ -309,8 +314,10 @@ page 53095 "Procurement Evaluation Card"
 
                 trigger OnAction()
                 begin
+                    //mk
                     if Confirm('Are you sure you want to Generate an LPO?', false) then
                         ProcurementManagement.GenerateOrderFromProcurementEvaluation(Rec);
+                    Rec."Calculation Type" := Rec."Calculation Type"::"Per Item";
 
                     CurrPage.Close();
                 end;

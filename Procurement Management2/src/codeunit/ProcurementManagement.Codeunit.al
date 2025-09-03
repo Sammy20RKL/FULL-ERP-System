@@ -845,6 +845,192 @@ codeunit 53000 "Procurement Management"
         end else
             Error(AwardAtLeastOneVendorErr);
     end;
+    //***************************************************************************************************
+    procedure GenerateOrderFromProcurementEvaluationItem(var IR: Record "Procurement Evaluation Header")
+    var
+        ProspectiveSuppliers: Record "Prospective Suppliers";
+        PurchHeader: Record "Purchase Header";
+        PurchLine: Record "Purchase Line";
+        PurchSetup: Record "Purchases & Payables Setup";
+        IRLine: Record "Procurement Evaluation Line";
+        IRLine2: Record "Procurement Evaluation Line";
+        TenderRec: Record "Procurement Request";
+        DocAttachRec: Record "Document Attachment";
+        Committement: Codeunit "Commitments Mgt Procurement";
+        Item: Record Item;
+        NoseriesMgt: Codeunit NoSeriesManagement;
+        DocumentAttachment: Codeunit "Document Attachment Custom";
+        TempBlob: Codeunit "Temp Blob";
+        QuoteFinancialEvaluation: Report "Quote Financial Evaluation";
+        TenderFinancialEvaluation: Report "Tender Financial Evaluation";
+        AwardAtLeastOneVendorErr: Label 'Please award at least one supplier';
+        OrderCreatedSuccessMsg: Label 'Order No %1 has been created';
+        DocNo, LPONo : Code[50];
+        VendNo: Code[50];
+        LineNo: Integer;
+        AttachInstream: Instream;
+        AttachOutstream: Outstream;
+        PurchRecRef: RecordRef;
+        FileName: Text;
+        IRCopy: Record "Procurement Evaluation Header";
+    begin
+        IR.TestField("LPO/Contract Generated", false);
+
+        IRLine.Reset();
+        IRLine.SetRange(IRLine."Document No.", IR."No.");
+        IRLine.SetRange(IRLine.Awarded, true);
+        IRLine.SetFilter(IRLine.Quantity, '>%1', 0);
+        IRLine.SetRange("LPO/Contract Generated", false);
+        if IRLine.FindSet() then begin
+            repeat
+                PurchSetup.Get();
+                IRLine2.Reset();
+                IRLine2.SetRange(IRLine2."Document No.", IRLine."Document No.");
+                IRLine2.SetRange(IRLine2.Awarded, IRLine.Awarded);
+                IRLine2.SetRange(IRLine2."Vendor No", IRLine."Vendor No");
+                if IRLine2.FindSet() then begin
+                    //Get Vendor No. mjk
+                    GetAwardedSupplierVendorNo(IRLine2, VendNo);
+
+                    DocNo := NoseriesMgt.GetNextNo(PurchSetup."Order Nos.", 0D, true);
+                    PurchHeader.Init();
+                    PurchHeader.Validate("No.");
+                    PurchHeader."No." := DocNo;
+                    PurchHeader."Document Type" := PurchHeader."Document Type"::Order;
+                    PurchHeader."No. Printed" := 0;
+                    PurchHeader."Quote No." := IR."No.";
+                    PurchHeader.Status := PurchHeader.Status::Open;
+                    PurchHeader."Responsibility Center" := IR."Responsibility Centre";
+                    PurchHeader.InitRecord();
+                    PurchHeader."Buy-from Vendor No." := VendNo;
+                    PurchHeader.Validate("Buy-from Vendor No.");
+                    PurchHeader."Document Date" := Today;
+                    PurchHeader."Requisition No." := IR."Requisition No";
+                    PurchHeader."Posting Date" := Today;
+                    PurchHeader."Order Date" := GetQuoteDate(IRLine2."Document No.");
+                    PurchHeader."Due Date" := GetQuoteDueDate(IRLine2."Document No.");
+                    PurchHeader."Assigned User ID" := UserId;
+                    PurchHeader."Document Date" := IR."Creation Date";
+                    PurchHeader."Shortcut Dimension 1 Code" := IR."Shortcut Dimension 1 Code";
+                    PurchHeader."Shortcut Dimension 2 Code" := IR."Shortcut Dimension 2 Code";
+                    PurchHeader."Dimension Set ID" := IR."Dimension Set ID";
+                    PurchHeader."RFQ No." := IR."No.";
+                    PurchHeader."Posting Description" := IR.Title;
+                    PurchHeader.Validate("Prices Including VAT", true);
+                    PurchHeader.Validate("Currency Code", IR."Currency Code");
+                    //**************************************************
+
+                    //PurchHeader."Email Sent" := IRLine2
+                    PurchHeader.Insert();
+
+                    //Get Attachments from Evaluation
+                    DocumentAttachment.CopyAttachmentsFromRec(PurchHeader.RecordId,
+                                                              Database::"Procurement Evaluation Header",
+                                                              IR."No.",
+                                                              PurchHeader."No.",
+                                                              Enum::"Attachment Document Type"::Order);
+
+                    //Attach Financial Evaluation Report To LPO
+                    case IR."Process Type" of
+                        IR."Process Type"::Tender:
+                            begin
+                                Clear(TenderFinancialEvaluation);
+
+                                IRCopy.SetRange("No.", IR."No.");
+                                if IRCopy.FindFirst() then begin
+                                    TenderFinancialEvaluation.SetTableView(IRCopy);
+                                    TempBlob.CreateOutStream(AttachOutStream);
+
+                                    if TenderFinancialEvaluation.SaveAs('', ReportFormat::Pdf, AttachOutStream) then begin
+                                        FileName := StrSubstNo('Financial Evaluation for %1.pdf', IRCopy."No.");
+                                        TempBlob.CreateInStream(AttachInstream);
+                                        PurchRecRef.Get(PurchHeader.RecordId());
+                                        DocAttachRec.SaveAttachmentFromStream(AttachInstream, PurchRecRef, FileName);
+                                    end;
+                                end;
+                            end;
+                        else begin
+                            Clear(QuoteFinancialEvaluation);
+
+                            IRCopy.SetRange("No.", IR."No.");
+                            if IRCopy.FindFirst() then begin
+                                QuoteFinancialEvaluation.SetTableView(IRCopy);
+                                TempBlob.CreateOutStream(AttachOutStream);
+
+                                if QuoteFinancialEvaluation.SaveAs('', ReportFormat::Pdf, AttachOutStream) then begin
+                                    FileName := StrSubstNo('Financial Evaluation for %1.pdf', IRCopy."No.");
+                                    TempBlob.CreateInStream(AttachInstream);
+                                    PurchRecRef.Get(PurchHeader.RecordId());
+                                    DocAttachRec.SaveAttachmentFromStream(AttachInstream, PurchRecRef, FileName);
+                                end;
+                            end;
+                        end;
+                    end;
+
+                    repeat
+                        //insert lines
+                        LineNo := LineNo + 1000;
+                        PurchLine.Init();
+                        PurchLine."Document No." := DocNo;
+                        PurchLine."Line No." := LineNo;
+                        PurchLine."Document Type" := PurchLine."Document Type"::Order;
+                        PurchLine.Type := IRLine2.Type;
+                        PurchLine.Validate(Type);
+                        if IRLine2.Type = IRLine2.Type::Item then
+                            IRLine2.TestField("Location Code");
+                        PurchLine."No." := IRLine2."No.";
+                        PurchLine.Validate("No.");
+                        PurchLine."Unit of Measure" := IRLine2."Unit of Measure";
+                        IRLine2.CalcFields(Specification);
+                        PurchLine.Specification := IRLine2.Specification;
+                        PurchLine."Location Code" := IRLine2."Location Code";
+                        PurchLine."Unit of Measure Code" := IRLine2."Unit of Measure";
+                        PurchLine."Quantity Received" := 0;
+                        PurchLine.Validate(Quantity, IRLine2.Quantity);
+                        PurchLine."Direct Unit Cost" := IRLine2."Unit Amount";
+                        PurchLine.Validate("Direct Unit Cost");
+                        PurchLine.Validate("Line Amount");
+                        PurchLine.Amount := IRLine2.Amount;
+
+
+                        // Get VAT Prod. Posting Group from Item Card when Type = Item
+                        if PurchLine.Type = PurchLine.Type::Item then begin
+                            if Item.Get(PurchLine."No.") then
+                                PurchLine."VAT Prod. Posting Group" := Item."VAT Prod. Posting Group";
+                        end else
+                            PurchLine."VAT Prod. Posting Group" := IRLine2."VAT Code";
+                        PurchLine."VAT %" := IRLine2."VAT %";
+                        PurchLine.Validate(Amount);
+                        PurchLine."Requisition No." := IR."Requisition No";
+                        PurchLine."Expected Receipt Date" := IRLine2."Expected Receipt Date";
+                        PurchLine."Shortcut Dimension 1 Code" := IR."Shortcut Dimension 1 Code";
+                        PurchLine."Shortcut Dimension 2 Code" := IR."Shortcut Dimension 2 Code";
+                        PurchLine."Dimension Set ID" := IR."Dimension Set ID";
+                        PurchLine.Insert();
+
+                        Committement.UncommitPurchRequestOnCreateLPOAfterEvaluation(IR."No.", IR."Requisition No");
+                        //Committement.EncumberPO(PurchLine, PurchHeader);
+
+                        IRLine2."Quantity Received" := IRLine2."Quantity Received" + IRLine.Quantity;
+                        //IRLine2.Quantity := IRLine2.Quantity - IRLine2."Quantity Received";
+                        IRLine2."LPO/Contract Generated" := true;
+                        IRLine2.Modify();
+                    until IRLine2.Next() = 0;
+                end;
+                Message(OrderCreatedSuccessMsg, DocNo);
+                LPONo := LPONo + ',' + DocNo;
+            until IRLine.Next() = 0;
+
+            IR.Validate("LPO/Contract No.", CopyStr(LPONo, 1, MaxStrLen(IR."LPO/Contract No.")));
+            IR.Validate("LPO/Contract Generated", true);
+            IR.Modify();
+        end else
+            Error(AwardAtLeastOneVendorErr);
+    end;
+
+
+    //************************************************************************************************
+
 
 
     procedure MakeQuote(var IR: Record "Internal Request Header")
@@ -2528,7 +2714,7 @@ codeunit 53000 "Procurement Management"
     begin
         CommitteeMember.TestField("Mobile Phone No.");
         CommitteeMember.TestField("E-Mail Address");
-        // Mjk
+
         // TenderRec.Get(CommitteeMember."Tender No.");
 
         CompanyInfo.Get();
@@ -2614,7 +2800,7 @@ codeunit 53000 "Procurement Management"
         Recipient.Add(ProspectiveSupplier."E-mail");
         EmailBody := StrSubstNo(NewBody, ProspectiveSupplier.Name, TenderEvaluationLine."Buy-from Vendor No.", CompanyInfo.Name, purchaseorder."Posting Description");
         EmailMessage.Create(Recipient, Subject, EmailBody, true);
-        ///*************************************************************************************mjk
+        ///************************************************************************************
         AwardLetter.SetTableView(TenderEvaluationLine);
 
         TempBlob.CreateOutStream(AttachOutstr);
@@ -2663,7 +2849,7 @@ codeunit 53000 "Procurement Management"
         Recipient.Add(ProspectiveSupplier."E-mail");
         EmailBody := StrSubstNo(NewBody, ProspectiveSupplier.Name, TenderEvaluation."No.", CompanyInfo.Name, TenderEvaluation.Title);
         EmailMessage.Create(Recipient, Subject, EmailBody, true);
-        ///*************************************************************************************mjk
+        ///************************************************************************************
         AwardLetter.SetTableView(TenderEvaluationLine);
 
         TempBlob.CreateOutStream(AttachOutstr);
