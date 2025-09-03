@@ -55,6 +55,7 @@ table 53055 "Supplier Price Line"
         {
             DataClassification = CustomerContent;
             Caption = 'Quoted Unit Amount';
+            DecimalPlaces = 5;
 
             trigger OnValidate()
             begin
