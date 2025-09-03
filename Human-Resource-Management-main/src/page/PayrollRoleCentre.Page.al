@@ -320,6 +320,13 @@ page 52108 "Payroll Role Centre"
                     ApplicationArea = All;
                     ToolTip = 'Executes the Transfer To Journal - Employees action';
                 }
+                action("Transfer Journal Single")
+                {
+                    Caption = 'Transfer single Payroll Entries To Journal';
+                    RunObject = report "Transfer Journal Single";
+                    ApplicationArea = All;
+                    ToolTip = 'Executes the Transfer To Journal - Employees action';
+                }
                 action("Generate Payroll EFT")
                 {
                     RunObject = report "Generate Payroll EFT";

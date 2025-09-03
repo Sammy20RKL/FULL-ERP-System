@@ -11,7 +11,7 @@
             // "authentication": "Windows",
             // "port": 9049,
 
-            "server": " http://194.233.67.105:8080/BC210/",
+            "server": "https://bcsvrc.ch-int.org/BC210/",
             "serverInstance": "BC210",
             "authentication": "UserPassword",
            "port": 7049,

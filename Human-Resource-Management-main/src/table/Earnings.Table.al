@@ -352,6 +352,10 @@ table 52123 "Earnings"
         {
             Caption = 'Exclude Gross Pay Deduction';
         }
+         field(74; "Paye Allocation"; Boolean)
+        {
+            Caption = 'Paye Allocation';
+        }
     }
 
     keys
