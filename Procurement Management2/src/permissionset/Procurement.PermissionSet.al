@@ -356,5 +356,6 @@ permissionset 53000 Procurement
         report "LPO New" = X,
         report "REQUEST FOR QUOTATION" = X,
         report "Tender Advert" = X,
-        page "Procurement Eva Criteria Lines" = X;
+        page "Procurement Eva Criteria Lines" = X,
+        report RFQnew = X;
 }

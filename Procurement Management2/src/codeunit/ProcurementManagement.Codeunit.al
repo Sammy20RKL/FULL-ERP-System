@@ -760,7 +760,7 @@ codeunit 53000 "Procurement Management"
                                     TempBlob.CreateOutStream(AttachOutStream);
 
                                     if TenderFinancialEvaluation.SaveAs('', ReportFormat::Pdf, AttachOutStream) then begin
-                                        FileName := StrSubstNo('Financial Evaluation for %1.pdf', IRCopy."No.");
+                                        FileName := StrSubstNo('Financial Evaluation for %1.pdf', IRLine."Vendor No");
                                         TempBlob.CreateInStream(AttachInstream);
                                         PurchRecRef.Get(PurchHeader.RecordId());
                                         DocAttachRec.SaveAttachmentFromStream(AttachInstream, PurchRecRef, FileName);
@@ -776,7 +776,10 @@ codeunit 53000 "Procurement Management"
                                 TempBlob.CreateOutStream(AttachOutStream);
 
                                 if QuoteFinancialEvaluation.SaveAs('', ReportFormat::Pdf, AttachOutStream) then begin
-                                    FileName := StrSubstNo('Financial Evaluation for %1.pdf', IRCopy."No.");
+                                    //FileName := StrSubstNo('Financial Evaluation for %1.pdf', IRCopy."No.");
+                                    // IRLine."Vendor No"
+                                    FileName := StrSubstNo('Financial Evaluation for %1.pdf', IRLine."Vendor No");
+
                                     TempBlob.CreateInStream(AttachInstream);
                                     PurchRecRef.Get(PurchHeader.RecordId());
                                     DocAttachRec.SaveAttachmentFromStream(AttachInstream, PurchRecRef, FileName);

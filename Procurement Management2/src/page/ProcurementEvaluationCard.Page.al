@@ -120,6 +120,7 @@ page 53095 "Procurement Evaluation Card"
                 }
                 field("Process Type"; Rec."Process Type")
                 {
+                    Visible = false;
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Process Type field.';
                 }

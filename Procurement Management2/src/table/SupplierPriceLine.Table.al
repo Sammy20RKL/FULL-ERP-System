@@ -56,10 +56,6 @@ table 53055 "Supplier Price Line"
             DataClassification = CustomerContent;
             Caption = 'Quoted Unit Amount';
             DecimalPlaces = 5;
-<<<<<<< HEAD
-=======
-
->>>>>>> caf513357bef7b7907c57a396e6ed21bb005adbb
             trigger OnValidate()
             begin
                 if "Unit Amount" < 0 then
