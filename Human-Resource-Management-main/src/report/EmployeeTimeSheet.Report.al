@@ -28,13 +28,22 @@ report 52119 "Employee Time Sheet"
         {
             area(Content)
             {
-                // group(GroupName)
-                // {
-                //     field(Name; SourceExpression)
-                //     {
+                group(Period)
 
-                //     }
-                // }
+                {
+
+                    field(startDate; startDate)
+                    {
+                        Caption = 'Start Period';
+
+                    }
+                    field(EndDate; EndDate)
+                    {
+                        Caption = 'End Period';
+
+
+                    }
+                }
             }
         }
 
@@ -61,4 +70,7 @@ report 52119 "Employee Time Sheet"
 
     var
         myInt: Integer;
+        startDate: Date;
+        EndDate: Date;
+        monthly: Date;
 }

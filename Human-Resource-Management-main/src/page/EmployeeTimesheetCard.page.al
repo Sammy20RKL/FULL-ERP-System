@@ -86,11 +86,51 @@ page 52312 "Employee Timesheet card"
 
                 end;
             }
+            action(calculate)
+            {
+                trigger OnAction()
+                begin
+                    //                     FromDate:=StartDate;
+
+                    // ToDate:=CALCDATE('-1D',CALCDATE('1M',StartDate));
+                    // EVALUATE(FromDateS,FORMAT(FromDate));
+                    // EVALUATE(ToDateS,FORMAT(ToDate));
+
+
+                    FromDate := CalcDate('-CM', Rec."Payroll Period");
+                    ToDate := CALCDATE('-1D', CALCDATE('1M', Rec."Payroll Period"));
+                    Message('from is %1...#...ToDate is %2', FromDate, ToDate);
+                    EVALUATE(FromDateS, FORMAT(startDate));
+                    EVALUATE(ToDateS, FORMAT(EndDate));
+                    DateFilter := FromDateS + '..' + ToDateS;
+
+                    CustomizedCalendarChange.Reset();
+                    CustomizedCalendarChange.SetFilter(Date, DateFilter);
+                    if CustomizedCalendarChange.Find('-') then
+                        TDays := Rec.count;//TDays + CustomizedCalendarChange."Entry No.";
+                    Message('Tday is %1', TDays);
+
+                end;
+            }
         }
     }
 
     var
+        ToDate: Date;
+        FromDate: Date;
+        TDays: Integer;
+        DateFilter: Text;
+        ToDateS: Text;
+        FromDateS: Text;
         myInt: Integer;
+        BaseCalendar: Record "Base Calendar";
+        startDate: Date;
+        EndDate: Date;
+        StartInt: Integer;
+        EndInt: Integer;
+        Monthperiod: Date;
+        DaysOfMonth: Integer;
+        CustomizedCalendarChange: Record "Customized Calendar Change";
 }
 
 
