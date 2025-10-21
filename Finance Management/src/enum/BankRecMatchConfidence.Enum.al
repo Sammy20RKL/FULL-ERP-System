@@ -1,4 +1,4 @@
-enum 51008 "Bank Rec. Match Confidence"
+enum 51008 "Bank Rec. Match Confidence1"
 {
     Extensible = true;
     AssignmentCompatibility = true;

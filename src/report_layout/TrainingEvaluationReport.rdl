@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Comp_Name">
+          <DataField>Comp_Name</DataField>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="Tel_No">
+          <DataField>Tel_No</DataField>
+        </Field>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+        </Field>
+        <Field Name="Post_Code">
+          <DataField>Post_Code</DataField>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+        </Field>
+        <Field Name="Website">
+          <DataField>Website</DataField>
+        </Field>
+        <Field Name="Country">
+          <DataField>Country</DataField>
+        </Field>
+        <Field Name="Header_Training_Evaluation_No_">
+          <DataField>Header_Training_Evaluation_No_</DataField>
+        </Field>
+        <Field Name="Header_Personal_No_">
+          <DataField>Header_Personal_No_</DataField>
+        </Field>
+        <Field Name="Header_Name_of_the_participant">
+          <DataField>Header_Name_of_the_participant</DataField>
+        </Field>
+        <Field Name="Header_Training_Name">
+          <DataField>Header_Training_Name</DataField>
+        </Field>
+        <Field Name="Header_Location">
+          <DataField>Header_Location</DataField>
+        </Field>
+        <Field Name="Header_Country">
+          <DataField>Header_Country</DataField>
+        </Field>
+        <Field Name="Header_Commencement_Date">
+          <DataField>Header_Commencement_Date</DataField>
+        </Field>
+        <Field Name="Header_Completion_Date">
+          <DataField>Header_Completion_Date</DataField>
+        </Field>
+        <Field Name="Header_Duration">
+          <DataField>Header_Duration</DataField>
+        </Field>
+        <Field Name="Lines_Description">
+          <DataField>Lines_Description</DataField>
+        </Field>
+        <Field Name="Lines_Action_Plan">
+          <DataField>Lines_Action_Plan</DataField>
+        </Field>
+        <Field Name="Lines_How_To_achieve">
+          <DataField>Lines_How_To_achieve</DataField>
+        </Field>
+        <Field Name="Lines_Results_to_be_achieved">
+          <DataField>Lines_Results_to_be_achieved</DataField>
+        </Field>
+        <Field Name="Lines_Timeline">
+          <DataField>Lines_Timeline</DataField>
+        </Field>
+        <Field Name="Lines_Evaluation_Line_Type">
+          <DataField>Lines_Evaluation_Line_Type</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Code_ProjectHeader">
+          <DataField>Code_ProjectHeader</DataField>
+        </Field>
+        <Field Name="Description_ProjectHeader">
+          <DataField>Description_ProjectHeader</DataField>
+        </Field>
+        <Field Name="StartDate_ProjectHeader">
+          <DataField>StartDate_ProjectHeader</DataField>
+        </Field>
+        <Field Name="EndDate_ProjectHeader">
+          <DataField>EndDate_ProjectHeader</DataField>
+        </Field>
+        <Field Name="Cost_ProjectHeader">
+          <DataField>Cost_ProjectHeader</DataField>
+        </Field>
+        <Field Name="Cost_ProjectHeaderFormat">
+          <DataField>Cost_ProjectHeaderFormat</DataField>
+        </Field>
+        <Field Name="Status_ProjectHeader">
+          <DataField>Status_ProjectHeader</DataField>
+        </Field>
+        <Field Name="Remarks_ProjectHeader">
+          <DataField>Remarks_ProjectHeader</DataField>
+        </Field>
+        <Field Name="Source_ProjectHeader">
+          <DataField>Source_ProjectHeader</DataField>
+        </Field>
+        <Field Name="WorkPlanCode_ProjectHeader">
+          <DataField>WorkPlanCode_ProjectHeader</DataField>
+        </Field>
+        <Field Name="Progress_ProjectHeader">
+          <DataField>Progress_ProjectHeader</DataField>
+        </Field>
+        <Field Name="ShortcutDimension1Code_ProjectHeader">
+          <DataField>ShortcutDimension1Code_ProjectHeader</DataField>
+        </Field>
+        <Field Name="Logo_">
+          <DataField>Logo_</DataField>
+        </Field>
+        <Field Name="Milestone_">
+          <DataField>Milestone_</DataField>
+        </Field>
+        <Field Name="Percentage_of_Implementation">
+          <DataField>Percentage_of_Implementation</DataField>
+        </Field>
+        <Field Name="Percentage_of_ImplementationFormat">
+          <DataField>Percentage_of_ImplementationFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

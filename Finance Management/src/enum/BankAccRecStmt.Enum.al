@@ -1,4 +1,4 @@
-enum 51009 "Bank Acc. Rec. Stmt. Type"
+enum 51009 "Bank Acc. Rec. Stmt. Type1"
 {
     Extensible = true;
     AssignmentCompatibility = true;

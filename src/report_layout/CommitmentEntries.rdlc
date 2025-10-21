@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CommitmentNo_CommitmentEntries">
+          <DataField>CommitmentNo_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="CommitmentDate_CommitmentEntries">
+          <DataField>CommitmentDate_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="CommitmentType_CommitmentEntries">
+          <DataField>CommitmentType_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="EntryNo_CommitmentEntries">
+          <DataField>EntryNo_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="DocumentType_CommitmentEntries">
+          <DataField>DocumentType_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="DocumentNo_CommitmentEntries">
+          <DataField>DocumentNo_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="Account_CommitmentEntries">
+          <DataField>Account_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="User_CommitmentEntries">
+          <DataField>User_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="AccountNo_CommitmentEntries">
+          <DataField>AccountNo_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="AccountName_CommitmentEntries">
+          <DataField>AccountName_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="Description_CommitmentEntries">
+          <DataField>Description_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="AccountType_CommitmentEntries">
+          <DataField>AccountType_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="UncommittmentDate_CommitmentEntries">
+          <DataField>UncommittmentDate_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="CommittedAmount_CommitmentEntries">
+          <DataField>CommittedAmount_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="CommittedAmount_CommitmentEntriesFormat">
+          <DataField>CommittedAmount_CommitmentEntriesFormat</DataField>
+        </Field>
+        <Field Name="No_CommitmentEntries">
+          <DataField>No_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="GlobalDimension1_CommitmentEntries">
+          <DataField>GlobalDimension1_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="GlobalDimension2_CommitmentEntries">
+          <DataField>GlobalDimension2_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="LineNo_CommitmentEntries">
+          <DataField>LineNo_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="DimensionSetID_CommitmentEntries">
+          <DataField>DimensionSetID_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="LastModifiedBy_CommitmentEntries">
+          <DataField>LastModifiedBy_CommitmentEntries</DataField>
+        </Field>
+        <Field Name="Name_CompanyInformation">
+          <DataField>Name_CompanyInformation</DataField>
+        </Field>
+        <Field Name="AddressCompanyInformation">
+          <DataField>AddressCompanyInformation</DataField>
+        </Field>
+        <Field Name="CityCompanyInformation">
+          <DataField>CityCompanyInformation</DataField>
+        </Field>
+        <Field Name="Phone_No_CompanyInformation">
+          <DataField>Phone_No_CompanyInformation</DataField>
+        </Field>
+        <Field Name="Fax_No_CompanyInformation">
+          <DataField>Fax_No_CompanyInformation</DataField>
+        </Field>
+        <Field Name="Picture_CompanyInformation">
+          <DataField>Picture_CompanyInformation</DataField>
+        </Field>
+        <Field Name="E_Mail_CompanyInformation">
+          <DataField>E_Mail_CompanyInformation</DataField>
+        </Field>
+        <Field Name="Home_Page_CompanyInformation">
+          <DataField>Home_Page_CompanyInformation</DataField>
+        </Field>
+        <Field Name="FilteredAccountNo">
+          <DataField>FilteredAccountNo</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

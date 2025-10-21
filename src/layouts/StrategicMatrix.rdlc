@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyInformation_Name">
+          <DataField>CompanyInformation_Name</DataField>
+        </Field>
+        <Field Name="CompanyInformation_Picture">
+          <DataField>CompanyInformation_Picture</DataField>
+        </Field>
+        <Field Name="Code_Strategies">
+          <DataField>Code_Strategies</DataField>
+        </Field>
+        <Field Name="StrategicName_Strategies">
+          <DataField>StrategicName_Strategies</DataField>
+        </Field>
+        <Field Name="Purpose_Strategies">
+          <DataField>Purpose_Strategies</DataField>
+        </Field>
+        <Field Name="EntryNo_Strategies">
+          <DataField>EntryNo_Strategies</DataField>
+        </Field>
+        <Field Name="ObjectiveCode_Strategies">
+          <DataField>ObjectiveCode_Strategies</DataField>
+        </Field>
+        <Field Name="ObjectiveDescription_Strategies">
+          <DataField>ObjectiveDescription_Strategies</DataField>
+        </Field>
+        <Field Name="StrategicCode_Strategies">
+          <DataField>StrategicCode_Strategies</DataField>
+        </Field>
+        <Field Name="HeaderNo_Strategies">
+          <DataField>HeaderNo_Strategies</DataField>
+        </Field>
+        <Field Name="StrategicDescription_Strategies">
+          <DataField>StrategicDescription_Strategies</DataField>
+        </Field>
+        <Field Name="Description_Strategies">
+          <DataField>Description_Strategies</DataField>
+        </Field>
+        <Field Name="Activity_Strategies">
+          <DataField>Activity_Strategies</DataField>
+        </Field>
+        <Field Name="Output_Strategies">
+          <DataField>Output_Strategies</DataField>
+        </Field>
+        <Field Name="PerformanceIndicator_Strategies">
+          <DataField>PerformanceIndicator_Strategies</DataField>
+        </Field>
+        <Field Name="ResponsiblePerson_Strategies">
+          <DataField>ResponsiblePerson_Strategies</DataField>
+        </Field>
+        <Field Name="AllocationI_Strategies">
+          <DataField>AllocationI_Strategies</DataField>
+        </Field>
+        <Field Name="AllocationI_StrategiesFormat">
+          <DataField>AllocationI_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="AllocationII_Strategies">
+          <DataField>AllocationII_Strategies</DataField>
+        </Field>
+        <Field Name="AllocationII_StrategiesFormat">
+          <DataField>AllocationII_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="AllocationIII_Strategies">
+          <DataField>AllocationIII_Strategies</DataField>
+        </Field>
+        <Field Name="AllocationIII_StrategiesFormat">
+          <DataField>AllocationIII_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Allocationiv_Strategies">
+          <DataField>Allocationiv_Strategies</DataField>
+        </Field>
+        <Field Name="Allocationiv_StrategiesFormat">
+          <DataField>Allocationiv_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Allocationv_Strategies">
+          <DataField>Allocationv_Strategies</DataField>
+        </Field>
+        <Field Name="Allocationv_StrategiesFormat">
+          <DataField>Allocationv_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="TotalCost_Strategies">
+          <DataField>TotalCost_Strategies</DataField>
+        </Field>
+        <Field Name="TotalCost_StrategiesFormat">
+          <DataField>TotalCost_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Descript">
+          <DataField>Descript</DataField>
+        </Field>
+        <Field Name="Year1Actual_Strategies">
+          <DataField>Year1Actual_Strategies</DataField>
+        </Field>
+        <Field Name="Year1Actual_StrategiesFormat">
+          <DataField>Year1Actual_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year2Actual_Strategies">
+          <DataField>Year2Actual_Strategies</DataField>
+        </Field>
+        <Field Name="Year2Actual_StrategiesFormat">
+          <DataField>Year2Actual_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year3Actual_Strategies">
+          <DataField>Year3Actual_Strategies</DataField>
+        </Field>
+        <Field Name="Year3Actual_StrategiesFormat">
+          <DataField>Year3Actual_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year4Actual_Strategies">
+          <DataField>Year4Actual_Strategies</DataField>
+        </Field>
+        <Field Name="Year4Actual_StrategiesFormat">
+          <DataField>Year4Actual_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year5Actual_Strategies">
+          <DataField>Year5Actual_Strategies</DataField>
+        </Field>
+        <Field Name="Year5Actual_StrategiesFormat">
+          <DataField>Year5Actual_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="TotalActual_Strategies">
+          <DataField>TotalActual_Strategies</DataField>
+        </Field>
+        <Field Name="TotalActual_StrategiesFormat">
+          <DataField>TotalActual_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year1Average_Strategies">
+          <DataField>Year1Average_Strategies</DataField>
+        </Field>
+        <Field Name="Year1Average_StrategiesFormat">
+          <DataField>Year1Average_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year2Average_Strategies">
+          <DataField>Year2Average_Strategies</DataField>
+        </Field>
+        <Field Name="Year2Average_StrategiesFormat">
+          <DataField>Year2Average_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year3Average_Strategies">
+          <DataField>Year3Average_Strategies</DataField>
+        </Field>
+        <Field Name="Year3Average_StrategiesFormat">
+          <DataField>Year3Average_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year4Average_Strategies">
+          <DataField>Year4Average_Strategies</DataField>
+        </Field>
+        <Field Name="Year4Average_StrategiesFormat">
+          <DataField>Year4Average_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year5Average_Strategies">
+          <DataField>Year5Average_Strategies</DataField>
+        </Field>
+        <Field Name="Year5Average_StrategiesFormat">
+          <DataField>Year5Average_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="TotalAverage_Strategies">
+          <DataField>TotalAverage_Strategies</DataField>
+        </Field>
+        <Field Name="TotalAverage_StrategiesFormat">
+          <DataField>TotalAverage_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year1Budget_Strategies">
+          <DataField>Year1Budget_Strategies</DataField>
+        </Field>
+        <Field Name="Year1Budget_StrategiesFormat">
+          <DataField>Year1Budget_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year2Budget_Strategies">
+          <DataField>Year2Budget_Strategies</DataField>
+        </Field>
+        <Field Name="Year2Budget_StrategiesFormat">
+          <DataField>Year2Budget_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year3Budget_Strategies">
+          <DataField>Year3Budget_Strategies</DataField>
+        </Field>
+        <Field Name="Year3Budget_StrategiesFormat">
+          <DataField>Year3Budget_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year4Budget_Strategies">
+          <DataField>Year4Budget_Strategies</DataField>
+        </Field>
+        <Field Name="Year4Budget_StrategiesFormat">
+          <DataField>Year4Budget_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="Year5Budget_Strategies">
+          <DataField>Year5Budget_Strategies</DataField>
+        </Field>
+        <Field Name="Year5Budget_StrategiesFormat">
+          <DataField>Year5Budget_StrategiesFormat</DataField>
+        </Field>
+        <Field Name="TotalBudget_Strategies">
+          <DataField>TotalBudget_Strategies</DataField>
+        </Field>
+        <Field Name="TotalBudget_StrategiesFormat">
+          <DataField>TotalBudget_StrategiesFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

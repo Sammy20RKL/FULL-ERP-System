@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="DescriptionSubActivities_LineObjectiveSubActivitiesCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DescriptionSubActivities_LineObjectiveSubActivitiesCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DescriptionSubActivities_LineObjectiveSubActivitiesCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Code_wPlan">
+          <DataField>Code_wPlan</DataField>
+        </Field>
+        <Field Name="Description_wPlan">
+          <DataField>Description_wPlan</DataField>
+        </Field>
+        <Field Name="ShortcutDimension1Code_wPlan">
+          <DataField>ShortcutDimension1Code_wPlan</DataField>
+        </Field>
+        <Field Name="CompanyInformation_Name">
+          <DataField>CompanyInformation_Name</DataField>
+        </Field>
+        <Field Name="CompanyInformation_Picture">
+          <DataField>CompanyInformation_Picture</DataField>
+        </Field>
+        <Field Name="Code_LineObjective">
+          <DataField>Code_LineObjective</DataField>
+        </Field>
+        <Field Name="ObjectiveCode_LineObjective">
+          <DataField>ObjectiveCode_LineObjective</DataField>
+        </Field>
+        <Field Name="Description_LineObjective">
+          <DataField>Description_LineObjective</DataField>
+        </Field>
+        <Field Name="StrategicName_LineObjectiveSubActivities">
+          <DataField>StrategicName_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="DepartMent_">
+          <DataField>DepartMent_</DataField>
+        </Field>
+        <Field Name="ObjectiveDescription_LineObjectiveSubActivities">
+          <DataField>ObjectiveDescription_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="StrategicCode_LineObjectiveSubActivities">
+          <DataField>StrategicCode_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="StrategicDescription_LineObjectiveSubActivities">
+          <DataField>StrategicDescription_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="KRACode_LineObjectiveSubActivities">
+          <DataField>KRACode_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="KRADescription_LineObjectiveSubActivities">
+          <DataField>KRADescription_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="SubActivities_LineObjectiveSubActivities">
+          <DataField>SubActivities_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Code_LineObjectiveSubActivities">
+          <DataField>Code_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Description_LineObjectiveSubActivities">
+          <DataField>Description_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="ObjectiveCode_LineObjectiveSubActivities">
+          <DataField>ObjectiveCode_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="ActivitiesCode_LineObjectiveSubActivities">
+          <DataField>ActivitiesCode_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="ResponsiblePerson_LineObjectiveSubActivities">
+          <DataField>ResponsiblePerson_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Output_LineObjectiveSubActivities">
+          <DataField>Output_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="ApprovedTotalBudget_LineObjectiveSubActivities">
+          <DataField>ApprovedTotalBudget_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="ApprovedTotalBudget_LineObjectiveSubActivitiesFormat">
+          <DataField>ApprovedTotalBudget_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="SubActivityCode_LineObjectiveSubActivities">
+          <DataField>SubActivityCode_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="DescriptionActivities_LineObjectiveSubActivities">
+          <DataField>DescriptionActivities_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="DescriptionSubActivities_LineObjectiveSubActivities">
+          <DataField>DescriptionSubActivities_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="KeyPerformanceIndicator_LineObjectiveSubActivities">
+          <DataField>KeyPerformanceIndicator_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="July_LineObjectiveSubActivities">
+          <DataField>July_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="August_LineObjectiveSubActivities">
+          <DataField>August_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="September_LineObjectiveSubActivities">
+          <DataField>September_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="October_LineObjectiveSubActivities">
+          <DataField>October_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="November_LineObjectiveSubActivities">
+          <DataField>November_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="December_LineObjectiveSubActivities">
+          <DataField>December_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="January_LineObjectiveSubActivities">
+          <DataField>January_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="February_LineObjectiveSubActivities">
+          <DataField>February_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="March_LineObjectiveSubActivities">
+          <DataField>March_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="April_LineObjectiveSubActivities">
+          <DataField>April_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="May_LineObjectiveSubActivities">
+          <DataField>May_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="June_LineObjectiveSubActivities">
+          <DataField>June_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="GOKApprovedBudget_LineObjectiveSubActivities">
+          <DataField>GOKApprovedBudget_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="GOKApprovedBudget_LineObjectiveSubActivitiesFormat">
+          <DataField>GOKApprovedBudget_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="DonorFundsApprovedBudget_LineObjectiveSubActivities">
+          <DataField>DonorFundsApprovedBudget_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="DonorFundsApprovedBudget_LineObjectiveSubActivitiesFormat">
+          <DataField>DonorFundsApprovedBudget_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="UnitofMeasure_LineObjectiveSubActivities">
+          <DataField>UnitofMeasure_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="DonorinKind_LineObjectiveSubActivities">
+          <DataField>DonorinKind_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Quarter1Target_LineObjectiveSubActivities">
+          <DataField>Quarter1Target_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Quarter1Target_LineObjectiveSubActivitiesFormat">
+          <DataField>Quarter1Target_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="Quarter2Target_LineObjectiveSubActivities">
+          <DataField>Quarter2Target_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Quarter2Target_LineObjectiveSubActivitiesFormat">
+          <DataField>Quarter2Target_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="Quarter3Target_LineObjectiveSubActivities">
+          <DataField>Quarter3Target_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Quarter3Target_LineObjectiveSubActivitiesFormat">
+          <DataField>Quarter3Target_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="Quarter4Target_LineObjectiveSubActivities">
+          <DataField>Quarter4Target_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Quarter4Target_LineObjectiveSubActivitiesFormat">
+          <DataField>Quarter4Target_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="TotalQuarterTarget_LineObjectiveSubActivities">
+          <DataField>TotalQuarterTarget_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="TotalQuarterTarget_LineObjectiveSubActivitiesFormat">
+          <DataField>TotalQuarterTarget_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="Quarter1Actual_LineObjectiveSubActivities">
+          <DataField>Quarter1Actual_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Quarter1Actual_LineObjectiveSubActivitiesFormat">
+          <DataField>Quarter1Actual_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="Quarter2Actual_LineObjectiveSubActivities">
+          <DataField>Quarter2Actual_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Quarter2Actual_LineObjectiveSubActivitiesFormat">
+          <DataField>Quarter2Actual_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="Quarter3Actual_LineObjectiveSubActivities">
+          <DataField>Quarter3Actual_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Quarter3Actual_LineObjectiveSubActivitiesFormat">
+          <DataField>Quarter3Actual_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="Quarter4Actual_LineObjectiveSubActivities">
+          <DataField>Quarter4Actual_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="Quarter4Actual_LineObjectiveSubActivitiesFormat">
+          <DataField>Quarter4Actual_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="TotalQuarterActual_LineObjectiveSubActivities">
+          <DataField>TotalQuarterActual_LineObjectiveSubActivities</DataField>
+        </Field>
+        <Field Name="TotalQuarterActual_LineObjectiveSubActivitiesFormat">
+          <DataField>TotalQuarterActual_LineObjectiveSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="Average_1">
+          <DataField>Average_1</DataField>
+        </Field>
+        <Field Name="Average_1Format">
+          <DataField>Average_1Format</DataField>
+        </Field>
+        <Field Name="Average_2">
+          <DataField>Average_2</DataField>
+        </Field>
+        <Field Name="Average_2Format">
+          <DataField>Average_2Format</DataField>
+        </Field>
+        <Field Name="Average_3">
+          <DataField>Average_3</DataField>
+        </Field>
+        <Field Name="Average_3Format">
+          <DataField>Average_3Format</DataField>
+        </Field>
+        <Field Name="Average_4">
+          <DataField>Average_4</DataField>
+        </Field>
+        <Field Name="Average_4Format">
+          <DataField>Average_4Format</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

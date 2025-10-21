@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="BatchName">
+          <DataField>BatchName</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="DocumentDate">
+          <DataField>DocumentDate</DataField>
+        </Field>
+        <Field Name="AccountType">
+          <DataField>AccountType</DataField>
+        </Field>
+        <Field Name="AccountNo">
+          <DataField>AccountNo</DataField>
+        </Field>
+        <Field Name="AccountName">
+          <DataField>AccountName</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="ExternalDocNo">
+          <DataField>ExternalDocNo</DataField>
+        </Field>
+        <Field Name="DebitAmount">
+          <DataField>DebitAmount</DataField>
+        </Field>
+        <Field Name="DebitAmountFormat">
+          <DataField>DebitAmountFormat</DataField>
+        </Field>
+        <Field Name="CreditAmount">
+          <DataField>CreditAmount</DataField>
+        </Field>
+        <Field Name="CreditAmountFormat">
+          <DataField>CreditAmountFormat</DataField>
+        </Field>
+        <Field Name="BalAccountType">
+          <DataField>BalAccountType</DataField>
+        </Field>
+        <Field Name="BalAccountNo">
+          <DataField>BalAccountNo</DataField>
+        </Field>
+        <Field Name="Dimension1Code">
+          <DataField>Dimension1Code</DataField>
+        </Field>
+        <Field Name="Dimension2Code">
+          <DataField>Dimension2Code</DataField>
+        </Field>
+        <Field Name="Currency">
+          <DataField>Currency</DataField>
+        </Field>
+        <Field Name="UserID">
+          <DataField>UserID</DataField>
+        </Field>
+        <Field Name="Picture">
+          <DataField>Picture</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+        </Field>
+        <Field Name="CompanyAddr1">
+          <DataField>CompanyAddr1</DataField>
+        </Field>
+        <Field Name="CompanyAddr2">
+          <DataField>CompanyAddr2</DataField>
+        </Field>
+        <Field Name="CompanyAddr3">
+          <DataField>CompanyAddr3</DataField>
+        </Field>
+        <Field Name="CompanyAddr4">
+          <DataField>CompanyAddr4</DataField>
+        </Field>
+        <Field Name="NumberText1">
+          <DataField>NumberText1</DataField>
+        </Field>
+        <Field Name="NumberText2">
+          <DataField>NumberText2</DataField>
+        </Field>
+        <Field Name="Balance">
+          <DataField>Balance</DataField>
+        </Field>
+        <Field Name="BalanceFormat">
+          <DataField>BalanceFormat</DataField>
+        </Field>
+        <Field Name="BalanceLCY">
+          <DataField>BalanceLCY</DataField>
+        </Field>
+        <Field Name="BalanceLCYFormat">
+          <DataField>BalanceLCYFormat</DataField>
+        </Field>
+        <Field Name="Narration">
+          <DataField>Narration</DataField>
+        </Field>
+        <Field Name="DimVisible1">
+          <DataField>DimVisible1</DataField>
+        </Field>
+        <Field Name="DimVisible2">
+          <DataField>DimVisible2</DataField>
+        </Field>
+        <Field Name="DimVisible3">
+          <DataField>DimVisible3</DataField>
+        </Field>
+        <Field Name="DimVisible4">
+          <DataField>DimVisible4</DataField>
+        </Field>
+        <Field Name="DimVisible5">
+          <DataField>DimVisible5</DataField>
+        </Field>
+        <Field Name="DimVisible6">
+          <DataField>DimVisible6</DataField>
+        </Field>
+        <Field Name="DimVisible7">
+          <DataField>DimVisible7</DataField>
+        </Field>
+        <Field Name="DimVisible8">
+          <DataField>DimVisible8</DataField>
+        </Field>
+        <Field Name="ShortcutDimCode1">
+          <DataField>ShortcutDimCode1</DataField>
+        </Field>
+        <Field Name="ShortcutDimCode2">
+          <DataField>ShortcutDimCode2</DataField>
+        </Field>
+        <Field Name="ShortcutDimCode3">
+          <DataField>ShortcutDimCode3</DataField>
+        </Field>
+        <Field Name="ShortcutDimCode4">
+          <DataField>ShortcutDimCode4</DataField>
+        </Field>
+        <Field Name="ShortcutDimCode5">
+          <DataField>ShortcutDimCode5</DataField>
+        </Field>
+        <Field Name="ShortcutDimCode6">
+          <DataField>ShortcutDimCode6</DataField>
+        </Field>
+        <Field Name="ShortcutDimCode7">
+          <DataField>ShortcutDimCode7</DataField>
+        </Field>
+        <Field Name="ShortcutDimCode8">
+          <DataField>ShortcutDimCode8</DataField>
+        </Field>
+        <Field Name="GLSetupShortcutDimCode1Caption">
+          <DataField>GLSetupShortcutDimCode1Caption</DataField>
+        </Field>
+        <Field Name="GLSetupShortcutDimCode2Caption">
+          <DataField>GLSetupShortcutDimCode2Caption</DataField>
+        </Field>
+        <Field Name="GLSetupShortcutDimCode3Caption">
+          <DataField>GLSetupShortcutDimCode3Caption</DataField>
+        </Field>
+        <Field Name="GLSetupShortcutDimCode4Caption">
+          <DataField>GLSetupShortcutDimCode4Caption</DataField>
+        </Field>
+        <Field Name="GLSetupShortcutDimCode5Caption">
+          <DataField>GLSetupShortcutDimCode5Caption</DataField>
+        </Field>
+        <Field Name="GLSetupShortcutDimCode6Caption">
+          <DataField>GLSetupShortcutDimCode6Caption</DataField>
+        </Field>
+        <Field Name="GLSetupShortcutDimCode7Caption">
+          <DataField>GLSetupShortcutDimCode7Caption</DataField>
+        </Field>
+        <Field Name="GLSetupShortcutDimCode8Caption">
+          <DataField>GLSetupShortcutDimCode8Caption</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -15,26 +15,26 @@ page 52310 "Leave Application Type"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Entry No.';
-                    // Visible = false;
+                    Visible = false;
                 }
                 field("Leave Code"; Rec."Leave Code")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Leave Code';
-                    // Visible = false;
+                    Visible = false;
                 }
                 field("Employee No"; Rec."Employee No")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Employee No';
-                    //  Visible = false;
+                    Visible = false;
                 }
                 field("Leave Period"; Rec."Leave Period")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Leave Period';
                     Editable = false;
-                    // Visible = false;
+                    Visible = false;
 
                 }
                 field("Leave Type"; Rec."Leave Type")
@@ -86,20 +86,34 @@ page 52310 "Leave Application Type"
                     NotBlank = true;
                     ToolTip = 'Specifies the value of the Resumption Date field';
                 }
-                field("Duties Taken Over By"; Rec."Duties Taken Over By")
-                {
-                    Visible = false;
-                    ToolTip = 'Specifies the value of the Duties Taken Over By field';
-                }
+
 
                 field("Leave Balance"; Rec."Leave Balance")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Leave Balance';
+                    Visible = false;
                     trigger OnValidate()
                     begin
                         CurrPage.Update();
                     end;
+
+                }
+                field("Current Leave Balance"; Rec."Current Leave Balance")
+                {
+
+                }
+                field("Total Leave Days Taken"; Rec."Total Leave Days Taken")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    Visible = false;
+
+                }
+                field("Duties Taken Over By"; Rec."Duties Taken Over By")
+                {
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the Duties Taken Over By field';
                 }
                 field("Staff No"; Rec."Staff No")
                 {
@@ -113,6 +127,7 @@ page 52310 "Leave Application Type"
                     Caption = 'Reliever Name';
                     ToolTip = 'Specifies the value of the Staff Name field';
                 }
+
             }
         }
     }

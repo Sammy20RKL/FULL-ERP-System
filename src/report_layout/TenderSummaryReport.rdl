@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_Tender">
+          <DataField>No_Tender</DataField>
+        </Field>
+        <Field Name="Title_Tender">
+          <DataField>Title_Tender</DataField>
+        </Field>
+        <Field Name="TenderItemType_Tender">
+          <DataField>TenderItemType_Tender</DataField>
+        </Field>
+        <Field Name="EvaluationCriteria_Tender">
+          <DataField>EvaluationCriteria_Tender</DataField>
+        </Field>
+        <Field Name="RequisitionNo_Tender">
+          <DataField>RequisitionNo_Tender</DataField>
+        </Field>
+        <Field Name="CreationDate_Tender">
+          <DataField>CreationDate_Tender</DataField>
+        </Field>
+        <Field Name="ShortcutDimension1Code_Tender">
+          <DataField>ShortcutDimension1Code_Tender</DataField>
+        </Field>
+        <Field Name="ShortcutDimension2Code_Tender">
+          <DataField>ShortcutDimension2Code_Tender</DataField>
+        </Field>
+        <Field Name="UserID_Tender">
+          <DataField>UserID_Tender</DataField>
+        </Field>
+        <Field Name="QuotationDeadline_Tender">
+          <DataField>QuotationDeadline_Tender</DataField>
+        </Field>
+        <Field Name="ExpectedClosingTime_Tender">
+          <DataField>ExpectedClosingTime_Tender</DataField>
+        </Field>
+        <Field Name="TechnicalPassMark_Tender">
+          <DataField>TechnicalPassMark_Tender</DataField>
+        </Field>
+        <Field Name="TechnicalPassMark_TenderFormat">
+          <DataField>TechnicalPassMark_TenderFormat</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="CompPic">
+          <DataField>CompPic</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="CompPostCode">
+          <DataField>CompPostCode</DataField>
+        </Field>
+        <Field Name="Companycity">
+          <DataField>Companycity</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompCountry">
+          <DataField>CompCountry</DataField>
+        </Field>
+        <Field Name="AppointmentNo_CommitteeMembers">
+          <DataField>AppointmentNo_CommitteeMembers</DataField>
+        </Field>
+        <Field Name="CommitteeMemberNo_CommitteeMembers">
+          <DataField>CommitteeMemberNo_CommitteeMembers</DataField>
+        </Field>
+        <Field Name="CommitteeMemberType_CommitteeMembers">
+          <DataField>CommitteeMemberType_CommitteeMembers</DataField>
+        </Field>
+        <Field Name="Name_CommitteeMembers">
+          <DataField>Name_CommitteeMembers</DataField>
+        </Field>
+        <Field Name="EMailAddress_CommitteeMembers">
+          <DataField>EMailAddress_CommitteeMembers</DataField>
+        </Field>
+        <Field Name="Role_CommitteeMembers">
+          <DataField>Role_CommitteeMembers</DataField>
+        </Field>
+        <Field Name="UserID_CommitteeMembers">
+          <DataField>UserID_CommitteeMembers</DataField>
+        </Field>
+        <Field Name="No_PurchaseRequest">
+          <DataField>No_PurchaseRequest</DataField>
+        </Field>
+        <Field Name="DocumentDate_PurchaseRequest">
+          <DataField>DocumentDate_PurchaseRequest</DataField>
+        </Field>
+        <Field Name="OrderDate_PurchaseRequest">
+          <DataField>OrderDate_PurchaseRequest</DataField>
+        </Field>
+        <Field Name="EmployeeName_PurchaseRequest">
+          <DataField>EmployeeName_PurchaseRequest</DataField>
+        </Field>
+        <Field Name="EmployeeNo_PurchaseRequest">
+          <DataField>EmployeeNo_PurchaseRequest</DataField>
+        </Field>
+        <Field Name="ReasonDescription_PurchaseRequest">
+          <DataField>ReasonDescription_PurchaseRequest</DataField>
+        </Field>
+        <Field Name="RequestedBy_PurchaseRequest">
+          <DataField>RequestedBy_PurchaseRequest</DataField>
+        </Field>
+        <Field Name="CurrencyCode_PurchaseRequest">
+          <DataField>CurrencyCode_PurchaseRequest</DataField>
+        </Field>
+        <Field Name="ProcurementPlanItem_PurchReqLines">
+          <DataField>ProcurementPlanItem_PurchReqLines</DataField>
+        </Field>
+        <Field Name="Type_PurchReqLines">
+          <DataField>Type_PurchReqLines</DataField>
+        </Field>
+        <Field Name="No_PurchReqLines">
+          <DataField>No_PurchReqLines</DataField>
+        </Field>
+        <Field Name="SupplierCategoryCode_PurchReqLines">
+          <DataField>SupplierCategoryCode_PurchReqLines</DataField>
+        </Field>
+        <Field Name="SupplierCategoryName_PurchReqLines">
+          <DataField>SupplierCategoryName_PurchReqLines</DataField>
+        </Field>
+        <Field Name="Description_PurchReqLines">
+          <DataField>Description_PurchReqLines</DataField>
+        </Field>
+        <Field Name="Quantity_PurchReqLines">
+          <DataField>Quantity_PurchReqLines</DataField>
+        </Field>
+        <Field Name="Quantity_PurchReqLinesFormat">
+          <DataField>Quantity_PurchReqLinesFormat</DataField>
+        </Field>
+        <Field Name="PlannedQuantity_PurchReqLines">
+          <DataField>PlannedQuantity_PurchReqLines</DataField>
+        </Field>
+        <Field Name="PlannedQuantity_PurchReqLinesFormat">
+          <DataField>PlannedQuantity_PurchReqLinesFormat</DataField>
+        </Field>
+        <Field Name="UnitCost_PurchReqLines">
+          <DataField>UnitCost_PurchReqLines</DataField>
+        </Field>
+        <Field Name="UnitCost_PurchReqLinesFormat">
+          <DataField>UnitCost_PurchReqLinesFormat</DataField>
+        </Field>
+        <Field Name="AmountIncludingVAT_PurchReqLines">
+          <DataField>AmountIncludingVAT_PurchReqLines</DataField>
+        </Field>
+        <Field Name="AmountIncludingVAT_PurchReqLinesFormat">
+          <DataField>AmountIncludingVAT_PurchReqLinesFormat</DataField>
+        </Field>
+        <Field Name="ApprovedBudgetAmount_PurchReqLines">
+          <DataField>ApprovedBudgetAmount_PurchReqLines</DataField>
+        </Field>
+        <Field Name="ApprovedBudgetAmount_PurchReqLinesFormat">
+          <DataField>ApprovedBudgetAmount_PurchReqLinesFormat</DataField>
+        </Field>
+        <Field Name="BudgetBalanceAfter_PurchReqLines">
+          <DataField>BudgetBalanceAfter_PurchReqLines</DataField>
+        </Field>
+        <Field Name="BudgetBalanceAfter_PurchReqLinesFormat">
+          <DataField>BudgetBalanceAfter_PurchReqLinesFormat</DataField>
+        </Field>
+        <Field Name="CurrentBudgetBalance_PurchReqLines">
+          <DataField>CurrentBudgetBalance_PurchReqLines</DataField>
+        </Field>
+        <Field Name="CurrentBudgetBalance_PurchReqLinesFormat">
+          <DataField>CurrentBudgetBalance_PurchReqLinesFormat</DataField>
+        </Field>
+        <Field Name="BudgetLine_PurchReqLines">
+          <DataField>BudgetLine_PurchReqLines</DataField>
+        </Field>
+        <Field Name="UnitofMeasure_PurchReqLines">
+          <DataField>UnitofMeasure_PurchReqLines</DataField>
+        </Field>
+        <Field Name="Specification_PurchReqLines">
+          <DataField>Specification_PurchReqLines</DataField>
+        </Field>
+        <Field Name="SupplierCategory_TenderApplicants">
+          <DataField>SupplierCategory_TenderApplicants</DataField>
+        </Field>
+        <Field Name="SupplierCode_TenderApplicants">
+          <DataField>SupplierCode_TenderApplicants</DataField>
+        </Field>
+        <Field Name="SupplierName_TenderApplicants">
+          <DataField>SupplierName_TenderApplicants</DataField>
+        </Field>
+        <Field Name="SupplierEmail_TenderApplicants">
+          <DataField>SupplierEmail_TenderApplicants</DataField>
+        </Field>
+        <Field Name="TenderApplicantStage_TenderApplicants">
+          <DataField>TenderApplicantStage_TenderApplicants</DataField>
+        </Field>
+        <Field Name="SupplierCategory_BidderSelection">
+          <DataField>SupplierCategory_BidderSelection</DataField>
+        </Field>
+        <Field Name="SupplierCode_BidderSelection">
+          <DataField>SupplierCode_BidderSelection</DataField>
+        </Field>
+        <Field Name="SupplierName_BidderSelection">
+          <DataField>SupplierName_BidderSelection</DataField>
+        </Field>
+        <Field Name="SupplierEmail_BidderSelection">
+          <DataField>SupplierEmail_BidderSelection</DataField>
+        </Field>
+        <Field Name="EvaluationStage_Evaluation">
+          <DataField>EvaluationStage_Evaluation</DataField>
+        </Field>
+        <Field Name="No_Evaluation">
+          <DataField>No_Evaluation</DataField>
+        </Field>
+        <Field Name="Quote_No_Evaluation">
+          <DataField>Quote_No_Evaluation</DataField>
+        </Field>
+        <Field Name="Total_Score_Evaluation">
+          <DataField>Total_Score_Evaluation</DataField>
+        </Field>
+        <Field Name="Total_Score_EvaluationFormat">
+          <DataField>Total_Score_EvaluationFormat</DataField>
+        </Field>
+        <Field Name="User_Evaluation">
+          <DataField>User_Evaluation</DataField>
+        </Field>
+        <Field Name="AverageTechnicalScore_Evaluation">
+          <DataField>AverageTechnicalScore_Evaluation</DataField>
+        </Field>
+        <Field Name="AverageTechnicalScore_EvaluationFormat">
+          <DataField>AverageTechnicalScore_EvaluationFormat</DataField>
+        </Field>
+        <Field Name="Score_Parameter">
+          <DataField>Score_Parameter</DataField>
+        </Field>
+        <Field Name="Score_DescriptionHeader">
+          <DataField>Score_DescriptionHeader</DataField>
+        </Field>
+        <Field Name="Supplier_Code">
+          <DataField>Supplier_Code</DataField>
+        </Field>
+        <Field Name="Supplier_Name">
+          <DataField>Supplier_Name</DataField>
+        </Field>
+        <Field Name="Total_ScoreHeader">
+          <DataField>Total_ScoreHeader</DataField>
+        </Field>
+        <Field Name="Total_ScoreHeaderFormat">
+          <DataField>Total_ScoreHeaderFormat</DataField>
+        </Field>
+        <Field Name="BlobDescription">
+          <DataField>BlobDescription</DataField>
+        </Field>
+        <Field Name="Score_DescriptionLine">
+          <DataField>Score_DescriptionLine</DataField>
+        </Field>
+        <Field Name="Score">
+          <DataField>Score</DataField>
+        </Field>
+        <Field Name="ScoreFormat">
+          <DataField>ScoreFormat</DataField>
+        </Field>
+        <Field Name="ScoreCriteria">
+          <DataField>ScoreCriteria</DataField>
+        </Field>
+        <Field Name="PassFail">
+          <DataField>PassFail</DataField>
+        </Field>
+        <Field Name="Maximum_Score">
+          <DataField>Maximum_Score</DataField>
+        </Field>
+        <Field Name="Maximum_ScoreFormat">
+          <DataField>Maximum_ScoreFormat</DataField>
+        </Field>
+        <Field Name="Score_ParameterTechGoods">
+          <DataField>Score_ParameterTechGoods</DataField>
+        </Field>
+        <Field Name="Score_DescriptionHeaderTechGoods">
+          <DataField>Score_DescriptionHeaderTechGoods</DataField>
+        </Field>
+        <Field Name="Supplier_CodeTechGoods">
+          <DataField>Supplier_CodeTechGoods</DataField>
+        </Field>
+        <Field Name="Supplier_NameTechGoods">
+          <DataField>Supplier_NameTechGoods</DataField>
+        </Field>
+        <Field Name="Total_ScoreHeaderTechGoods">
+          <DataField>Total_ScoreHeaderTechGoods</DataField>
+        </Field>
+        <Field Name="Total_ScoreHeaderTechGoodsFormat">
+          <DataField>Total_ScoreHeaderTechGoodsFormat</DataField>
+        </Field>
+        <Field Name="BlobDescriptionTechGoods">
+          <DataField>BlobDescriptionTechGoods</DataField>
+        </Field>
+        <Field Name="Score_DescriptionLineTechGoods">
+          <DataField>Score_DescriptionLineTechGoods</DataField>
+        </Field>
+        <Field Name="ScoreTechGoods">
+          <DataField>ScoreTechGoods</DataField>
+        </Field>
+        <Field Name="ScoreTechGoodsFormat">
+          <DataField>ScoreTechGoodsFormat</DataField>
+        </Field>
+        <Field Name="ScoreCriteriaTechGoods">
+          <DataField>ScoreCriteriaTechGoods</DataField>
+        </Field>
+        <Field Name="ConformTechGoods">
+          <DataField>ConformTechGoods</DataField>
+        </Field>
+        <Field Name="Maximum_ScoreTechGoods">
+          <DataField>Maximum_ScoreTechGoods</DataField>
+        </Field>
+        <Field Name="Maximum_ScoreTechGoodsFormat">
+          <DataField>Maximum_ScoreTechGoodsFormat</DataField>
+        </Field>
+        <Field Name="Score_ParameterTechServices">
+          <DataField>Score_ParameterTechServices</DataField>
+        </Field>
+        <Field Name="Score_DescriptionHeaderTechServices">
+          <DataField>Score_DescriptionHeaderTechServices</DataField>
+        </Field>
+        <Field Name="Supplier_CodeTechServices">
+          <DataField>Supplier_CodeTechServices</DataField>
+        </Field>
+        <Field Name="Supplier_NameTechServices">
+          <DataField>Supplier_NameTechServices</DataField>
+        </Field>
+        <Field Name="Total_ScoreHeaderTechServices">
+          <DataField>Total_ScoreHeaderTechServices</DataField>
+        </Field>
+        <Field Name="Total_ScoreHeaderTechServicesFormat">
+          <DataField>Total_ScoreHeaderTechServicesFormat</DataField>
+        </Field>
+        <Field Name="BlobDescriptionTechServices">
+          <DataField>BlobDescriptionTechServices</DataField>
+        </Field>
+        <Field Name="Score_DescriptionLineTechServices">
+          <DataField>Score_DescriptionLineTechServices</DataField>
+        </Field>
+        <Field Name="ScoreTechServices">
+          <DataField>ScoreTechServices</DataField>
+        </Field>
+        <Field Name="ScoreTechServicesFormat">
+          <DataField>ScoreTechServicesFormat</DataField>
+        </Field>
+        <Field Name="ScoreCriteriaTechServices">
+          <DataField>ScoreCriteriaTechServices</DataField>
+        </Field>
+        <Field Name="PassFailTechServices">
+          <DataField>PassFailTechServices</DataField>
+        </Field>
+        <Field Name="Maximum_ScoreTechServices">
+          <DataField>Maximum_ScoreTechServices</DataField>
+        </Field>
+        <Field Name="Maximum_ScoreTechServicesFormat">
+          <DataField>Maximum_ScoreTechServicesFormat</DataField>
+        </Field>
+        <Field Name="QuoteNo_FinancialEvaluation">
+          <DataField>QuoteNo_FinancialEvaluation</DataField>
+        </Field>
+        <Field Name="RefNo_FinancialEvaluation">
+          <DataField>RefNo_FinancialEvaluation</DataField>
+        </Field>
+        <Field Name="Title_FinancialEvaluation">
+          <DataField>Title_FinancialEvaluation</DataField>
+        </Field>
+        <Field Name="RequisitionNo_FinancialEvaluation">
+          <DataField>RequisitionNo_FinancialEvaluation</DataField>
+        </Field>
+        <Field Name="CreationDate_FinancialEvaluation">
+          <DataField>CreationDate_FinancialEvaluation</DataField>
+        </Field>
+        <Field Name="CalculationType_FinancialEvaluation">
+          <DataField>CalculationType_FinancialEvaluation</DataField>
+        </Field>
+        <Field Name="EvaluationCriteria_FinancialEvaluation">
+          <DataField>EvaluationCriteria_FinancialEvaluation</DataField>
+        </Field>
+        <Field Name="ShortcutDimension1Code_FinancialEvaluation">
+          <DataField>ShortcutDimension1Code_FinancialEvaluation</DataField>
+        </Field>
+        <Field Name="ShortcutDimension2Code_FinancialEvaluation">
+          <DataField>ShortcutDimension2Code_FinancialEvaluation</DataField>
+        </Field>
+        <Field Name="PreparedBy_FinancialEvaluation">
+          <DataField>PreparedBy_FinancialEvaluation</DataField>
+        </Field>
+        <Field Name="RemarksTxt_FinancialEvaluation">
+          <DataField>RemarksTxt_FinancialEvaluation</DataField>
+        </Field>
+        <Field Name="VendorNo_TenderEvaluationLine">
+          <DataField>VendorNo_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="VendorName_TenderEvaluationLine">
+          <DataField>VendorName_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="Type_TenderEvaluationLine">
+          <DataField>Type_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="No_TenderEvaluationLine">
+          <DataField>No_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="Description_TenderEvaluationLine">
+          <DataField>Description_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="LineNo_TenderEvaluationLine">
+          <DataField>LineNo_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="QuoteNo_TenderEvaluationLine">
+          <DataField>QuoteNo_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="Quantity_TenderEvaluationLine">
+          <DataField>Quantity_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="Quantity_TenderEvaluationLineFormat">
+          <DataField>Quantity_TenderEvaluationLineFormat</DataField>
+        </Field>
+        <Field Name="UnitofMeasure_TenderEvaluationLine">
+          <DataField>UnitofMeasure_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="UnitAmount_TenderEvaluationLine">
+          <DataField>UnitAmount_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="UnitAmount_TenderEvaluationLineFormat">
+          <DataField>UnitAmount_TenderEvaluationLineFormat</DataField>
+        </Field>
+        <Field Name="Amount_TenderEvaluationLine">
+          <DataField>Amount_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="Amount_TenderEvaluationLineFormat">
+          <DataField>Amount_TenderEvaluationLineFormat</DataField>
+        </Field>
+        <Field Name="AmountInclusiveVAT_TenderEvaluationLine">
+          <DataField>AmountInclusiveVAT_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="AmountInclusiveVAT_TenderEvaluationLineFormat">
+          <DataField>AmountInclusiveVAT_TenderEvaluationLineFormat</DataField>
+        </Field>
+        <Field Name="NegotiatedUnitAmount_TenderEvaluationLine">
+          <DataField>NegotiatedUnitAmount_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="NegotiatedUnitAmount_TenderEvaluationLineFormat">
+          <DataField>NegotiatedUnitAmount_TenderEvaluationLineFormat</DataField>
+        </Field>
+        <Field Name="VATAmount_TenderEvaluationLine">
+          <DataField>VATAmount_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="VATAmount_TenderEvaluationLineFormat">
+          <DataField>VATAmount_TenderEvaluationLineFormat</DataField>
+        </Field>
+        <Field Name="VATAmountLCY_TenderEvaluationLine">
+          <DataField>VATAmountLCY_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="VATAmountLCY_TenderEvaluationLineFormat">
+          <DataField>VATAmountLCY_TenderEvaluationLineFormat</DataField>
+        </Field>
+        <Field Name="FinancialScore_TenderEvaluationLine">
+          <DataField>FinancialScore_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="FinancialScore_TenderEvaluationLineFormat">
+          <DataField>FinancialScore_TenderEvaluationLineFormat</DataField>
+        </Field>
+        <Field Name="Awarded_TenderEvaluationLine">
+          <DataField>Awarded_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="Suggested_TenderEvaluationLine">
+          <DataField>Suggested_TenderEvaluationLine</DataField>
+        </Field>
+        <Field Name="Specifications_TenderEvaluationLine">
+          <DataField>Specifications_TenderEvaluationLine</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

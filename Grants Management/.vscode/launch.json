@@ -1,30 +1,24 @@
 {
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "Your own server",
+         {
+            "name": "localhost",
             "request": "launch",
             "type": "al",
             "environmentType": "OnPrem",
-            // "server": "http://localhost:8080/BC210/",
-            // "serverInstance": "BC210",
-            // "authentication": "Windows",
-            // "port": 9049,
-
-            "server": "https://bcsvrc.ch-int.org/BC210/",
-            "serverInstance": "BC210",
+            "server": "http://localhost:8080/BC250/",
+            "serverInstance": "BC250",
             "authentication": "UserPassword",
-           "port": 7049,
-
-            "startupObjectId": 22,
+            "startupObjectId": 52121,
             "startupObjectType": "Page",
+            "port": 2549,
             "breakOnError": "All",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
-            "enableSqlInformationDebugger": true,
+            "enableSqlInformationDebugger": false,
             "tenant": "default",
-            "usePublicURLFromServer": true,
-            "schemaUpdateMode": "ForceSync"
+            "schemaUpdateMode": "Synchronize",
+            "usePublicURLFromServer": true
         }
     ]
 }

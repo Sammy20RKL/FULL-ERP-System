@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Code_PerformanceContracting">
+          <DataField>Code_PerformanceContracting</DataField>
+        </Field>
+        <Field Name="Decription_PerformanceContracting">
+          <DataField>Decription_PerformanceContracting</DataField>
+        </Field>
+        <Field Name="DueDate_PerformanceContracting">
+          <DataField>DueDate_PerformanceContracting</DataField>
+        </Field>
+        <Field Name="Closed_PerformanceContracting">
+          <DataField>Closed_PerformanceContracting</DataField>
+        </Field>
+        <Field Name="Header_PerformanceContracting">
+          <DataField>Header_PerformanceContracting</DataField>
+        </Field>
+        <Field Name="Name_CompanyInformation">
+          <DataField>Name_CompanyInformation</DataField>
+        </Field>
+        <Field Name="Picture_CompanyInformation">
+          <DataField>Picture_CompanyInformation</DataField>
+        </Field>
+        <Field Name="DocumentNo_PerformanceContractingLines">
+          <DataField>DocumentNo_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="LineNo_PerformanceContractingLines">
+          <DataField>LineNo_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="RowNo_PerformanceContractingLines">
+          <DataField>RowNo_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="ItemActivity_PerformanceContractingLines">
+          <DataField>ItemActivity_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Weight_PerformanceContractingLines">
+          <DataField>Weight_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Weight_PerformanceContractingLinesFormat">
+          <DataField>Weight_PerformanceContractingLinesFormat</DataField>
+        </Field>
+        <Field Name="Measure_PerformanceContractingLines">
+          <DataField>Measure_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="AnnualTarget_PerformanceContractingLines">
+          <DataField>AnnualTarget_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="AnnualTarget_PerformanceContractingLinesFormat">
+          <DataField>AnnualTarget_PerformanceContractingLinesFormat</DataField>
+        </Field>
+        <Field Name="AnnualTarget_PerformanceContractingLines_">
+          <DataField>AnnualTarget_PerformanceContractingLines_</DataField>
+        </Field>
+        <Field Name="AnnualTarget_PerformanceContractingLines_Format">
+          <DataField>AnnualTarget_PerformanceContractingLines_Format</DataField>
+        </Field>
+        <Field Name="Q1_PerformanceContractingLines">
+          <DataField>Q1_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Q2_PerformanceContractingLines">
+          <DataField>Q2_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Q3_PerformanceContractingLines">
+          <DataField>Q3_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Q4_PerformanceContractingLines">
+          <DataField>Q4_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="SpecificIndicatorComponents_PerformanceContractingLines">
+          <DataField>SpecificIndicatorComponents_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Evidence_PerformanceContractingLines">
+          <DataField>Evidence_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="ResponsibleDept_PerformanceContractingLines">
+          <DataField>ResponsibleDept_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Heading_PerformanceContractingLines">
+          <DataField>Heading_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Class_PerformanceContractingLines">
+          <DataField>Class_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Detailed_PerformanceContractingLines">
+          <DataField>Detailed_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="TotalingType_PerformanceContractingLines">
+          <DataField>TotalingType_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Submitted_PerformanceContractingLines">
+          <DataField>Submitted_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Remarks_PerformanceContractingLines">
+          <DataField>Remarks_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="QuarterTarget_PerformanceContractingLines">
+          <DataField>QuarterTarget_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="QuarterTarget_PerformanceContractingLinesFormat">
+          <DataField>QuarterTarget_PerformanceContractingLinesFormat</DataField>
+        </Field>
+        <Field Name="QuarterActual_PerformanceContractingLines">
+          <DataField>QuarterActual_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="QuarterActual_PerformanceContractingLinesFormat">
+          <DataField>QuarterActual_PerformanceContractingLinesFormat</DataField>
+        </Field>
+        <Field Name="Variance_">
+          <DataField>Variance_</DataField>
+        </Field>
+        <Field Name="Variance_Format">
+          <DataField>Variance_Format</DataField>
+        </Field>
+        <Field Name="Variance_Perc_">
+          <DataField>Variance_Perc_</DataField>
+        </Field>
+        <Field Name="Variance_Perc_Format">
+          <DataField>Variance_Perc_Format</DataField>
+        </Field>
+        <Field Name="TotalQuarterTarget_PerformanceContractingLines">
+          <DataField>TotalQuarterTarget_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="TotalQuarterTarget_PerformanceContractingLinesFormat">
+          <DataField>TotalQuarterTarget_PerformanceContractingLinesFormat</DataField>
+        </Field>
+        <Field Name="TotalQuarterActual_PerformanceContractingLines">
+          <DataField>TotalQuarterActual_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="TotalQuarterActual_PerformanceContractingLinesFormat">
+          <DataField>TotalQuarterActual_PerformanceContractingLinesFormat</DataField>
+        </Field>
+        <Field Name="TotalQuarterVariance_PerformanceContractingLines">
+          <DataField>TotalQuarterVariance_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="TotalQuarterVariance_PerformanceContractingLinesFormat">
+          <DataField>TotalQuarterVariance_PerformanceContractingLinesFormat</DataField>
+        </Field>
+        <Field Name="Amount_Formula">
+          <DataField>Amount_Formula</DataField>
+        </Field>
+        <Field Name="Amount_FormulaFormat">
+          <DataField>Amount_FormulaFormat</DataField>
+        </Field>
+        <Field Name="RowText1_PerformanceContractingLines">
+          <DataField>RowText1_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="RowText2_PerformanceContractingLines">
+          <DataField>RowText2_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="Indicator_PerformanceContractingLines">
+          <DataField>Indicator_PerformanceContractingLines</DataField>
+        </Field>
+        <Field Name="SubIndicator_PerformanceContractingLines">
+          <DataField>SubIndicator_PerformanceContractingLines</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

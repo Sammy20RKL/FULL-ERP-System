@@ -46,6 +46,8 @@ table 52176 "Leave Application Type"
                     "Leave Earned to Date" := HRManagement.GetLeaveDaysEarnedToDate(employeerec, "Leave Type");
                     Validate("Leave Earned to Date");
                     Message('leave earned to date %1', "Leave Earned to Date");
+                    CalcFields("Total Leave Days Taken");
+                    "Current Leave Balance" := "Leave Earned to Date" - "Total Leave Days Taken";
 
                 end;
             end;
@@ -84,6 +86,11 @@ table 52176 "Leave Application Type"
                         "Annual Leave Entitlement Bal" := "Leave Balance" + -"Days Applied"
                     else
                         "Annual Leave Entitlement Bal" := "Leave Balance";
+
+                if "Days Applied" > "Current Leave Balance" then
+                    Error('You can not apply for more days than %1 No. of days Balance', "Current Leave Balance");
+
+
             end;
         }
         field(5; "Start Date"; Date)
@@ -235,11 +242,16 @@ table 52176 "Leave Application Type"
         field(29; "Total Leave Days Taken"; Decimal)
         {
             CalcFormula = - sum("HR Leave Ledger Entries"."No. of days" where("Staff No." = field("Employee No"),
-                                                                              "Leave Type" = field("Leave Code"),
+                                                                              "Leave Type" = field("Leave Type"),
                                                                               Closed = const(false),
                                                                               "Leave Entry Type" = const(Negative)));
             FieldClass = FlowField;
             Caption = 'Total Leave Days Taken';
+            trigger OnValidate()
+            begin
+                CalcFields("Total Leave Days Taken");
+                "Current Leave Balance" := "Leave Earned to Date" - "Total Leave Days Taken";
+            end;
         }
         field(30; "Duties Taken Over By"; Code[20])
         {
@@ -367,6 +379,10 @@ table 52176 "Leave Application Type"
         {
             Caption = 'Employee Name';
             Editable = false;
+        }
+        field(89; "Current Leave Balance"; Decimal)
+        {
+
         }
 
     }

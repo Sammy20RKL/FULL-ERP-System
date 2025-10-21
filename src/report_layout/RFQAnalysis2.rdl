@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="QuoteNo_QuoteEvaluationHeader">
+          <DataField>QuoteNo_QuoteEvaluationHeader</DataField>
+        </Field>
+        <Field Name="Title_QuoteEvaluationHeader">
+          <DataField>Title_QuoteEvaluationHeader</DataField>
+        </Field>
+        <Field Name="RequisitionNo_QuoteEvaluationHeader">
+          <DataField>RequisitionNo_QuoteEvaluationHeader</DataField>
+        </Field>
+        <Field Name="QuoteGenerated_QuoteEvaluationHeader">
+          <DataField>QuoteGenerated_QuoteEvaluationHeader</DataField>
+        </Field>
+        <Field Name="Minutes_QuoteEvaluationHeader">
+          <DataField>Minutes_QuoteEvaluationHeader</DataField>
+        </Field>
+        <Field Name="AwardingCommittee_QuoteEvaluationHeader">
+          <DataField>AwardingCommittee_QuoteEvaluationHeader</DataField>
+        </Field>
+        <Field Name="DateofAward_QuoteEvaluationHeader">
+          <DataField>DateofAward_QuoteEvaluationHeader</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="CompanyPostCode">
+          <DataField>CompanyPostCode</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="CompanyPhone">
+          <DataField>CompanyPhone</DataField>
+        </Field>
+        <Field Name="CompanyFax">
+          <DataField>CompanyFax</DataField>
+        </Field>
+        <Field Name="CompanyEmail">
+          <DataField>CompanyEmail</DataField>
+        </Field>
+        <Field Name="CompanyWebsite">
+          <DataField>CompanyWebsite</DataField>
+        </Field>
+        <Field Name="QuoteNo_QuoteEvaluation">
+          <DataField>QuoteNo_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="VendorNo_QuoteEvaluation">
+          <DataField>VendorNo_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="Type_QuoteEvaluation">
+          <DataField>Type_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="No_QuoteEvaluation">
+          <DataField>No_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="Description_QuoteEvaluation">
+          <DataField>Description_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="Quantity_QuoteEvaluation">
+          <DataField>Quantity_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="Quantity_QuoteEvaluationFormat">
+          <DataField>Quantity_QuoteEvaluationFormat</DataField>
+        </Field>
+        <Field Name="UnitAmount_QuoteEvaluation">
+          <DataField>UnitAmount_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="UnitAmount_QuoteEvaluationFormat">
+          <DataField>UnitAmount_QuoteEvaluationFormat</DataField>
+        </Field>
+        <Field Name="Amount_QuoteEvaluation">
+          <DataField>Amount_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="Amount_QuoteEvaluationFormat">
+          <DataField>Amount_QuoteEvaluationFormat</DataField>
+        </Field>
+        <Field Name="Awarded_QuoteEvaluation">
+          <DataField>Awarded_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="UnitofMeasure_QuoteEvaluation">
+          <DataField>UnitofMeasure_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="LineNo_QuoteEvaluation">
+          <DataField>LineNo_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="QuoteGenerated_QuoteEvaluation">
+          <DataField>QuoteGenerated_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="VendorName_QuoteEvaluation">
+          <DataField>VendorName_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="Title_QuoteEvaluation">
+          <DataField>Title_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="ShortcutDimension1Code_QuoteEvaluation">
+          <DataField>ShortcutDimension1Code_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="ShortcutDimension2Code_QuoteEvaluation">
+          <DataField>ShortcutDimension2Code_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="DimensionSetID_QuoteEvaluation">
+          <DataField>DimensionSetID_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="Committed_QuoteEvaluation">
+          <DataField>Committed_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="QuantityReceived_QuoteEvaluation">
+          <DataField>QuantityReceived_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="QuantityReceived_QuoteEvaluationFormat">
+          <DataField>QuantityReceived_QuoteEvaluationFormat</DataField>
+        </Field>
+        <Field Name="ProcurementPlan_QuoteEvaluation">
+          <DataField>ProcurementPlan_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="ProcurementPlanItem_QuoteEvaluation">
+          <DataField>ProcurementPlanItem_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="BudgetLine_QuoteEvaluation">
+          <DataField>BudgetLine_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="RequestDate_QuoteEvaluation">
+          <DataField>RequestDate_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="ExpectedReceiptDate_QuoteEvaluation">
+          <DataField>ExpectedReceiptDate_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="Suggested_QuoteEvaluation">
+          <DataField>Suggested_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="AmountInclusiveVAT_QuoteEvaluation">
+          <DataField>AmountInclusiveVAT_QuoteEvaluation</DataField>
+        </Field>
+        <Field Name="AmountInclusiveVAT_QuoteEvaluationFormat">
+          <DataField>AmountInclusiveVAT_QuoteEvaluationFormat</DataField>
+        </Field>
+        <Field Name="LeastVendorName">
+          <DataField>LeastVendorName</DataField>
+        </Field>
+        <Field Name="LeastAmount">
+          <DataField>LeastAmount</DataField>
+        </Field>
+        <Field Name="LeastAmountFormat">
+          <DataField>LeastAmountFormat</DataField>
+        </Field>
+        <Field Name="SupplierCount">
+          <DataField>SupplierCount</DataField>
+        </Field>
+        <Field Name="TotalSuppliers">
+          <DataField>TotalSuppliers</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

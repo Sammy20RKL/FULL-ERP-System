@@ -169,7 +169,7 @@ page 60033 "Close out Header"
                     DocumentType: Option Quote,"Order",Invoice,"Credit Memo","Blanket Order","Return Order",None,"Payment Voucher","Petty Cash",Imprest,Requisition,ImprestSurrender,Interbank,Receipt,"Staff Claim","Staff Advance",AdvanceSurrender,"Bank Slip",Grant,"Grant Surrender","Employee Requisition","Leave Application","Training Requisition","Transport Requisition",JV,"Grant Task","Concept Note",Proposal,"Job Approval","Disciplinary Approvals",GRN,Clearence,Donation,Transfer,PayChange,Budget,GL,"Cash Purchase","Leave Reimburse",Appraisal,Inspection,Closeout,"Lab Request",ProposalProjectsAreas,"Leave Carry over","Employee Transfer","Salary Advance","Staff Clearance",Payroll;
                 begin
                     DocumentType := DocumentType::Closeout;
-                    ApprovalEntries.Setfilters(DATABASE::"Close Out Check List", DocumentType, Rec."Closeout No.");
+                    ApprovalEntries.SetRecordFilters(DATABASE::"Close Out Check List", DocumentType, Rec."Closeout No.");
                     ApprovalEntries.Run();
                 end;
             }

@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+       {
+            "name": "localhost",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://localhost:8080/BC250/",
+            "serverInstance": "BC250",
+            "authentication": "UserPassword",
+            "startupObjectId": 52121,
+            "startupObjectType": "Page",
+            "port": 7049,
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": false,
+            "tenant": "default",
+            "schemaUpdateMode": "Synchronize",
+            "usePublicURLFromServer": true
+        }
+    ]
+}

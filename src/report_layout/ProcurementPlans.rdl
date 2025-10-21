@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="PlanSubmissionCutoff">
+          <DataField>PlanSubmissionCutoff</DataField>
+        </Field>
+        <Field Name="CurrentBudget">
+          <DataField>CurrentBudget</DataField>
+        </Field>
+        <Field Name="TotalBudgetAllocation">
+          <DataField>TotalBudgetAllocation</DataField>
+        </Field>
+        <Field Name="TotalBudgetAllocationFormat">
+          <DataField>TotalBudgetAllocationFormat</DataField>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+        </Field>
+        <Field Name="Company_Name">
+          <DataField>Company_Name</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyCity">
+          <DataField>CompanyCity</DataField>
+        </Field>
+        <Field Name="Phone_No">
+          <DataField>Phone_No</DataField>
+        </Field>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyEmail">
+          <DataField>CompanyEmail</DataField>
+        </Field>
+        <Field Name="CompanyWebsite">
+          <DataField>CompanyWebsite</DataField>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
+        </Field>
+        <Field Name="Date_ProcurementPlanItem">
+          <DataField>Date_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="MonthName_ProcurementPlanItem">
+          <DataField>MonthName_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="SupplierCategoryCode_ProcurementPlanItem">
+          <DataField>SupplierCategoryCode_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="SupplierCategoryName_ProcurementPlanItem">
+          <DataField>SupplierCategoryName_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="ShortcutDimension1Code_ProcurementPlanItem">
+          <DataField>ShortcutDimension1Code_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="ShortcutDimension2Code_ProcurementPlanItem">
+          <DataField>ShortcutDimension2Code_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="ExpenditureType_ProcurementPlanItem">
+          <DataField>ExpenditureType_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="Quantity_ProcurementPlanItem">
+          <DataField>Quantity_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="Quantity_ProcurementPlanItemFormat">
+          <DataField>Quantity_ProcurementPlanItemFormat</DataField>
+        </Field>
+        <Field Name="UnitPrice_ProcurementPlanItem">
+          <DataField>UnitPrice_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="UnitPrice_ProcurementPlanItemFormat">
+          <DataField>UnitPrice_ProcurementPlanItemFormat</DataField>
+        </Field>
+        <Field Name="EstimatedCost_ProcurementPlanItem">
+          <DataField>EstimatedCost_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="EstimatedCost_ProcurementPlanItemFormat">
+          <DataField>EstimatedCost_ProcurementPlanItemFormat</DataField>
+        </Field>
+        <Field Name="Justification_ProcurementPlanItem">
+          <DataField>Justification_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="UserID_ProcurementPlanItem">
+          <DataField>UserID_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="TotalEstimatedCost_ProcurementPlanItem">
+          <DataField>TotalEstimatedCost_ProcurementPlanItem</DataField>
+        </Field>
+        <Field Name="TotalEstimatedCost_ProcurementPlanItemFormat">
+          <DataField>TotalEstimatedCost_ProcurementPlanItemFormat</DataField>
+        </Field>
+        <Field Name="ItemDescription_ProcurementPlanItem">
+          <DataField>ItemDescription_ProcurementPlanItem</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

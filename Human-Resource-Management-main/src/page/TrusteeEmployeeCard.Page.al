@@ -8,7 +8,7 @@ page 52178 "Trustee Employee Card"
     layout
     {
 
-        
+
         area(content)
         {
             group(General)
@@ -338,11 +338,11 @@ page 52178 "Trustee Employee Card"
                 {
                     ToolTip = 'Specifies the value of the Contract Length field';
                 }
-                field("Start_Date"; Rec."Contract Start Date")
+                field("Start_Date1"; Rec."Contract Start Date")
                 {
                     ToolTip = 'Specifies the value of the Contract Start Date field';
                 }
-                field("End_Date"; Rec."Contract End Date")
+                field("End_Date1"; Rec."Contract End Date")
                 {
                     ToolTip = 'Specifies the value of the Contract End Date field';
                 }
@@ -734,8 +734,8 @@ page 52178 "Trustee Employee Card"
                 Visible = true;
             }
         }
-    
-    
+
+
     }
 
     actions

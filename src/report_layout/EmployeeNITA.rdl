@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="UPPERCASE_FORMAT_DateSpecified_0___Month_Text___year4____">
+          <DataField>UPPERCASE_FORMAT_DateSpecified_0___Month_Text___year4____</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="CompAddr">
+          <DataField>CompAddr</DataField>
+        </Field>
+        <Field Name="CompPhoneNo">
+          <DataField>CompPhoneNo</DataField>
+        </Field>
+        <Field Name="CompLogo">
+          <DataField>CompLogo</DataField>
+        </Field>
+        <Field Name="CompEmail">
+          <DataField>CompEmail</DataField>
+        </Field>
+        <Field Name="CompWebsite">
+          <DataField>CompWebsite</DataField>
+        </Field>
+        <Field Name="Tel">
+          <DataField>Tel</DataField>
+        </Field>
+        <Field Name="Address">
+          <DataField>Address</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="EmployerNHIFNo">
+          <DataField>EmployerNHIFNo</DataField>
+        </Field>
+        <Field Name="CompPINNo">
+          <DataField>CompPINNo</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX_Name">
+          <DataField>Payroll_PeriodX_Name</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX__Starting_Date_">
+          <DataField>Payroll_PeriodX__Starting_Date_</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodCaption">
+          <DataField>Payroll_PeriodCaption</DataField>
+        </Field>
+        <Field Name="AmountCaption">
+          <DataField>AmountCaption</DataField>
+        </Field>
+        <Field Name="PERIODCaption">
+          <DataField>PERIODCaption</DataField>
+        </Field>
+        <Field Name="TEL_NOCaption">
+          <DataField>TEL_NOCaption</DataField>
+        </Field>
+        <Field Name="Name_of_EmployeeCaption">
+          <DataField>Name_of_EmployeeCaption</DataField>
+        </Field>
+        <Field Name="ADDRESSCaptions">
+          <DataField>ADDRESSCaptions</DataField>
+        </Field>
+        <Field Name="EMPLOYER_NOCaption">
+          <DataField>EMPLOYER_NOCaption</DataField>
+        </Field>
+        <Field Name="EMPLOYERCaption">
+          <DataField>EMPLOYERCaption</DataField>
+        </Field>
+        <Field Name="EMPLOYER_PIN_NOCaption">
+          <DataField>EMPLOYER_PIN_NOCaption</DataField>
+        </Field>
+        <Field Name="Payroll_No_Caption">
+          <DataField>Payroll_No_Caption</DataField>
+        </Field>
+        <Field Name="PageCaption">
+          <DataField>PageCaption</DataField>
+        </Field>
+        <Field Name="MONTHLY_EARNINGS_REPORTCaption">
+          <DataField>MONTHLY_EARNINGS_REPORTCaption</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX_Starting_Date">
+          <DataField>Payroll_PeriodX_Starting_Date</DataField>
+        </Field>
+        <Field Name="Payroll_PeriodX_Earnings_Code_Filter">
+          <DataField>Payroll_PeriodX_Earnings_Code_Filter</DataField>
+        </Field>
+        <Field Name="PreparedBy">
+          <DataField>PreparedBy</DataField>
+        </Field>
+        <Field Name="DatePrepared">
+          <DataField>DatePrepared</DataField>
+        </Field>
+        <Field Name="PreparedBy_Signature">
+          <DataField>PreparedBy_Signature</DataField>
+        </Field>
+        <Field Name="ExaminedBy">
+          <DataField>ExaminedBy</DataField>
+        </Field>
+        <Field Name="DateApproved">
+          <DataField>DateApproved</DataField>
+        </Field>
+        <Field Name="ExaminedBy_Signature">
+          <DataField>ExaminedBy_Signature</DataField>
+        </Field>
+        <Field Name="VBC">
+          <DataField>VBC</DataField>
+        </Field>
+        <Field Name="VBCDate">
+          <DataField>VBCDate</DataField>
+        </Field>
+        <Field Name="VBC_Signature">
+          <DataField>VBC_Signature</DataField>
+        </Field>
+        <Field Name="Authorizer">
+          <DataField>Authorizer</DataField>
+        </Field>
+        <Field Name="DateAuthorized">
+          <DataField>DateAuthorized</DataField>
+        </Field>
+        <Field Name="Authorizer_Signature">
+          <DataField>Authorizer_Signature</DataField>
+        </Field>
+        <Field Name="Earnings_Description">
+          <DataField>Earnings_Description</DataField>
+        </Field>
+        <Field Name="Earnings_Code">
+          <DataField>Earnings_Code</DataField>
+        </Field>
+        <Field Name="Earnings_Pay_Period_Filter">
+          <DataField>Earnings_Pay_Period_Filter</DataField>
+        </Field>
+        <Field Name="Assignment_Matrix_X__Assignment_Matrix_X__Amount">
+          <DataField>Assignment_Matrix_X__Assignment_Matrix_X__Amount</DataField>
+        </Field>
+        <Field Name="Assignment_Matrix_X__Assignment_Matrix_X__AmountFormat">
+          <DataField>Assignment_Matrix_X__Assignment_Matrix_X__AmountFormat</DataField>
+        </Field>
+        <Field Name="LastName">
+          <DataField>LastName</DataField>
+        </Field>
+        <Field Name="Assignment_Matrix_X__Assignment_Matrix_X___Employee_No_">
+          <DataField>Assignment_Matrix_X__Assignment_Matrix_X___Employee_No_</DataField>
+        </Field>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+        </Field>
+        <Field Name="TotalAmount">
+          <DataField>TotalAmount</DataField>
+        </Field>
+        <Field Name="TotalAmountFormat">
+          <DataField>TotalAmountFormat</DataField>
+        </Field>
+        <Field Name="Counter">
+          <DataField>Counter</DataField>
+        </Field>
+        <Field Name="Total_AmountCaption">
+          <DataField>Total_AmountCaption</DataField>
+        </Field>
+        <Field Name="Assignment_Matrix_X_Type">
+          <DataField>Assignment_Matrix_X_Type</DataField>
+        </Field>
+        <Field Name="Assignment_Matrix_X_Code">
+          <DataField>Assignment_Matrix_X_Code</DataField>
+        </Field>
+        <Field Name="Assignment_Matrix_X_Payroll_Period">
+          <DataField>Assignment_Matrix_X_Payroll_Period</DataField>
+        </Field>
+        <Field Name="Assignment_Matrix_X_Reference_No">
+          <DataField>Assignment_Matrix_X_Reference_No</DataField>
+        </Field>
+        <Field Name="ID_No">
+          <DataField>ID_No</DataField>
+        </Field>
+        <Field Name="KRA_Pin">
+          <DataField>KRA_Pin</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

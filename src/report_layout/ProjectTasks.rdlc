@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_Project">
+          <DataField>No_Project</DataField>
+        </Field>
+        <Field Name="ProjectName_Project">
+          <DataField>ProjectName_Project</DataField>
+        </Field>
+        <Field Name="ProjectDate_Project">
+          <DataField>ProjectDate_Project</DataField>
+        </Field>
+        <Field Name="EstimatedStartDate_Project">
+          <DataField>EstimatedStartDate_Project</DataField>
+        </Field>
+        <Field Name="EstimatedEndDate_Project">
+          <DataField>EstimatedEndDate_Project</DataField>
+        </Field>
+        <Field Name="EstimatedDuration_Project">
+          <DataField>EstimatedDuration_Project</DataField>
+        </Field>
+        <Field Name="ActualStartDate_Project">
+          <DataField>ActualStartDate_Project</DataField>
+        </Field>
+        <Field Name="ActualEndDate_Project">
+          <DataField>ActualEndDate_Project</DataField>
+        </Field>
+        <Field Name="ActualDuration_Project">
+          <DataField>ActualDuration_Project</DataField>
+        </Field>
+        <Field Name="ProjectBudget_Project">
+          <DataField>ProjectBudget_Project</DataField>
+        </Field>
+        <Field Name="ProjectBudget_ProjectFormat">
+          <DataField>ProjectBudget_ProjectFormat</DataField>
+        </Field>
+        <Field Name="ContractNo_Project">
+          <DataField>ContractNo_Project</DataField>
+        </Field>
+        <Field Name="ContractName_Project">
+          <DataField>ContractName_Project</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="CompAddress">
+          <DataField>CompAddress</DataField>
+        </Field>
+        <Field Name="CompCity">
+          <DataField>CompCity</DataField>
+        </Field>
+        <Field Name="CompPhone">
+          <DataField>CompPhone</DataField>
+        </Field>
+        <Field Name="CompPic">
+          <DataField>CompPic</DataField>
+        </Field>
+        <Field Name="TaskNo_ProjectTasks">
+          <DataField>TaskNo_ProjectTasks</DataField>
+        </Field>
+        <Field Name="Descriprion_ProjectTasks">
+          <DataField>Descriprion_ProjectTasks</DataField>
+        </Field>
+        <Field Name="ResponsiblePerson_ProjectTasks">
+          <DataField>ResponsiblePerson_ProjectTasks</DataField>
+        </Field>
+        <Field Name="Category_ProjectTasks">
+          <DataField>Category_ProjectTasks</DataField>
+        </Field>
+        <Field Name="Importance_ProjectTasks">
+          <DataField>Importance_ProjectTasks</DataField>
+        </Field>
+        <Field Name="ProgressLevel_ProjectTasks">
+          <DataField>ProgressLevel_ProjectTasks</DataField>
+        </Field>
+        <Field Name="ProgressLevel_ProjectTasksFormat">
+          <DataField>ProgressLevel_ProjectTasksFormat</DataField>
+        </Field>
+        <Field Name="TaskBudget_ProjectTasks">
+          <DataField>TaskBudget_ProjectTasks</DataField>
+        </Field>
+        <Field Name="TaskBudget_ProjectTasksFormat">
+          <DataField>TaskBudget_ProjectTasksFormat</DataField>
+        </Field>
+        <Field Name="EstimatedStartDate_ProjectTasks">
+          <DataField>EstimatedStartDate_ProjectTasks</DataField>
+        </Field>
+        <Field Name="EstimatedEndDate_ProjectTasks">
+          <DataField>EstimatedEndDate_ProjectTasks</DataField>
+        </Field>
+        <Field Name="ActualStartDate_ProjectTasks">
+          <DataField>ActualStartDate_ProjectTasks</DataField>
+        </Field>
+        <Field Name="ActualEnddate_ProjectTasks">
+          <DataField>ActualEnddate_ProjectTasks</DataField>
+        </Field>
+        <Field Name="FullName">
+          <DataField>FullName</DataField>
+        </Field>
+        <Field Name="Component_ProjectTaskComponents">
+          <DataField>Component_ProjectTaskComponents</DataField>
+        </Field>
+        <Field Name="ComponentBudget_ProjectTaskComponents">
+          <DataField>ComponentBudget_ProjectTaskComponents</DataField>
+        </Field>
+        <Field Name="ComponentBudget_ProjectTaskComponentsFormat">
+          <DataField>ComponentBudget_ProjectTaskComponentsFormat</DataField>
+        </Field>
+        <Field Name="ProgressLevel_ProjectTaskComponents">
+          <DataField>ProgressLevel_ProjectTaskComponents</DataField>
+        </Field>
+        <Field Name="ProgressLevel_ProjectTaskComponentsFormat">
+          <DataField>ProgressLevel_ProjectTaskComponentsFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_ProcurementRequest">
+          <DataField>No_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Title_ProcurementRequest">
+          <DataField>Title_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="RequisitionNo_ProcurementRequest">
+          <DataField>RequisitionNo_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ProcurementPlanNo_ProcurementRequest">
+          <DataField>ProcurementPlanNo_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="CreationDate_ProcurementRequest">
+          <DataField>CreationDate_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="UserID_ProcurementRequest">
+          <DataField>UserID_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Procurementtype_ProcurementRequest">
+          <DataField>Procurementtype_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="NoSeries_ProcurementRequest">
+          <DataField>NoSeries_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ProcessType_ProcurementRequest">
+          <DataField>ProcessType_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ProcurementPlanItem_ProcurementRequest">
+          <DataField>ProcurementPlanItem_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Category_ProcurementRequest">
+          <DataField>Category_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ShortcutDimension1Code_ProcurementRequest">
+          <DataField>ShortcutDimension1Code_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ShortcutDimension2Code_ProcurementRequest">
+          <DataField>ShortcutDimension2Code_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TenderOpeningDate_ProcurementRequest">
+          <DataField>TenderOpeningDate_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TenderStatus_ProcurementRequest">
+          <DataField>TenderStatus_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="TenderClosingDate_ProcurementRequest">
+          <DataField>TenderClosingDate_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Addedum_ProcurementRequest">
+          <DataField>Addedum_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="SiteView_ProcurementRequest">
+          <DataField>SiteView_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="Status_ProcurementRequest">
+          <DataField>Status_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="QuotationDeadline_ProcurementRequest">
+          <DataField>QuotationDeadline_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="DimensionSetID_ProcurementRequest">
+          <DataField>DimensionSetID_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="ExpectedClosingTime_ProcurementRequest">
+          <DataField>ExpectedClosingTime_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="CurrencyCode_ProcurementRequest">
+          <DataField>CurrencyCode_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="PaymentTerms_ProcurementRequest">
+          <DataField>PaymentTerms_ProcurementRequest</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address">
+          <DataField>CompanyInfo_Address</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Address2">
+          <DataField>CompanyInfo_Address2</DataField>
+        </Field>
+        <Field Name="CompanyInfo_City">
+          <DataField>CompanyInfo_City</DataField>
+        </Field>
+        <Field Name="CompanyInfo_PhoneNo">
+          <DataField>CompanyInfo_PhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyInfo_FaxNo">
+          <DataField>CompanyInfo_FaxNo</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Picture">
+          <DataField>CompanyInfo_Picture</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Email">
+          <DataField>CompanyInfo_Email</DataField>
+        </Field>
+        <Field Name="CompNameCaption">
+          <DataField>CompNameCaption</DataField>
+        </Field>
+        <Field Name="ReportTitleCaption">
+          <DataField>ReportTitleCaption</DataField>
+        </Field>
+        <Field Name="Inivite">
+          <DataField>Inivite</DataField>
+        </Field>
+        <Field Name="NoteA">
+          <DataField>NoteA</DataField>
+        </Field>
+        <Field Name="NoteC">
+          <DataField>NoteC</DataField>
+        </Field>
+        <Field Name="NoteD">
+          <DataField>NoteD</DataField>
+        </Field>
+        <Field Name="DeliveryNote">
+          <DataField>DeliveryNote</DataField>
+        </Field>
+        <Field Name="NBCaption">
+          <DataField>NBCaption</DataField>
+        </Field>
+        <Field Name="SellersCaption">
+          <DataField>SellersCaption</DataField>
+        </Field>
+        <Field Name="DateCation">
+          <DataField>DateCation</DataField>
+        </Field>
+        <Field Name="OpennedByCaption">
+          <DataField>OpennedByCaption</DataField>
+        </Field>
+        <Field Name="DesignationCaption">
+          <DataField>DesignationCaption</DataField>
+        </Field>
+        <Field Name="SignatureCaptiion">
+          <DataField>SignatureCaptiion</DataField>
+        </Field>
+        <Field Name="TimeCaption">
+          <DataField>TimeCaption</DataField>
+        </Field>
+        <Field Name="ConditionsCaption">
+          <DataField>ConditionsCaption</DataField>
+        </Field>
+        <Field Name="Cond1">
+          <DataField>Cond1</DataField>
+        </Field>
+        <Field Name="Cond2">
+          <DataField>Cond2</DataField>
+        </Field>
+        <Field Name="Cond3">
+          <DataField>Cond3</DataField>
+        </Field>
+        <Field Name="Cond4">
+          <DataField>Cond4</DataField>
+        </Field>
+        <Field Name="InstructionCaption">
+          <DataField>InstructionCaption</DataField>
+        </Field>
+        <Field Name="Instruct1">
+          <DataField>Instruct1</DataField>
+        </Field>
+        <Field Name="Instruct2">
+          <DataField>Instruct2</DataField>
+        </Field>
+        <Field Name="Instruct3">
+          <DataField>Instruct3</DataField>
+        </Field>
+        <Field Name="Instruct4">
+          <DataField>Instruct4</DataField>
+        </Field>
+        <Field Name="Instruct5">
+          <DataField>Instruct5</DataField>
+        </Field>
+        <Field Name="CountryCaption">
+          <DataField>CountryCaption</DataField>
+        </Field>
+        <Field Name="Counter">
+          <DataField>Counter</DataField>
+        </Field>
+        <Field Name="ResponsibilityCentre">
+          <DataField>ResponsibilityCentre</DataField>
+        </Field>
+        <Field Name="JobDescription">
+          <DataField>JobDescription</DataField>
+        </Field>
+        <Field Name="Quotation_Deadline">
+          <DataField>Quotation_Deadline</DataField>
+        </Field>
+        <Field Name="Issue_Date">
+          <DataField>Issue_Date</DataField>
+        </Field>
+        <Field Name="RequisitionNo_ProcurementRequestLines">
+          <DataField>RequisitionNo_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="LineNo_ProcurementRequestLines">
+          <DataField>LineNo_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="Type_ProcurementRequestLines">
+          <DataField>Type_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="No_ProcurementRequestLines">
+          <DataField>No_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="Description_ProcurementRequestLines">
+          <DataField>Description_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="Quantity_ProcurementRequestLines">
+          <DataField>Quantity_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="Quantity_ProcurementRequestLinesFormat">
+          <DataField>Quantity_ProcurementRequestLinesFormat</DataField>
+        </Field>
+        <Field Name="UnitofMeasure_ProcurementRequestLines">
+          <DataField>UnitofMeasure_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="UnitPrice_ProcurementRequestLines">
+          <DataField>UnitPrice_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="UnitPrice_ProcurementRequestLinesFormat">
+          <DataField>UnitPrice_ProcurementRequestLinesFormat</DataField>
+        </Field>
+        <Field Name="Amount_ProcurementRequestLines">
+          <DataField>Amount_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="Amount_ProcurementRequestLinesFormat">
+          <DataField>Amount_ProcurementRequestLinesFormat</DataField>
+        </Field>
+        <Field Name="ProcurementPlan_ProcurementRequestLines">
+          <DataField>ProcurementPlan_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="ProcurementPlanItem_ProcurementRequestLines">
+          <DataField>ProcurementPlanItem_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="BudgetLine_ProcurementRequestLines">
+          <DataField>BudgetLine_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="AmountLCY_ProcurementRequestLines">
+          <DataField>AmountLCY_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="AmountLCY_ProcurementRequestLinesFormat">
+          <DataField>AmountLCY_ProcurementRequestLinesFormat</DataField>
+        </Field>
+        <Field Name="Select_ProcurementRequestLines">
+          <DataField>Select_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="RequestGenerated_ProcurementRequestLines">
+          <DataField>RequestGenerated_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="RequestDate_ProcurementRequestLines">
+          <DataField>RequestDate_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="ExpectedReceiptDate_ProcurementRequestLines">
+          <DataField>ExpectedReceiptDate_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="ShortcutDimension1Code_ProcurementRequestLines">
+          <DataField>ShortcutDimension1Code_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="ShortcutDimension2Code_ProcurementRequestLines">
+          <DataField>ShortcutDimension2Code_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="Committed_ProcurementRequestLines">
+          <DataField>Committed_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="DimensionSetID_ProcurementRequestLines">
+          <DataField>DimensionSetID_ProcurementRequestLines</DataField>
+        </Field>
+        <Field Name="Specifications_ProcurementRequestLines">
+          <DataField>Specifications_ProcurementRequestLines</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

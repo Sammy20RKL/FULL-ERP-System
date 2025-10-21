@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Code_WorkPlanLineSubActivities">
+          <DataField>Code_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="Description_WorkPlanLineSubActivities">
+          <DataField>Description_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="ObjectiveCode_WorkPlanLineSubActivities">
+          <DataField>ObjectiveCode_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="ActivitiesCode_WorkPlanLineSubActivities">
+          <DataField>ActivitiesCode_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="ResponsiblePerson_WorkPlanLineSubActivities">
+          <DataField>ResponsiblePerson_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="Output_WorkPlanLineSubActivities">
+          <DataField>Output_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="ApprovedBudget_WorkPlanLineSubActivities">
+          <DataField>ApprovedBudget_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="ApprovedBudget_WorkPlanLineSubActivitiesFormat">
+          <DataField>ApprovedBudget_WorkPlanLineSubActivitiesFormat</DataField>
+        </Field>
+        <Field Name="FirstQuarter_WorkPlanLineSubActivities">
+          <DataField>FirstQuarter_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="SecondQuarter_WorkPlanLineSubActivities">
+          <DataField>SecondQuarter_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="ThirdQuarter_WorkPlanLineSubActivities">
+          <DataField>ThirdQuarter_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="FourthQuarter_WorkPlanLineSubActivities">
+          <DataField>FourthQuarter_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="SubActivityCode_WorkPlanLineSubActivities">
+          <DataField>SubActivityCode_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="DescriptionActivities_WorkPlanLineSubActivities">
+          <DataField>DescriptionActivities_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="DescriptionSubActivities_WorkPlanLineSubActivities">
+          <DataField>DescriptionSubActivities_WorkPlanLineSubActivities</DataField>
+        </Field>
+        <Field Name="KeyPerformanceIndicator_WorkPlanLineSubActivities">
+          <DataField>KeyPerformanceIndicator_WorkPlanLineSubActivities</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
